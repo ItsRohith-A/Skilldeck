@@ -15,16 +15,16 @@ import NavBar from "@/components/others/NavBar";
 import localFont from "next/font/local";
 import Head from "next/head";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const sans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
 
 export default function Home() {
   return (
@@ -39,7 +39,7 @@ export default function Home() {
       <BannerImage />
       <FullyAutomated />
       <Unique />
-      <DemoVideo />
+      {/*  <DemoVideo />
       <Collaborative />
       <EdtechSpace />
       <Founder />
@@ -52,7 +52,7 @@ export default function Home() {
         title2="How can I contact customer support?"
         desc2="Reach out to our dedicated support team via email at support@example.com or call our toll-free number at 1-800-123-4567 during business hours."
       />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }
