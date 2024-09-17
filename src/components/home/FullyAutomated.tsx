@@ -5,6 +5,7 @@ import cardimg2 from '../../../public/images/empowering/fully2.png';
 import cardimg3 from '../../../public/images/empowering/fully3.png';
 import cardimg4 from '../../../public/images/empowering/fully4.png';
 import Image from "next/image";
+import { IoIosArrowDown } from "react-icons/io";
 
 function FullyAutomated() {
   const points = [
@@ -17,18 +18,12 @@ function FullyAutomated() {
   return (
     <div>
       <div className="container mx-auto my-12 px-4 lg:px-0" data-aos="fade-up">
-        <div className="fully-automated lg:flex justify-between">
-          {/* Empowering Section */}
-          <div className="empowering lg:w-1/3 self-center">
-            <p className="bg-prime-dark text-white py-1 px-2 rounded-full w-fit">
-              <small>Digital Service</small>
-            </p>
-            <h2 className="text-xl font-bold mt-6 lg:text-2xl">
+        <div className=" lg:flex justify-between">
+          <div className="lg:w-1/3 self-center">
+            <div className="text-slate-900 text-2xl font-medium leading-10">
               Empowering Training Companies With <br />
-              <span className="text-prime-blue text-2xl lg:text-3xl">
-                The Fully Automated Tech & Marketing Solution!
-              </span>
-            </h2>
+              <span className="text-prime-blue text-4xl font-bold ">The Fully Automated Tech & Marketing Solution!</span>
+            </div>
           </div>
 
           {/* Points Section */}
@@ -36,10 +31,12 @@ function FullyAutomated() {
             {points.map((point, index) => (
               <div
                 key={index}
-                className="flex items-center border border-[rgba(12,33,58,0.3)] rounded-lg p-3 hover:border-prime-blue hover:text-prime-blue transition"
+                className="flex items-center border-2 border-slate-900/30 rounded-lg p-3 hover:border-prime-blue hover:text-prime-blue transition"
               >
-                <MdKeyboardArrowRight size={30} className="mr-2" />
-                <p className="m-0">{point}</p>
+                <div className="">
+                  <MdKeyboardArrowRight size={30} className="mr-2" />
+                </div>
+                <p className="opacity-80 text-black text-sm lg:text-lg font-semibold">{point}</p>
               </div>
             ))}
           </div>
@@ -55,22 +52,27 @@ function FullyAutomated() {
             { image: cardimg3, text: "4X Less Operational Costs" },
             { image: cardimg4, text: "100% Upvotes" },
           ].map((card, index) => (
+
+
             <div
               key={index}
-              className="rounded-xl border border-prime-dark/20 hover:border-prime-blue transition flex-col flex items-center"
+              className="py-4 rounded-xl border border-prime-dark/20 hover:border-prime-blue transition flex-col flex items-center"
             >
               <Image src={card.image} alt={card.text} className="rounded-t-xl" />
               <p className="text-center font-bold py-3">{card.text}</p>
             </div>
+
+
           ))}
         </div>
 
         {/* Buttons Section */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 my-8">
-          <button className="px-6 py-3 bg-prime-dark text-white rounded-lg text-xl font-medium tracking-wide">
+          <button className="px-6 py-3 flex items-center gap-3 bg-prime-dark text-white rounded-lg text-lg">
             Book A Demo
+            <IoIosArrowDown />
           </button>
-          <button className="px-6 py-3 border border-prime-dark rounded-lg text-xl font-medium tracking-wide">
+          <button className="px-6 py-3 border border-prime-dark rounded-lg text-lg">
             Explore More!
           </button>
         </div>

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        'slow-bounce': 'bounce 2s infinite', // Custom animation duration
+      },
       colors: {
         "prime-blue": "#6374ff",
         "prime-dark": "#0c213a",

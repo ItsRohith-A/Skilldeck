@@ -3,9 +3,7 @@ import logo from '../../../public/logos/mainlogo.svg';
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { IoClose } from 'react-icons/io5';
-import { FaArrowRight } from 'react-icons/fa';
 import { IoMdMenu } from 'react-icons/io';
-import { FaSquarePhone } from 'react-icons/fa6';
 
 function MainNav() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,11 +45,8 @@ function MainNav() {
 
                 {/* Phone Number and Buy Now */}
                 <div className="hidden md:flex">
-                    <Link href='/' className='px-4 text-prime-dark py-2 rounded font-bold flex items-center gap-2'>
-                        <FaSquarePhone className='text-xl' />
-                        +91-82964-94941
-                    </Link>
-                    <Link href='/contact-us' className='border-2 border-prime-dark font-medium px-4 py-2 rounded '>
+
+                    <Link href='/contact-us' className='border-2 border-prime-dark font-medium px-4 ml-12 py-2 rounded '>
                         Buy Now!
                     </Link>
                 </div>
@@ -85,10 +80,6 @@ function MainNav() {
                     </Link>
                     <Link href="/contact-us" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Contact Us
-                    </Link>
-                    <Link href='/' className='text-prime-dark flex items-center gap-2 font-bold' onClick={toggleMenu}>
-                        <FaSquarePhone className='text-xl' />
-                        +91-82964-94941
                     </Link>
                     <Link href='/contact-us' className='border-2 border-prime-dark font-medium text-center p-2 rounded' onClick={toggleMenu}>
                         Buy Now!

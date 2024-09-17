@@ -2,75 +2,62 @@ import Image from "next/image";
 import React from "react";
 import dashboard from "../../../public/images/unique/dashbord.png";
 import codingIcon from "../../../public/images/unique/coding.svg";
+import box2bg from "../../../public/images/unique/boxb.png";
 import chart from "../../../public/images/unique/boxc.png";
 import star from "../../../public/images/unique/star.svg";
 import loginimg from "../../../public/images/unique/loginimg.png";
 
 function Unique() {
   return (
-    <div className="container mx-auto py-16 px-4" id="unique">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* First Card */}
-        <div className="bg-prime-lightblue/20 p-6 rounded-lg flex flex-col space-y-4">
-          <div className="flex items-center space-x-4">
-            <Image src={codingIcon} alt="coding icon" className="w-8 h-8" />
-            <h5 className="text-prime-blue font-bold">
-              What’s So Unique about this Application?
-            </h5>
+    <div className="container mx-auto mt-12 lg:mt-24" id="unique">
+      <div className="grid gap-6">
+        <div className="grid grid-cols-3 gap-6">
+          {/* card 1 */}
+          <div className="col-span-2 space-y-6 ">
+            <div className="flex bg-prime-bg pl-6 pt-6 rounded-xl gap-6 h-full overflow-hidden">
+              <div className="self-center pb-6 space-y-4">
+                <div className="flex items-center gap-3">
+                  <Image src={codingIcon} alt="coding icon" className="" />
+                  <div className="text-center text-indigo-500 text-xl font-black tracking-wide">What's So Unique about this Application?</div>
+                </div>
+                <div className=" text-black text-lg font-medium leading-normal">This application was developed by a team with expertise in building applications for leading companies in the Ed-tech space and others that have grown from zero to a significant level in a short span
+                </div>
+              </div>
+              <Image src={dashboard} alt="dashboard" className="mx-auto mt-4 border-l-4 border-t-4 border-prime-blue rounded-tl-xl bg-prime-dark" />
+            </div>
           </div>
-          <p className="text-lg font-medium leading-relaxed">
-            This application was developed by a team with expertise in building
-            applications for leading companies in the Ed-tech space and others
-            that have grown from zero to a significant level in a short span.
-          </p>
+          {/* card 2 */}
+          <div className="col-span-1 bg-prime-bg pl-6 pt-6 rounded-xl relative flex items-center justify-center group ">
+            <Image src={box2bg} alt="coding icon" className="group-hover:opacity-100 opacity-50" />
+            <div className="text-center absolute  text-indigo-500 text-3xl font-bold leading-9">
+              Fully automated
+              <br />
+              <span className="text-black text-3xl font-bold leading-9">plug-and-play platform</span>
+            </div>
+          </div>
         </div>
+        <div className="grid grid-cols-3 gap-6">
+          <div className="col-span-2 grid grid-cols-3 gap-6">
+            {/* card 3 */}
+            <div className="bg-prime-dark col-span-2 rounded-xl p-6 flex gap-12 items-center justify-center">
+              <div className="text-center text-indigo-500 text-2xl font-bold">High-standard<br />
+                <span className="text-white text-2xl font-semibold">user interface<br />& experience</span>
+              </div>
+              <Image src={chart} alt="coding icon" className="" />
+            </div>
+            {/* --------------------- */}
 
-        {/* Second Card */}
-        <div className="bg-prime-lightblue/20 p-6 rounded-lg text-center">
-          <h3 className="text-xl font-bold">Fully automated plug-and-play platform</h3>
-          <Image src={dashboard} alt="dashboard" className="mx-auto mt-4" />
-        </div>
+            {/* card 4 */}
+            <div className="col-span-1 bg-prime-dark rounded-xl p-6 flex-col flex items-center group">
+              <Image src={star} alt="coding icon" className="group-hover:animate-spin " />
 
-        {/* Third Card */}
-        <div className="bg-prime-dark text-white p-6 rounded-lg flex items-center space-x-4">
-          <h5 className="text-prime-blue font-bold">High-standard user interface & experience</h5>
-          <Image src={chart} alt="chart image" />
-        </div>
+              <div className="text-center text-white text-base font-normal leading-normal">Fully optimized for<br />
+                <span className="text-indigo-500 text-xl font-bold leading-normal">Conversion Rates</span>
+              </div>
+            </div>
+            {/* --------------------- */}
 
-        {/* Fourth Card */}
-        <div className="bg-prime-dark text-white p-6 rounded-lg flex flex-col items-center">
-          <Image src={star} alt="star icon" className="w-10 h-10 animate-spin-slow" />
-          <p className="mt-4">Fully optimized for <span className="text-prime-blue font-bold">Conversion Rates</span></p>
-        </div>
-
-        {/* Fifth Card */}
-        <div className="bg-prime-lightblue/20 p-6 rounded-lg text-center">
-          <h3 className="text-xl font-bold">An SEO-automated optimized & market-ready website</h3>
-          <Image src={dashboard} alt="dashboard" className="mx-auto mt-4" />
-        </div>
-
-        {/* Sixth Card */}
-        <div className="bg-prime-dark text-white p-6 rounded-lg flex flex-col items-center">
-          <h5 className="text-prime-blue font-bold">
-            Proven strategy with “N” number of businesses
-          </h5>
-          <Image src={loginimg} alt="login image" className="mt-4" />
-          <p className="mt-4 text-center">
-            Highest ROI from marketing investments
-          </p>
-        </div>
-
-        {/* Seventh Card */}
-        <div className="bg-prime-lightblue/20 p-6 rounded-lg flex flex-col items-center">
-          <p className="text-xl font-bold">
-            <span className="text-prime-blue">4X times smaller</span> teams & reduced operation costs
-          </p>
-          <p className="text-xl font-bold mt-4">
-            <span className="text-prime-blue">6X times faster</span> growth than other companies
-          </p>
-          <p className="text-xl font-bold mt-4">
-            <span className="text-prime-blue">10X times lesser</span> investment in technology & marketing
-          </p>
+          </div>
         </div>
       </div>
     </div>
