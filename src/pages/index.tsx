@@ -39,13 +39,13 @@ export default function Home() {
       <BannerImage />
       <FullyAutomated />
       <Unique />
-      {/*  <DemoVideo />
+      <DemoVideo />
       <Collaborative />
       <EdtechSpace />
-      <Founder />
+      {/* <Founder /> */}
       <Features />
       <Benefit />
-      <Pricing />
+      {/* <Pricing />
       <BottomContent
         title1="What browsers are supported?"
         desc1="Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our documentation for additional information."

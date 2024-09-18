@@ -12,84 +12,55 @@ import il from "../../../public/images/cob/logos/il.png";
 
 const logos = [logo1, aa, bt, il, kh, pal, sa, sta, vf];
 
+
 const Collaborative: React.FC = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const logosRef = useRef<HTMLUListElement | null>(null);
 
   useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    let scrollInterval: NodeJS.Timeout;
-
-    if (scrollContainer) {
-      scrollInterval = setInterval(() => {
-        // Automatically scroll the container horizontally
-        scrollContainer.scrollBy({ left: 1, behavior: "smooth" });
-        if (
-          scrollContainer.scrollLeft + scrollContainer.clientWidth >=
-          scrollContainer.scrollWidth
-        ) {
-          scrollContainer.scrollTo({ left: 0 });
-        }
-      }, 30); // Adjust the speed by changing the interval time
+    if (logosRef.current) {
+      const ul = logosRef.current;
+      ul.insertAdjacentHTML('afterend', ul.outerHTML);
+      if (ul.nextSibling) {
+        (ul.nextSibling as HTMLElement).setAttribute('aria-hidden', 'true');
+      }
     }
-
-    return () => {
-      if (scrollInterval) clearInterval(scrollInterval); // Clear the interval on unmount
-    };
   }, []);
 
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="mt-12 lg:mt-24">
       <div className="container mx-auto">
-        <p className="text-center font-bold text-3xl mb-12">
+        <p className="text-center font-bold text-2xl lg:text-3xl mb-4 lg:mb-12">
           Successful Collaborative Efforts
         </p>
-        <div className="flex justify-evenly gap-10 mb-8">
-          <div className="bg-cover bg-center p-8 rounded-xl bg-[url('/images/cob/card1bg.png')]">
-            <p className="font-bold text-gray-700">
-              The product team has worked with various training companies to
-              provide the requirements for automating marketing, operations,
-              sales, and business development.
-            </p>
+        <div className="">
+          <div className="mb-8 lg:flex gap-x-6 px-2 lg:px-0 space-y-4 lg:space-y-0">
+            <div className="bg-cover bg-center px-4 lg:p-8 rounded-xl h-52 flex items-center  bg-no-repeat bg-[url('/images/cob/card1bg.png')]">
+              <p className="lg:w-4/6 font-bold lg:text-gray-700 lg:leading-7">
+                The product team has worked with various training companies to
+                provide the requirements for automating marketing, operations,
+                sales, and business development.
+              </p>
+            </div>
+            <div className="bg-cover bg-center px-4 lg:p-8 rounded-xl h-52 flex items-center  bg-no-repeat bg-[url('/images/cob/card2bg.png')]">
+              <p className="lg:w-4/6 font-bold lg:text-gray-700 lg:leading-7">
+                The team has played a pivotal role in crafting the tech and
+                marketing solutions at different stages for the following training
+                companies to establish their internet portfolio.
+              </p>
+            </div>
           </div>
-          <div className="bg-cover bg-center p-8 rounded-xl bg-[url('/images/cob/card2bg.png')]">
-            <p className="font-bold text-gray-700">
-              The team has played a pivotal role in crafting the tech and
-              marketing solutions at different stages for the following training
-              companies to establish their internet portfolio.
-            </p>
-          </div>
-        </div>
-
-        {/* Auto-scrolling logo section */}
-        <div
-          className="overflow-hidden whitespace-nowrap"
-          ref={scrollContainerRef}
-        >
-          <div className="flex items-center space-x-8">
-            {logos.map((logo, index) => (
-              <div
-                key={index}
-                className="inline-block p-2 border border-gray-300 rounded-lg bg-gray-100 "
-              >
-                <Image
-                  src={logo}
-                  alt={`logo-${index}`}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-            ))}
-            {logos.map((logo, index) => (
-              <div
-                key={index + logos.length} // Duplicate for infinite scroll effect
-                className=" p-2 border border-gray-300 rounded-lg bg-gray-100 "
-              >
-                <Image
-                  src={logo}
-                  alt={`logo-${index + logos.length}`}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-            ))}
+          {/* Auto-scrolling logo section */}
+          <div
+            className="w-full py-6 inline-flex flex-nowrap overflow-hidden md:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+          >
+            <ul ref={logosRef} className="flex items-center justify-center md:justify-start [&_li]:mx-3 lg:[&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+              {logos.map((logo, index) => (
+                <li key={index} className='flex-shrink-0 bg-[#F2F2F2] px-4 rounded-xl py-2'>
+                  <Image src={logo} alt={`client logo ${index}`} className='lg:h-11 w-auto' />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

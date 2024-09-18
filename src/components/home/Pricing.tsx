@@ -1,85 +1,109 @@
-import React from 'react'
-
-function Pricing() {
-    return (
-        <div className="container mx-auto my-12">
-            <div className='flex justify-center gap-4'>
-                <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-md hover:border-blue-500 hover:shadow-lg transition">
-                    <div className='mt-2'>
-                        <h6 className="text-lg font-semibold">Basic</h6>
-                        <p className='text-3xl font-bold'>
-                            ₹10000/<span className='text-base font-normal'>Month</span>
-                        </p>
-                    </div>
-                    <ul className='list-disc list-inside mt-4 space-y-2'>
-                        <li>Automation Of Schedules</li>
-                        <li>Payment Gateways</li>
-                        <li>Trainer Module</li>
-                        <li>Testimonials Management</li>
-                        <li>Location Management</li>
-                        <li>Course and Course Category management</li>
-                        <li>Single User</li>
-                        <li>Blog Engine</li>
-                        <li>49999 Set Up charges First Year Only</li>
-                        <li>One time Buy Out- 399000</li>
-                        <li>Minimum Engagement 1 Year</li>
-                        <li>Frontend, servers, domain & others to be provided by the client</li>
-                    </ul>
-                    <button className='mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg border border-transparent hover:bg-blue-600'>
-                        Start Now
-                    </button>
-                </div>
-                <div className="bg-blue-500 text-white p-4 rounded-lg shadow-md hover:shadow-lg transition">
-                    <h6 className="text-lg font-semibold">Elite</h6>
-                    <p className='text-3xl font-bold'>
-                        ₹15000/<span className='text-base font-normal'>Month</span>
-                    </p>
-                    <ul className='list-disc list-inside mt-4 space-y-2'>
-                        <li>Everything about Plan1 Plus</li>
-                        <li>Analytics Dashboard Access</li>
-                        <li>SEO Module Access</li>
-                        <li>Site Control, Such as Promotional Messages/Banners</li>
-                        <li>Coupons Module</li>
-                        <li>Multiple Role-Based User Management</li>
-                        <li>Patterns Module</li>
-                        <li>Logs Access</li>
-                        <li>59999 Set Up charges First Year Only</li>
-                        <li>499000</li>
-                        <li>Minimum Engagement 1 Year</li>
-                        <li>Frontend, servers, domain & others to be provided by the client</li>
-                    </ul>
-                    <button className='mt-4 bg-white text-blue-500 py-2 px-4 rounded-lg border border-blue-500 hover:bg-blue-50'>
-                        Start Now
-                    </button>
-                </div>
-                <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-md hover:border-blue-500 hover:shadow-lg transition">
-                    <div className='mt-2'>
-                        <h6 className="text-lg font-semibold">Pro</h6>
-                        <p className='text-3xl font-bold'>
-                            ₹20000/<span className='text-base font-normal'>Month</span>
-                        </p>
-                    </div>
-                    <ul className='list-disc list-inside mt-4 space-y-2'>
-                        <li>Everything Of Plan2</li>
-                        <li>Bulk Uploads</li>
-                        <li>E-learning Module Access</li>
-                        <li>Social Media Submission</li>
-                        <li>Task Management</li>
-                        <li>Sales Utility</li>
-                        <li>Customer Profile</li>
-                        <li>Payments Tracking & Analytics</li>
-                        <li>69999 Set Up charges First Year Only</li>
-                        <li>599000</li>
-                        <li>Minimum Engagement 1 Year</li>
-                        <li>Frontend, servers, domain & others to be provided by the client</li>
-                    </ul>
-                    <button className='mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg border border-transparent hover:bg-blue-600'>
-                        Start Now
-                    </button>
-                </div>
-            </div>
-        </div>
-    )
+import React from 'react';
+import { FiChevronRight } from 'react-icons/fi';
+interface PricingCardProps {
+    plan: string;
+    price: number;
+    features: string[];
+    isHighlighted: boolean;
 }
 
-export default Pricing
+function PricingCard({ plan, price, features, isHighlighted }: PricingCardProps) {
+    return (
+        <div className={`rounded-lg p-4 shadow-md transition ${isHighlighted ? 'bg-prime-blue text-white' : 'bg-white border border-gray-200'
+            } hover:shadow-lg ${isHighlighted ? 'hover:bg-prime-blue' : 'hover:border-prime-blue'}`}>
+            <h6 className="text-lg font-semibold">{plan}</h6>
+            <p className={`text-slate-900 text-3xl font-medium leading-10 ${isHighlighted && 'text-white'} `}>
+                ₹{price}/<span className={`text-slate-900 text-xl font-medium leading-10 ${isHighlighted && 'text-white'}`}>Month</span>
+            </p>
+            <ul className="list-disc list-inside mt-4 space-y-2">
+                {features.map((feature, index) => (
+                    <li key={index} className={`text-slate-900 text-base font-medium leading-9 ${isHighlighted && 'text-white'} `}>{feature}</li>
+                ))}
+            </ul>
+
+            <button className={`mt-4 p-4 rounded-lg border border-slate-900 text-base font-medium flex text-slate-900 items-center justify-center gap-4 w-full ${isHighlighted
+                && 'bg-white hover:text-prime-blue border-none'}`}>
+                Start Now
+                <div className="">
+                    <FiChevronRight />
+                </div>
+            </button>
+        </div>
+    );
+}
+
+// Main Pricing component in TSX
+function Pricing() {
+    const plans = [
+        {
+            plan: 'Basic',
+            price: 149,
+            features: [
+                'Automation Of Schedules',
+                'Payment Gateways',
+                'Trainer Module',
+                'Testimonials Management',
+                'Location Management',
+                'Course and Course Category management',
+                'Single User',
+                'Blog Engine',
+                '600 $ Set Up charges First Year Only',
+                'Minimum Engagement 1 Year',
+
+            ],
+            isHighlighted: false,
+        },
+        {
+            plan: 'Elite',
+            price: 249,
+            features: [
+                'Everything about Plan1 Plus',
+                'Analytics Dashboard Access',
+                'SEO Module Access',
+                'Site Control, Such as Promotional Messages/Banners',
+                'Coupons Module',
+                'Multiple Role-Based User Management',
+                'Patterns Module',
+                'Logs Access',
+                '800 $ Set Up charges First Year Only',
+                'Minimum Engagement 1 Year',
+            ],
+            isHighlighted: true,
+        },
+        {
+            plan: 'Pro',
+            price: 349,
+            features: [
+                'Everything Of Plan2',
+                'Bulk Uploads',
+                'E-learning Module Access',
+                'Social Media Submission',
+                'Task Management',
+                'Sales Utility',
+                'Customer Profile',
+                'Payments Tracking & Analytics',
+                '900 $ Set Up charges First Year Only',
+                'Minimum Engagement 1 Year',
+            ],
+            isHighlighted: false,
+        }
+    ];
+
+    return (
+        <div className="container mx-auto my-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {plans.map((plan, index) => (
+                    <PricingCard
+                        key={index}
+                        plan={plan.plan}
+                        price={plan.price}
+                        features={plan.features}
+                        isHighlighted={plan.isHighlighted}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
+
+export default Pricing;

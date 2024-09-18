@@ -13,7 +13,7 @@ function Footer() {
         });
     };
     return (
-        <div className="">
+        <div className=" mt-12 lg:mt-24">
             <div className='bg-black text-white py-12'>
                 <div className="container mx-auto flex flex-wrap justify-between gap-8">
                     <div className="lg:w-1/4">
@@ -25,26 +25,26 @@ function Footer() {
                                 placeholder="Email"
                             />
                         </div>
-                        <button className='w-full bg-blue-500 text-white py-2 px-4 rounded-lg border border-transparent hover:bg-blue-600'>
+                        <button className='w-full bg-prime-blue text-white py-2 px-4 rounded-lg border border-transparent hover:bg-blue-600'>
                             Submit
                         </button>
                     </div>
                     <div className="lg:w-1/5">
                         <p className="font-semibold text-gray-400 mb-4">Features</p>
                         <div className="flex flex-col space-y-2">
-                            <Link href="/" className='hover:text-blue-500'>Documentation</Link>
-                            <Link href="/" className='hover:text-blue-500'>Stats</Link>
-                            <Link href="/" className='hover:text-blue-500'>Demo</Link>
-                            <Link href="/" className='hover:text-blue-500'>Release Overload</Link>
+                            <Link href="/" className='hover:text-prime-blue'>Documentation</Link>
+                            <Link href="/" className='hover:text-prime-blue'>Stats</Link>
+                            <Link href="/" className='hover:text-prime-blue'>Demo</Link>
+                            <Link href="/" className='hover:text-prime-blue'>Release Overload</Link>
                         </div>
                     </div>
                     <div className="lg:w-1/5">
                         <p className="font-semibold text-gray-400 mb-4">Company</p>
                         <div className="flex flex-col space-y-2">
-                            <Link href="/" className='hover:text-blue-500'>Documentation</Link>
-                            <Link href="/" className='hover:text-blue-500'>Stats</Link>
-                            <Link href="/" className='hover:text-blue-500'>Demo</Link>
-                            <Link href="/" className='hover:text-blue-500'>Release Overload</Link>
+                            <Link href="/" className='hover:text-prime-blue'>Documentation</Link>
+                            <Link href="/" className='hover:text-prime-blue'>Stats</Link>
+                            <Link href="/" className='hover:text-prime-blue'>Demo</Link>
+                            <Link href="/" className='hover:text-prime-blue'>Release Overload</Link>
                         </div>
                     </div>
                     <div className="lg:w-1/4">
@@ -58,14 +58,14 @@ function Footer() {
                             </div>
                             <div className='flex items-center mb-4'>
                                 <CiMail size={25} className="mr-3" />
-                                <Link href="mailto:clients@kandradigital.com" className='hover:text-blue-500'>clients@kandradigital.com</Link>
+                                <Link href="mailto:clients@kandradigital.com" className='hover:text-prime-blue'>clients@kandradigital.com</Link>
                             </div>
-                            <div className='flex items-center'>
+                            {/* <div className='flex items-center'>
                                 <IoCallOutline size={25} className="mr-3" />
-                                <a href="tel:+91-88671-64445" className='text-blue-500 hover:underline'>
+                                <a href="tel:+91-88671-64445" className='text-prime-blue hover:underline'>
                                     +91-82964-94941
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -73,11 +73,11 @@ function Footer() {
             <div className='bg-black border-t border-gray-800 py-4 text-white'>
                 <div className="container mx-auto flex justify-between items-center">
                     <p>© 2023 ✣ All rights reserved.</p>
-                    <Link href='https://kandradigital.com/' className='hover:underline'>
+                    <Link href='https://kandradigital.com/' className='hover:underline hover:text-prime-blue'>
                         KandraDigital
                     </Link>
                     <button className='p-0 bg-transparent border-none' onClick={scrollToTop}>
-                        <IoIosArrowDropupCircle fill='gray' size={40} />
+                        <IoIosArrowDropupCircle className='hover:text-prime-blue' size={40} />
                     </button>
                 </div>
             </div>
