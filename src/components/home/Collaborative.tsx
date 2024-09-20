@@ -9,8 +9,11 @@ import sa from "../../../public/images/cob/logos/sa.png";
 import sta from "../../../public/images/cob/logos/sta.png";
 import vf from "../../../public/images/cob/logos/vf.png";
 import il from "../../../public/images/cob/logos/il.png";
+import sax from "../../../public/images/cob/logos/sax.png";
+import eg from "../../../public/images/cob/logos/eg.png";
+import sd from "../../../public/images/cob/logos/sd.png";
 
-const logos = [logo1, aa, bt, il, kh, pal, sa, sta, vf];
+const logos = [logo1, aa, bt, il, kh, pal, sa, sta, vf, sax, eg, sd];
 
 
 const Collaborative: React.FC = () => {
@@ -57,7 +60,7 @@ const Collaborative: React.FC = () => {
             <ul ref={logosRef} className="flex items-center justify-center md:justify-start [&_li]:mx-3 lg:[&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
               {logos.map((logo, index) => (
                 <li key={index} className='flex-shrink-0 bg-[#F2F2F2] px-4 rounded-xl py-2'>
-                  <Image src={logo} alt={`client logo ${index}`} className='lg:h-11 w-auto' />
+                  <Image src={logo} alt={`client logo ${index}`} className='lg:h-10 w-auto' />
                 </li>
               ))}
             </ul>

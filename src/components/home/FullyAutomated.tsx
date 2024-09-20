@@ -1,3 +1,4 @@
+
 import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import cardimg1 from '../../../public/images/empowering/fully1.png';
@@ -49,7 +50,7 @@ function FullyAutomated() {
       </div>
 
       {/* Card Section */}
-      <div className="container mx-auto px-4 lg:px-0">
+      <div className="container mx-auto px-4 lg:px-0" data-aos="zoom-in">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
           {[
             { image: cardimg1, text: "5X Quicker Progress" },
@@ -59,6 +60,7 @@ function FullyAutomated() {
           ].map((card, index) => (
             <div
               key={index}
+
               className="py-4 rounded-xl border border-prime-dark/20 hover:border-prime-blue transition flex-col flex items-center"
             >
               <Image src={card.image} alt={card.text} className="rounded-t-xl" />

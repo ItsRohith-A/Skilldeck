@@ -9,11 +9,11 @@ interface PricingCardProps {
 
 function PricingCard({ plan, price, features, isHighlighted }: PricingCardProps) {
     return (
-        <div className={`rounded-lg p-4 shadow-md transition ${isHighlighted ? 'bg-prime-blue text-white' : 'bg-white border border-gray-200'
+        <div id="pricing" className={`rounded-lg p-4 shadow-md transition ${isHighlighted ? 'bg-prime-blue text-white' : 'bg-white border border-gray-200'
             } hover:shadow-lg ${isHighlighted ? 'hover:bg-prime-blue' : 'hover:border-prime-blue'}`}>
             <h6 className="text-lg font-semibold">{plan}</h6>
             <p className={`text-slate-900 text-3xl font-medium leading-10 ${isHighlighted && 'text-white'} `}>
-                ₹{price}/<span className={`text-slate-900 text-xl font-medium leading-10 ${isHighlighted && 'text-white'}`}>Month</span>
+                $ {price}/<span className={`text-slate-900 text-xl font-medium leading-10 ${isHighlighted && 'text-white'}`}>Month</span>
             </p>
             <ul className="list-disc list-inside mt-4 space-y-2">
                 {features.map((feature, index) => (
@@ -90,7 +90,10 @@ function Pricing() {
     ];
 
     return (
-        <div className="container mx-auto my-12">
+        <div className="container mx-auto my-12 lg:mt-24 px-4 space-y-6">
+            <div className="text-3xl text-prime-dark font-semibold text-center">
+                Our Pricing
+            </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {plans.map((plan, index) => (
                     <PricingCard

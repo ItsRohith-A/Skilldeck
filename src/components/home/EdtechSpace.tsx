@@ -17,7 +17,7 @@ function EdtechSpace() {
     return (
         <div className="container mx-auto my-12 px-4">
             <div className="space-y-3 lg:space-y-6">
-                <div className="text-black text-center lg:text-start text-2xl lg:text-3xl font-bold">Solving the Biggest Barriers In
+                <div className="text-black text-center lg:text-start text-2xl lg:text-3xl font-bold">Solving the Biggest Barriers In <br />
                     <span className="text-prime-blue text-center lg:text-start text-2xl lg:text-3xl font-bold"> The Ed-tech Space!</span>
                 </div>
                 <div className="lg:w-4/6 opacity-80 text-stone-500 text-sm font-normal text-center lg:text-start">Business owners can only focus on a few things related to the tech and process. At the same time, they are busy with their expertise and regular stuff. This solution can eliminate their burden and let them focus on what matters the most as we build the tech and marketing solutions.</div>

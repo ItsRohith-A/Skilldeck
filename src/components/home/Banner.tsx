@@ -2,6 +2,12 @@ import React from "react";
 import { FaAngleDown } from "react-icons/fa";
 
 function Banner() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <>
       <div className="container mx-auto mt-8 p-4">
