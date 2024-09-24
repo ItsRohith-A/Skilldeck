@@ -37,7 +37,7 @@ function Benefit() {
     };
 
     return (
-        <div className="py-8 px-4">
+        <div className="py-8 px-4 mt-12 lg:mt-24">
             <div className="container mx-auto flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-2/3 mb-8 lg:mb-0">
                     <div className="bg-zinc-100 h-full flex flex-col justify-around items-center rounded-lg p-4 lg:p-8 space-y-4">

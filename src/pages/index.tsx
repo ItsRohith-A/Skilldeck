@@ -46,12 +46,12 @@ export default function Home() {
       <DemoVideo />
       <Collaborative />
       <EdtechSpace />
+      <TechnicalAspects />
       {/* <Founder /> */}
-      <Features />
+      {/* <Features /> */}
       <Benefit />
       <Pricing />
-      <TechnicalAspects />
-      <FeaturesTable />
+      {/* <FeaturesTable /> */}
       <BottomContent
         title1="What browsers are supported?"
         desc1="Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our documentation for additional information."
