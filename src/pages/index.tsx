@@ -1,3 +1,5 @@
+import FeaturesTable from "@/components/features/FeaturesTable";
+import TechnicalAspects from "@/components/features/TechnicalAspects";
 import Banner from "@/components/home/Banner";
 import BannerImage from "@/components/home/BannerImage";
 import Benefit from "@/components/home/Benefit";
@@ -8,6 +10,7 @@ import Features from "@/components/home/Features";
 import Founder from "@/components/home/Founder";
 import FullyAutomated from "@/components/home/FullyAutomated";
 import Pricing from "@/components/home/Pricing";
+import StickyNavbar from "@/components/home/StickyNavbar";
 import Unique from "@/components/home/Unique";
 import BottomContent from "@/components/others/BottomContent";
 import Footer from "@/components/others/Footer";
@@ -37,22 +40,25 @@ export default function Home() {
       <NavBar />
       <Banner />
       <BannerImage />
+      <StickyNavbar />
       <FullyAutomated />
       <Unique />
-      {/*  <DemoVideo />
+      <DemoVideo />
       <Collaborative />
       <EdtechSpace />
-      <Founder />
-      <Features />
+      <TechnicalAspects />
+      {/* <Founder /> */}
+      {/* <Features /> */}
       <Benefit />
       <Pricing />
+      {/* <FeaturesTable /> */}
       <BottomContent
         title1="What browsers are supported?"
         desc1="Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our documentation for additional information."
         title2="How can I contact customer support?"
         desc2="Reach out to our dedicated support team via email at support@example.com or call our toll-free number at 1-800-123-4567 during business hours."
       />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }

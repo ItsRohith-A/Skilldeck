@@ -2,9 +2,15 @@ import React from "react";
 import { FaAngleDown } from "react-icons/fa";
 
 function Banner() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <>
-      <div className="container mx-auto mt-8 p-4" data-aos="fade-up">
+      <div className="container mx-auto mt-8 p-4">
         <div className="text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold leading-normal text-prime-dark">
             Unlock success through

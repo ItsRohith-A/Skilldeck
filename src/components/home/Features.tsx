@@ -10,10 +10,10 @@ function Features() {
   };
 
   return (
-    <div className="container mx-auto my-12 px-4">
+    <div className="container mx-auto my-12 px-2 lg:px-4">
       <div className="text-center mb-8">
         <p className="text-2xl font-bold">
-          The <span className="text-blue-500">Application Features</span> Brief
+          The <span className="text-prime-blue">Application Features</span> Brief
         </p>
       </div>
 
@@ -22,20 +22,24 @@ function Features() {
           {featuresData.map((item, index) => (
             <button
               key={index}
-              className="flex items-center justify-between w-full py-3 px-4 mb-2 border border-gray-300 rounded-lg bg-transparent hover:border-blue-500 hover:text-blue-500"
+              className="flex items-center justify-between w-full py-3 px-2 lg:px-4 mb-2 border-2 border-gray-300 rounded-lg bg-transparent hover:border-prime-blue hover:text-prime-blue"
               onClick={() => toggleSideData(item.id)}
             >
               <div className="flex items-center">
-                <MdStars size={25} className="text-blue-500 mr-2" />
-                <span>{item.title}</span>
+                <div className="">
+                  <MdStars size={25} className="text-prime-blue mr-2" />
+                </div>
+                <span className="text-start">{item.title}</span>
               </div>
-              <MdKeyboardArrowRight size={25} className={`transition-transform ${sideData === item.id ? 'text-blue-500' : 'text-gray-500'}`} />
+              <div className="">
+                <MdKeyboardArrowRight size={25} className={`transition-transform ${sideData === item.id ? 'text-prime-blue' : 'text-gray-500'}`} />
+              </div>
             </button>
           ))}
         </div>
-        <div className="lg:w-1/3 lg:ml-4 sticky top-0 border border-gray-300 rounded-lg p-4 bg-white">
+        <div className="lg:w-1/3 lg:ml-4 sticky top-4 border border-gray-300 rounded-lg p-4 bg-white h-fit text-center" >
           {featuresData.map((item) => (
-            <div key={item.id} className={`${item.id === sideData ? 'block' : 'hidden'}`}>
+            <div key={item.id} className={`${item.id === sideData ? 'block' : 'hidden'}`} >
               {item.desc}
             </div>
           ))}

@@ -5,7 +5,7 @@ import jump from "../../../public/images/banjump.png";
 
 function BannerImage() {
   return (
-    <div className="container mx-auto mt-4 mb-20" data-aos="fade-up">
+    <div className="container mx-auto mt-4 mb-20" >
       <div className=" flex justify-center">
         <div className="relative">
           <Image src={bannerimg} alt="Banner Image" className="w-[800px] h-auto" />
