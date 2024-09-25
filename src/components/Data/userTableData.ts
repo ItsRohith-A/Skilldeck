@@ -558,7 +558,7 @@ export const pricingData = [
     { label: 'Developer Recurring Costs', wordpress: 300, custom: 700, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
     { label: 'Publishing Resources Cost (Content, Schedules, etc.)', wordpress: 500, custom: 500, skilldeckGold: 100, skilldeckSilver: 100, skilldeckPlatinum: 100 },
     { label: 'Marketing Team/Implementation Cost', wordpress: 500, custom: 500, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
-    { label: 'Monthly Retainer', wordpress: 0, custom: 0, skilldeckGold: 150, skilldeckSilver: 250, skilldeckPlatinum: 350 },
+    { label: 'Monthly Retainer', wordpress: 0, custom: 0, skilldeckGold: 149, skilldeckSilver: 250, skilldeckPlatinum: 350 },
     { label: 'Total Sum Annual Cost', wordpress: 16680, custom: 31600, skilldeckGold: 5600, skilldeckSilver: 7400, skilldeckPlatinum: 9200 },
     { label: 'Monthly average Cost', wordpress: 1390, custom: 2633, skilldeckGold: 467, skilldeckSilver: 617, skilldeckPlatinum: 767 },
     { label: 'Subsequent Years Cost', wordpress: 15600, custom: 20400, skilldeckGold: 3000, skilldeckSilver: 4200, skilldeckPlatinum: 5400 },

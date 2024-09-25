@@ -60,10 +60,11 @@ const UserTable = () => {
 
     return (
         <div className="p-4 md:p-6 bg-white rounded-lg shadow-lg lg:container lg:mx-auto">
-            <div className="w-full overflow-x-auto">
-                <table className="min-w-full table-auto border-collapse border border-gray-200">
-                    <thead>
-                        <tr className="bg-gray-100 sticky top-0">
+            <div className="w-full">
+                <table className="min-w-full table-auto border-collapse border border-gray-200 ">
+                    {/* make this as top sticky  */}
+                    <thead >
+                        <tr className="sticky top-0 bg-gray-100">
                             <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
                                 Feature
                             </th>

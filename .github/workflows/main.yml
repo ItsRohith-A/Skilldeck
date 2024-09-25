@@ -1,0 +1,48 @@
+name: CICD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Remove previous Docker container (if exists)
+        run: docker rm -f next-container || true
+
+      - name: Remove previous Docker image (if exists)
+        run: docker rmi -f rohith359/vlsi:website || true
+
+      - name: Build Docker image
+        run: docker build -t rohith359/vlsi:website .
+
+      - name: Publish image to Docker Hub
+        run: docker push rohith359/vlsi:website
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Stop and remove previous Docker container
+        run: |
+          docker stop next-container || true
+          docker rm next-container || true
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Remove all Docker images
+        run: docker rmi -f rohith359/vlsi:website || true
+
+      - name: Pull image from Docker Hub
+        run: docker pull rohith359/vlsi:website
+
+      - name: Run Docker container
+        run: docker run -d -p 3000:3000 --name webisite-container rohith359/vlsi:website
