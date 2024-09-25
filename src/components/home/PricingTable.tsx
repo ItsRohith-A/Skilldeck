@@ -8,13 +8,13 @@ const PricingTable = () => {
             <div className="w-full overflow-x-auto">
                 <table className="min-w-full border-collapse bg-white shadow-md rounded-lg">
                     <thead>
-                        <tr className="bg-gradient-to-r from-prime-dark to-prime-blue text-white">
+                        <tr className="bg-prime-blue md:bg-gradient-to-r from-prime-dark to-prime-blue text-white">
                             <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg"> </th>
                             <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">Wordpress (USD)</th>
                             <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">Custom (USD)</th>
-                            <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">Skilldeck Gold ($)</th>
-                            <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">SkillDeck Silver ($)</th>
-                            <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">SkillDeck Platinum ($)</th>
+                            <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">SkillDeck Basic ($)</th>
+                            <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">Skilldeck Elite ($)</th>
+                            <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">SkillDeck Pro ($)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,13 +28,13 @@ const PricingTable = () => {
                                 <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base border-r border-prime-blue">
                                     {item.custom}
                                 </td>
-                                <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base border border-prime-blue">
+                                <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base font-semibold text-prime-dark border border-prime-blue">
                                     {item.skilldeckGold}
                                 </td>
-                                <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base border border-prime-blue">
+                                <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base font-semibold text-prime-dark border border-prime-blue">
                                     {item.skilldeckSilver}
                                 </td>
-                                <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base border border-prime-blue">
+                                <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base font-semibold text-prime-dark border border-prime-blue">
                                     {item.skilldeckPlatinum}
                                 </td>
                             </tr>

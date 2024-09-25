@@ -65,6 +65,18 @@ export const tableData = [
         custom: "May Not Be Relevant",
         skillDeck: "Highly Relevant & Deep Expertise",
     },
+    {
+        feature: "Database",
+        wordpress: "SQL",
+        custom: "May Not Be Relevant",
+        skillDeck: "MongoDB",
+    },
+    {
+        feature: "Framework",
+        wordpress: "NA",
+        custom: "May Not Be Relevant",
+        skillDeck: "Tailwind CSS",
+    },
 ];
 
 export const featureData = [

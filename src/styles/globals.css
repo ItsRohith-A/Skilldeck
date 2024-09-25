@@ -25,4 +25,9 @@ body {
     width: max-content;
     animation: infiniteScroll 20s linear infinite;
   }
+
+  .gradient-bg {
+    background: #1e3a8a; /* Fallback for older browsers or iOS issues */
+    background: linear-gradient(to right, #1e3a8a, #3b82f6);
+  }
 }

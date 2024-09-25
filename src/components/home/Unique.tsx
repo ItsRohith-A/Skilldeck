@@ -11,7 +11,7 @@ import loginimg from "../../../public/images/unique/loginimg.png";
 
 function Unique() {
   return (
-    <div className="">
+    <div className="" id="benefits">
       <div className="container mx-auto mt-12 lg:mt-24 hidden lg:block" id="unique" >
         <div className="grid gap-6">
           <div className="grid grid-cols-3 gap-6">
