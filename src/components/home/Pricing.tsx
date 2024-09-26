@@ -9,7 +9,7 @@ interface PricingCardProps {
 
 function PricingCard({ plan, price, features, isHighlighted }: PricingCardProps) {
     return (
-        <div id="pricing" className={`rounded-lg p-4 shadow-md transition ${isHighlighted ? 'bg-prime-blue text-white' : 'bg-white border border-gray-200'
+        <div className={`rounded-lg p-4 shadow-md transition ${isHighlighted ? 'bg-prime-blue text-white' : 'bg-white border border-gray-200'
             } hover:shadow-lg ${isHighlighted ? 'hover:bg-prime-blue' : 'hover:border-prime-blue'}`}>
             <h6 className="text-lg font-semibold">{plan}</h6>
             <p className={`text-slate-900 text-3xl font-medium leading-10 ${isHighlighted && 'text-white'} `}>
@@ -90,7 +90,7 @@ function Pricing() {
     ];
 
     return (
-        <div className="container mx-auto my-12 lg:mt-24 px-4 space-y-6">
+        <div className="container mx-auto my-12 lg:mt-24 px-4 space-y-6" id="pricing">
             <div className="text-3xl text-prime-dark font-semibold text-center">
                 Our Pricing
             </div>
