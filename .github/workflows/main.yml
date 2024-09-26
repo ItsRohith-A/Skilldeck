@@ -15,7 +15,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Remove previous Docker container (if exists)
-        run: docker rm -f next-container || true
+        run: docker rm -f webisite-container || true
 
       - name: Remove previous Docker image (if exists)
         run: docker rmi -f rohith359/vlsi:website || true
@@ -32,8 +32,8 @@ jobs:
     steps:
       - name: Stop and remove previous Docker container
         run: |
-          docker stop next-container || true
-          docker rm next-container || true
+          docker stop webisite-container || true
+          docker rm webisite-container || true
 
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
