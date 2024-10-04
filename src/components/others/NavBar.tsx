@@ -29,25 +29,26 @@ function MainNav() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex md:items-center space-x-6">
-                    <Link href="/" className="text-prime-dark text-sm font-bold capitalize">
-                        Home
+                    <Link href="/features" className="text-prime-dark text-sm font-bold capitalize">
+                        Features
                     </Link>
-                    <Link href="/courses" className="text-prime-dark text-sm font-bold capitalize">
-                        Courses
+                    <Link href="/pricing" className="text-prime-dark text-sm font-bold capitalize">
+                        Pricing
+                    </Link>
+                    <Link href="/blog" className="text-prime-dark text-sm font-bold capitalize">
+                        Blog
                     </Link>
                     <Link href="/about-us" className="text-prime-dark text-sm font-bold capitalize">
                         About Us
                     </Link>
-                    <Link href="/contact-us" className="text-prime-dark text-sm font-bold capitalize">
-                        Contact Us
-                    </Link>
+
                 </div>
 
                 {/* Phone Number and Buy Now */}
                 <div className="hidden md:flex">
 
                     <Link href='/contact-us' className='border-2 border-prime-dark font-medium px-4 ml-12 py-2 rounded '>
-                        Buy Now!
+                        Contact Us
                     </Link>
                 </div>
 
@@ -69,11 +70,11 @@ function MainNav() {
                 </div>
                 <div className="flex flex-col space-y-4 p-4">
                     {/* Mobile Links */}
-                    <Link href="/" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
-                        Home
+                    <Link href="/features" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
+                        Features
                     </Link>
-                    <Link href="/courses" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
-                        Courses
+                    <Link href="/pricing" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
+                        Pricing
                     </Link>
                     <Link href="/about-us" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         About Us
