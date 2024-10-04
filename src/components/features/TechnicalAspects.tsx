@@ -86,7 +86,6 @@ const UserTable = () => {
                                         alt="SkillDeck Logo"
                                         className="h-8 mx-auto w-auto md:h-10 "
                                     />
-                                    <div className="size-2 bg-prime-blue rounded-full animate-ping absolute left-24"></div>
                                 </div>
                             </th>
                         </tr>

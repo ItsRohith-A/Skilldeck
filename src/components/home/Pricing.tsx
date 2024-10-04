@@ -47,9 +47,14 @@ function Pricing() {
                 'Course and Course Category management',
                 'Single User',
                 'Blog Engine',
-                '600 $ Set Up charges First Year Only',
+                '600$ Set Up charges First Year Only',
+                'Frontend Default Templates - Free',
+                'Frontend Custom one time (Optional) - 2000 USD',
                 'Minimum Engagement 1 Year',
-
+                'Free hosting',
+                'Free CDN',
+                'Free Database',
+                'Free Load balancer',
             ],
             isHighlighted: false,
         },
@@ -57,7 +62,7 @@ function Pricing() {
             plan: 'Elite',
             price: 249,
             features: [
-                'Everything about Plan1 Plus',
+                'Everything of Basic',
                 'Analytics Dashboard Access',
                 'SEO Module Access',
                 'Site Control, Such as Promotional Messages/Banners',
@@ -65,8 +70,14 @@ function Pricing() {
                 'Multiple Role-Based User Management',
                 'Patterns Module',
                 'Logs Access',
-                '800 $ Set Up charges First Year Only',
+                '700$ Set Up charges First Year Only',
+                'Frontend Default Templates - Free',
+                'Frontend Custom one time (Optional) - 2000 USD',
                 'Minimum Engagement 1 Year',
+                'Location Management & Its SEO',
+                'Up to 3 users',
+                'External Leads Input',
+                'External Sales Input',
             ],
             isHighlighted: true,
         },
@@ -74,7 +85,7 @@ function Pricing() {
             plan: 'Pro',
             price: 349,
             features: [
-                'Everything Of Plan2',
+                'Everything of Elite',
                 'Bulk Uploads',
                 'E-learning Module Access',
                 'Social Media Submission',
@@ -82,12 +93,19 @@ function Pricing() {
                 'Sales Utility',
                 'Customer Profile',
                 'Payments Tracking & Analytics',
-                '900 $ Set Up charges First Year Only',
+                '800$ Set Up charges First Year Only',
+                'Frontend Default Templates - Free',
+                'Frontend Custom one time (Optional) - 2000 USD',
                 'Minimum Engagement 1 Year',
+                'Inbuilt Webchat',
+                'From the second year 15 Hours of free customization',
+                'Up to 20 users',
+                'Customer Engagement + Revenue Stream IOS & Android Apps',
             ],
             isHighlighted: false,
         }
     ];
+
 
     return (
         <div className="container mx-auto my-12 lg:mt-24 px-4 space-y-6" id="pricing">

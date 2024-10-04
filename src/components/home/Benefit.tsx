@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { MdStars } from 'react-icons/md';
 
-import slide1 from '../../../public/images/benefit/slide1.png';
-import slide2 from '../../../public/images/benefit/slide2.png';
-import slide3 from '../../../public/images/benefit/slide3.png';
-import slide4 from '../../../public/images/benefit/slide4.png';
-import slide5 from '../../../public/images/benefit/slide5.png';
+import slide1 from '../../../public/images/benefit/slide1.jpg';
+import slide2 from '../../../public/images/benefit/slide2.jpg';
+import slide3 from '../../../public/images/benefit/slide3.jpg';
+import slide4 from '../../../public/images/benefit/slide4.jpg';
+import slide5 from '../../../public/images/benefit/slide5.jpg';
 import slide6 from '../../../public/images/benefit/slide6.png';
 import slide7 from '../../../public/images/benefit/slide7.png';
 import slide8 from '../../../public/images/benefit/slide8.png';
