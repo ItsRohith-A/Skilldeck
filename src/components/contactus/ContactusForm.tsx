@@ -160,7 +160,7 @@ const ContactusForm: React.FC = () => {
                     {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
                 </label>
 
-                <div className="flex gap-4 items-center justify-center">
+                <div className="sm:flex gap-4 items-center justify-center">
                     <label className="flex items-center gap-2">
                         <input
                             type="radio"
@@ -185,7 +185,7 @@ const ContactusForm: React.FC = () => {
                     </label>
                 </div>
                 <div className="flex justify-center">
-                    <button type="submit" className="lg:w-2/5 py-3 mt-4 bg-prime-dark hover:text-prime-blue text-white rounded-md ">
+                    <button type="submit" className="lg:w-2/5 py-3 px-4 mt-4 bg-prime-dark hover:text-prime-blue text-white rounded-md ">
                         Send Message
                     </button>
                 </div>

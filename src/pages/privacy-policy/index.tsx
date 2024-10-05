@@ -1,13 +1,15 @@
 
 import Footer from '@/components/others/Footer'
 import Navbar from '@/components/others/NavBar'
+import OtherBanner from '@/components/others/OtherBanner'
 import React from 'react'
 
 const index = () => {
     return (
         <>
             <Navbar />
-            <div className="container mx-auto">
+            <OtherBanner title={'Privacy Policy'} />
+            <div className="container mx-auto mt-12 lg:mt-24 lg:px-28 px-4">
                 <p><span>This Privacy Policy explains how Skilldeck collects, uses, discloses, and protects the personal information of users who access and use our software as a service (SaaS) platform. The Platform is designed to serve training companies who use it to manage their training programs, clients, and other related activities. We are committed to protecting the privacy of all individuals and organizations using our services.</span></p>
                 <p><span>By using our Platform, you agree to the terms and practices described in this Privacy Policy. If you do not agree with this policy, please do not use the Platform.</span></p>
                 <h3><strong>1. Information We Collect</strong></h3>

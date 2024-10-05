@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import logo from '../../../public/logos/mainlogo.svg';
+import custom from '../../../public/images/custom.svg';
 
 import {
     tableData,
@@ -76,7 +77,12 @@ const UserTable = () => {
                                     WordPress
                                 </div>
                             </th>
-                            <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
+                            <th className="px-2 md:px-4 h-16 border border-gray-200 text-sm md:text-base flex items-center justify-center text-[#F48B19] gap-3">
+                                <Image
+                                    src={custom}
+                                    alt="custom"
+                                    className="h-8  w-auto md:h-6  "
+                                />
                                 Custom
                             </th>
                             <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base ">
@@ -155,7 +161,12 @@ const UserTable = () => {
                                     WordPress
                                 </div>
                             </th>
-                            <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
+                            <th className="px-2 md:px-4 h-16 border border-gray-200 text-sm md:text-base flex items-center justify-center text-[#F48B19] gap-3">
+                                <Image
+                                    src={custom}
+                                    alt="custom"
+                                    className="h-6  w-auto  "
+                                />
                                 Custom
                             </th>
                             <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">

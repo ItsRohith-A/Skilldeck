@@ -1,13 +1,15 @@
 
 import Footer from '@/components/others/Footer'
 import Navbar from '@/components/others/NavBar'
+import OtherBanner from '@/components/others/OtherBanner'
 import React from 'react'
 
 const index = () => {
     return (
         <>
             <Navbar />
-            <div className="container mx-auto">
+            <OtherBanner title={'Cancellation & Refund Policy'} />
+            <div className="container mx-auto mt-12 lg:mt-24 lg:px-28 px-4">
                 <p><strong>Cancellation &amp; refund page:</strong></p>
                 <p>&nbsp;</p>
                 <ol>
@@ -21,7 +23,7 @@ const index = () => {
                 <p><span>This page will have detailed information about the time-to-time releases and the features incorporated during every release</span></p>
                 <p><br /><br /></p>
                 <p><span>Release version- date</span></p>
-                <p><br /><br /><br /></p>
+                <p><br /><br /></p>
                 <p><strong>Support Terms:</strong></p>
                 <p>&nbsp;</p>
                 <p><strong>During the first year, this application gets the following for free,</strong></p>
