@@ -1,13 +1,15 @@
 
 import Footer from '@/components/others/Footer'
 import Navbar from '@/components/others/NavBar'
+import OtherBanner from '@/components/others/OtherBanner'
 import React from 'react'
 
 const index = () => {
     return (
         <>
             <Navbar />
-            <div className="container mx-auto">
+            <OtherBanner title={'Terms and Condition'} />
+            <div className="container mx-auto mt-12 lg:mt-24  lg:px-28 px-4">
                 <p><strong>About the application License</strong></p>
                 <p>&nbsp;</p>
                 <p>The web application license is a subscription-based license type, you can subscribe monthly and the minimum lock-in period will be for one year.</p>
@@ -16,9 +18,6 @@ const index = () => {
                 <p>The application license offers hosting as well</p>
                 <p>The application price doesn't include the front-end, as it's going to be unique and based on the company's requirements and the same is available at a buy at one time and use it forever at a price of 1500 USD.</p>
                 <p>The front end has to be designed as per the backend options/fields and some of them can be altered or renamed within the scope of the application without developing or assuring any new fields development or customization.</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p><strong>Application Brief.</strong></p>
@@ -224,7 +223,6 @@ const index = () => {
                         <p>The Hourly charges shall cost INR 999 per hour ( This doesn&rsquo;t come into the picture if annual maintenance has been opted).</p>
                     </li>
                 </ul>
-                <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p><strong>About the web application</strong></p>

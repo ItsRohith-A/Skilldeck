@@ -15,7 +15,6 @@ function FullyAutomated() {
     "Global expansion, Time Zones, and Multi-Currency optimization in just a few clicks",
     "Automation of content and Marketing Implementations",
   ];
-
   return (
     <div>
       <div className="container mx-auto my-12 px-4 lg:px-0">
@@ -35,7 +34,7 @@ function FullyAutomated() {
             {points.map((point, index) => (
               <div
                 key={index}
-                className="flex items-center border-2 border-slate-900/30 rounded-lg p-3 hover:border-prime-blue hover:text-prime-blue transition"
+                className="flex items-center border-2 border-slate-900/10 rounded-lg p-3 hover:border-prime-blue hover:text-prime-blue transition"
               >
                 <div>
                   <MdKeyboardArrowRight size={30} className="mr-2" />

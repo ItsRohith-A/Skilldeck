@@ -9,6 +9,8 @@ import EdtechSpace from "@/components/home/EdtechSpace";
 import Features from "@/components/home/Features";
 import Founder from "@/components/home/Founder";
 import FullyAutomated from "@/components/home/FullyAutomated";
+import NewBanner from "@/components/home/NewBanner";
+import OurClients from "@/components/home/OurClients";
 import Pricing from "@/components/home/Pricing";
 import StickyNavbar from "@/components/home/StickyNavbar";
 import Unique from "@/components/home/Unique";
@@ -38,8 +40,9 @@ export default function Home() {
         <meta name="description" content="Automate your marketing, sales, operations and various other functional departments at 5X times lesser cost and Skyrocket your leads and sales. 4X times faster growth & 6X higher conversions." />
       </Head>
       <NavBar />
-      <Banner />
-      <BannerImage />
+      <NewBanner />
+      <OurClients />
+      {/* <BannerImage /> */}
       <StickyNavbar />
       <FullyAutomated />
       <Unique />
