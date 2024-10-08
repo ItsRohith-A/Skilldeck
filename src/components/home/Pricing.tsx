@@ -78,12 +78,15 @@ function Pricing() {
         }
     ];
 
-
     const handleStartNow = (selectedPlan: { plan: string; price: number, features: string[] }) => {
         // Navigate to the /payment page with the selected plan data
         router.push({
             pathname: '/payment',
-            query: { plan: selectedPlan.plan, price: selectedPlan.price, features: JSON.stringify(selectedPlan.features), },
+            query: {
+                plan: selectedPlan.plan,
+                price: selectedPlan.price,
+                features: JSON.stringify(selectedPlan.features), // Sending features as a stringified object
+            },
         });
     };
 

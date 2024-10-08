@@ -1,7 +1,14 @@
+'use client';
+
 import React, { useState } from 'react';
 import SuccessModal from '../others/SuccessModal';
+import { error } from 'console';
 
 const ContactusForm: React.FC = () => {
+
+    const [result, setResult] = useState<Record<string, string>>({});
+    const [loading, setLoading] = useState<boolean>(false);
+
     const initialFormData = {
         name: '',
         email: '',
@@ -56,6 +63,17 @@ const ContactusForm: React.FC = () => {
     };
     console.log(handleSubmit)
 
+    const sendEmail = () => {
+        setLoading(true);
+        fetch('/api/emails', {
+            method: 'POST'
+        })
+            .then(response => response.json())
+            .then(data => setResult(data))
+            .catch(error => setResult(error))
+            .finally(() => setLoading(false))
+    }
+
     const handleReset = () => {
         setFormData(initialFormData);
     };
@@ -63,6 +81,7 @@ const ContactusForm: React.FC = () => {
 
     return (
         <div className="container mx-auto px-4">
+            {loading && <div className="text-prime-dark text-xl">Processing</div>}
             <form onSubmit={handleSubmit} className="p-6 rounded-2xl border border-prime-blue flex flex-col gap-4">
                 <h2 className="text-prime-blue text-lg text-center font-semibold leading-relaxed">
                     Fill out the following form with all the details
@@ -185,7 +204,7 @@ const ContactusForm: React.FC = () => {
                     </label>
                 </div>
                 <div className="flex justify-center">
-                    <button type="submit" className="lg:w-2/5 py-3 px-4 mt-4 bg-prime-dark hover:text-prime-blue text-white rounded-md ">
+                    <button type="submit" onClick={sendEmail} className="lg:w-2/5 py-3 px-4 mt-4 bg-prime-dark hover:text-prime-blue text-white rounded-md ">
                         Send Message
                     </button>
                 </div>
