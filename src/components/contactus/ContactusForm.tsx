@@ -39,7 +39,7 @@ const ContactusForm: React.FC = () => {
         if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'A valid email is required';
         if (!formData.phone || !/^\d{10}$/.test(formData.phone)) newErrors.phone = 'A valid 10-digit phone number is required';
         if (!formData.designation) newErrors.designation = 'Designation is required';
-        if (!formData.website || !/^https?:\/\/.+\..+/.test(formData.website)) newErrors.website = 'A valid website URL is required';
+        // if (!formData.website || !/^https?:\/\/.+\..+/.test(formData.website)) newErrors.website = 'A valid website URL is required';
         if (!formData.country) newErrors.country = 'Country is required';
         if (!formData.message) newErrors.message = 'Message is required';
 
@@ -63,16 +63,32 @@ const ContactusForm: React.FC = () => {
     };
     console.log(handleSubmit)
 
-    const sendEmail = () => {
+    const sendEmail = async () => {
         setLoading(true);
-        fetch('/api/emails', {
-            method: 'POST'
-        })
-            .then(response => response.json())
-            .then(data => setResult(data))
-            .catch(error => setResult(error))
-            .finally(() => setLoading(false))
-    }
+
+        try {
+            const response = await fetch('/api/emails/route', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            // Check if the response is ok (status code 2xx)
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status} ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            setResult(data);  // Handle success
+        } catch (error: any) {
+            console.error("Error occurred while sending email:", error);
+            setResult({ error: error.message });  // Handle error
+        } finally {
+            setLoading(false);
+        }
+    };
 
     const handleReset = () => {
         setFormData(initialFormData);
@@ -209,11 +225,13 @@ const ContactusForm: React.FC = () => {
                     </button>
                 </div>
             </form>
+
             <SuccessModal
                 isVisible={isSubmitted}
                 onClose={() => setIsSubmitted(false)}
                 onReset={handleReset}
             />
+
         </div>
     );
 };

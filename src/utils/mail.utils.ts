@@ -4,8 +4,7 @@ import SMTPTransport from 'nodemailer/lib/smtp-transport';
 import { send } from 'process';
 
 const transport = nodemailer.createTransport({
-    host: process.env.MAIL_HOST,
-    post: process.env.MAIL_PORT,
+    service: 'gmail',
     secure: process.env.NODE_ENV !== 'development',
     auth: {
         user: process.env.MAIL_USER,
@@ -13,21 +12,20 @@ const transport = nodemailer.createTransport({
     },
 } as SMTPTransport.Options)
 
-type SendEmailDto = {
-    sender: Mail.Address,
-    receipients: Mail.Address[],
+export type SendEmailDto = {
+    sender?: Mail.Address,
+    receipients: Mail.Address,
     subject: string;
     message: string;
 }
 
-export const sendEmail = async (dto: SendEmailDto) => {
-    const { sender, receipients, subject, message } = dto;
+export const sendEmail = async (dto: any) => {
+    const { receipients, subject, message } = dto;
     return await transport.sendMail({
-        from: sender,
+        from: process.env.MAIL_USER,
         to: receipients,
         subject,
         html: message,
-        text: message,
     })
 
 }
