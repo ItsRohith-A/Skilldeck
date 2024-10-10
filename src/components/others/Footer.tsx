@@ -1,9 +1,87 @@
+'use client';
+
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { CiLocationOn, CiMail } from 'react-icons/ci';
 import { IoIosArrowDropupCircle } from 'react-icons/io';
 
 function Footer() {
+
+    const [formData, setFormData] = useState({
+        email: '',
+        phone: '',
+    });
+    const [errors, setErrors] = useState({
+        email: '',
+        phone: '',
+    });
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [result, setResult] = useState<Record<string, string>>({});
+
+    const validate = () => {
+        const newErrors = { email: '', phone: '' };
+
+        if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'A valid email is required';
+        }
+        if (!formData.phone || !/^\d{10}$/.test(formData.phone)) {
+            newErrors.phone = 'A valid 10-digit phone number is required';
+        }
+
+        setErrors(newErrors);
+        return !Object.values(newErrors).some((error) => error);
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (validate()) {
+            setLoading(true);
+            try {
+                const response = await fetch('/api/emails/route', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                setResult(data);
+                setIsSubmitted(true);
+            } catch (error: any) {
+                console.error("Error occurred while sending email:", error);
+                setResult({ error: error.message });
+            } finally {
+                setLoading(false);
+            }
+        }
+    };
+
+    const handleReset = () => {
+        setFormData({
+            email: '',
+            phone: '',
+        });
+        setErrors({
+            email: '',
+            phone: '',
+        });
+        setIsSubmitted(false);
+    };
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -19,16 +97,37 @@ function Footer() {
                         {/* Start Journey Section */}
                         <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-8">
                             <h4 className="text-xl font-bold mb-4">Start your journey now.</h4>
-                            <div className="mb-4">
-                                <input
-                                    type="email"
-                                    className="form-input rounded-lg py-2 px-4 w-full"
-                                    placeholder="Email"
-                                />
-                            </div>
-                            <button className="w-full bg-prime-blue text-white py-2 px-4 rounded-lg border border-transparent hover:bg-blue-600">
-                                Submit
-                            </button>
+                            <form onSubmit={handleSubmit}>
+                                <div className="mb-4 space-y-4">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        className="form-input rounded-lg py-2 px-4 w-full text-prime-dark"
+                                        placeholder="Email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                    />
+                                    {errors.email && <p className="text-red-500">{errors.email}</p>}
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        className="form-input rounded-lg py-2 px-4 w-full text-prime-dark"
+                                        placeholder="Phone no."
+                                        pattern="[0-9]*"
+                                        inputMode="numeric"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                    />
+                                    {errors.phone && <p className="text-red-500">{errors.phone}</p>}
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="w-full md:w-fit bg-prime-blue text-white py-2 px-4 rounded-lg border border-transparent hover:bg-blue-600"
+                                    disabled={loading}
+                                >
+                                    {loading ? 'Submitting...' : 'Submit'}
+                                </button>
+                            </form>
                         </div>
                         {/* Features Section */}
                         <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 mb-8">

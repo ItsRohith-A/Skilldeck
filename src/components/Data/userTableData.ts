@@ -68,13 +68,13 @@ export const tableData = [
     {
         feature: "Database",
         wordpress: "SQL",
-        custom: "May Not Be Relevant",
+        custom: "Any",
         skillDeck: "MongoDB",
     },
     {
         feature: "Framework",
         wordpress: "NA",
-        custom: "May Not Be Relevant",
+        custom: "Any",
         skillDeck: "Tailwind CSS",
     },
 ];

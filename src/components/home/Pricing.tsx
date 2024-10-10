@@ -1,39 +1,11 @@
 import React from 'react';
-import { FiChevronRight } from 'react-icons/fi';
-interface PricingCardProps {
-    plan: string;
-    price: number;
-    features: string[];
-    isHighlighted: boolean;
-}
-
-function PricingCard({ plan, price, features, isHighlighted }: PricingCardProps) {
-    return (
-        <div className={`rounded-lg p-4 shadow-md transition ${isHighlighted ? 'bg-prime-blue text-white' : 'bg-white border border-gray-200'
-            } hover:shadow-lg ${isHighlighted ? 'hover:bg-prime-blue' : 'hover:border-prime-blue'}`}>
-            <h6 className="text-lg font-semibold">{plan}</h6>
-            <p className={`text-slate-900 text-3xl font-medium leading-10 ${isHighlighted && 'text-white'} `}>
-                $ {price}/<span className={`text-slate-900 text-xl font-medium leading-10 ${isHighlighted && 'text-white'}`}>Month</span>
-            </p>
-            <ul className="list-disc list-inside mt-4 space-y-2">
-                {features.map((feature, index) => (
-                    <li key={index} className={`text-slate-900 text-base font-medium leading-9 ${isHighlighted && 'text-white'} `}>{feature}</li>
-                ))}
-            </ul>
-
-            <button className={`mt-4 p-4 rounded-lg border border-slate-900 text-base font-medium flex text-slate-900 items-center justify-center gap-4 w-full ${isHighlighted
-                && 'bg-white hover:text-prime-blue border-none'}`}>
-                Start Now
-                <div className="">
-                    <FiChevronRight />
-                </div>
-            </button>
-        </div>
-    );
-}
+import { useRouter } from 'next/router';
+import PricingCard from './PricingCard'; // Make sure to adjust the import path if necessary
 
 // Main Pricing component in TSX
 function Pricing() {
+    const router = useRouter(); // Initialize useRouter
+
     const plans = [
         {
             plan: 'Basic',
@@ -106,6 +78,17 @@ function Pricing() {
         }
     ];
 
+    const handleStartNow = (selectedPlan: { plan: string; price: number, features: string[] }) => {
+        // Navigate to the /payment page with the selected plan data
+        router.push({
+            pathname: '/payment',
+            query: {
+                plan: selectedPlan.plan,
+                price: selectedPlan.price,
+                features: JSON.stringify(selectedPlan.features), // Sending features as a stringified object
+            },
+        });
+    };
 
     return (
         <div className="container mx-auto my-12 lg:mt-24 px-4 space-y-6" id="pricing">
@@ -120,6 +103,7 @@ function Pricing() {
                         price={plan.price}
                         features={plan.features}
                         isHighlighted={plan.isHighlighted}
+                        onStartNow={handleStartNow} // Pass the handler
                     />
                 ))}
             </div>

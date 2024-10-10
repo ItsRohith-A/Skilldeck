@@ -1,7 +1,14 @@
+'use client';
+
 import React, { useState } from 'react';
 import SuccessModal from '../others/SuccessModal';
+import { error } from 'console';
 
 const ContactusForm: React.FC = () => {
+
+    const [result, setResult] = useState<Record<string, string>>({});
+    const [loading, setLoading] = useState<boolean>(false);
+
     const initialFormData = {
         name: '',
         email: '',
@@ -32,7 +39,7 @@ const ContactusForm: React.FC = () => {
         if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'A valid email is required';
         if (!formData.phone || !/^\d{10}$/.test(formData.phone)) newErrors.phone = 'A valid 10-digit phone number is required';
         if (!formData.designation) newErrors.designation = 'Designation is required';
-        if (!formData.website || !/^https?:\/\/.+\..+/.test(formData.website)) newErrors.website = 'A valid website URL is required';
+        // if (!formData.website || !/^https?:\/\/.+\..+/.test(formData.website)) newErrors.website = 'A valid website URL is required';
         if (!formData.country) newErrors.country = 'Country is required';
         if (!formData.message) newErrors.message = 'Message is required';
 
@@ -56,6 +63,33 @@ const ContactusForm: React.FC = () => {
     };
     console.log(handleSubmit)
 
+    const sendEmail = async () => {
+        setLoading(true);
+
+        try {
+            const response = await fetch('/api/emails/route', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            // Check if the response is ok (status code 2xx)
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status} ${response.statusText}`);
+            }
+
+            const data = await response.json();
+            setResult(data);  // Handle success
+        } catch (error: any) {
+            console.error("Error occurred while sending email:", error);
+            setResult({ error: error.message });  // Handle error
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const handleReset = () => {
         setFormData(initialFormData);
     };
@@ -63,6 +97,7 @@ const ContactusForm: React.FC = () => {
 
     return (
         <div className="container mx-auto px-4">
+            {loading && <div className="text-prime-dark text-xl">Processing</div>}
             <form onSubmit={handleSubmit} className="p-6 rounded-2xl border border-prime-blue flex flex-col gap-4">
                 <h2 className="text-prime-blue text-lg text-center font-semibold leading-relaxed">
                     Fill out the following form with all the details
@@ -185,16 +220,18 @@ const ContactusForm: React.FC = () => {
                     </label>
                 </div>
                 <div className="flex justify-center">
-                    <button type="submit" className="lg:w-2/5 py-3 px-4 mt-4 bg-prime-dark hover:text-prime-blue text-white rounded-md ">
+                    <button type="submit" onClick={sendEmail} className="lg:w-2/5 py-3 px-4 mt-4 bg-prime-dark hover:text-prime-blue text-white rounded-md ">
                         Send Message
                     </button>
                 </div>
             </form>
+
             <SuccessModal
                 isVisible={isSubmitted}
                 onClose={() => setIsSubmitted(false)}
                 onReset={handleReset}
             />
+
         </div>
     );
 };
