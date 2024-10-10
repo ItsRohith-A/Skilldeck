@@ -2,17 +2,6 @@
 import { sendEmail, SendEmailDto } from "@/utils/mail.utils";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-// {
-//     name: 'rohith',
-//         email: 'rohith@kandradigital.com',
-//             phone: '8296627169',
-//                 designation: 'mca',
-//                     website: 'https://nextjs.org/docs/pages/api-reference/components/link',
-//                         country: 'India',
-//                             message: 'message',
-//                                 needDemo: true
-// }
-
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
@@ -21,19 +10,9 @@ export default async function handler(
         try {
             const data = req.body
             console.log(req.body)
-            // const { receipients, subject, message }: SendEmailDto = req.body;
-
-            // // Ensure all fields are provided
-            // if (!receipients || !subject || !message) {
-            //     return res.status(400).json({ error: "Missing required fields" });
-            // }
-
-            // // Call the sendEmail function
             await sendEmail({ receipients: data.email, subject: "Enquery Response", message: thankYouTemplate(data) });
 
             await sendEmail({ receipients: process.env.MAIL_USER, subject: "New Lead", message: getHtmlTemplate(data) });
-            // // Call the sendEmail function
-            // await sendEmail({ receipients, subject, message });
 
             res.status(200).json({ message: "Email sent successfully" });
         } catch (error) {
@@ -122,6 +101,7 @@ const getHtmlTemplate = (data: any) => `
                 <td>Phone:</td>
                 <td>${data.phone}</td>
             </tr>
+            
             <tr>
                 <td>Designation:</td>
                 <td>${data.designation}</td>
