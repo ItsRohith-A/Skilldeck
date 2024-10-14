@@ -7,7 +7,7 @@ function DemoVideo() {
     <div className="container mx-auto mt-12 lg:mt-24 px-3" id="demo">
       <div className="text-center text-slate-900 text-2xl lg:text-4xl font-bold leading-loose">Watch A Demo!</div>
       <div className="text-center flex justify-center my-4 lg:my-12">
-        <Image src={video} alt="video image" />
+        <Image src={video} alt="video image" className="md:h-[96] lg:h-[600px] w-auto" />
       </div>
       <div className="text-center text-black text-lg lg:text-2xl font-bold ">The brief demo of the platforms</div>
     </div>

@@ -28,13 +28,13 @@ const AboutusBanner = () => {
 
                 {/* Action buttons */}
                 <div className="flex justify-center lg:justify-start sm:flex-row gap-4">
-                    <Link href='/' className='bg-[#e5e5e5] w-fit flex p-3 lg:p-4 gap-2 lg:gap-3 rounded-lg items-center'>
+                    <Link href='/#features' className='bg-[#e5e5e5] w-fit flex p-3 lg:p-4 gap-2 lg:gap-3 rounded-lg items-center'>
                         <div className="text-center text-zinc-950 text-sm font-semibold">
                             Explore Features
                         </div>
                         <BsLightningCharge className='text-prime-blue' />
                     </Link>
-                    <Link href='/' className='bg-prime-dark w-fit flex p-3 lg:p-4 gap-2 lg:gap-3 rounded-lg items-center'>
+                    <Link href='/#demo' className='bg-prime-dark w-fit flex p-3 lg:p-4 gap-2 lg:gap-3 rounded-lg items-center'>
                         <div className="text-center text-sm font-semibold text-white">
                             Watch Demo
                         </div>
@@ -44,7 +44,7 @@ const AboutusBanner = () => {
 
                 {/* Trusted by section */}
                 <div className="space-y-2">
-                    <Image src={people} alt='People image' className='h-12 lg:h-16 w-auto  mx-auto' />
+                    <Image src={people} alt='People image' className='h-12 lg:h-16 w-auto  mx-auto md:mx-0' />
                     <div className="text-zinc-400 text-sm lg:text-base font-normal leading-relaxed tracking-tight text-center lg:text-start">
                         Trusted by 30,000+ Businesses Worldwide
                     </div>
