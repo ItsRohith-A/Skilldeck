@@ -29,15 +29,15 @@ function MainNav() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex md:items-center space-x-6">
-                    <Link href="/features" className="text-prime-dark text-sm font-bold capitalize">
+                    {/* <Link href="/features" className="text-prime-dark text-sm font-bold capitalize">
                         Features
-                    </Link>
+                    </Link> */}
                     <Link href="/pricing" className="text-prime-dark text-sm font-bold capitalize">
                         Pricing
                     </Link>
-                    <Link href="/blog" className="text-prime-dark text-sm font-bold capitalize">
+                    {/* <Link href="/blog" className="text-prime-dark text-sm font-bold capitalize">
                         Blog
-                    </Link>
+                    </Link> */}
                     <Link href="/about-us" className="text-prime-dark text-sm font-bold capitalize">
                         About Us
                     </Link>
@@ -70,9 +70,9 @@ function MainNav() {
                 </div>
                 <div className="flex flex-col space-y-4 p-4">
                     {/* Mobile Links */}
-                    <Link href="/features" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
+                    {/* <Link href="/features" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Features
-                    </Link>
+                    </Link> */}
                     <Link href="/pricing" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Pricing
                     </Link>
@@ -82,9 +82,9 @@ function MainNav() {
                     <Link href="/contact-us" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Contact Us
                     </Link>
-                    <Link href='/contact-us' className='border-2 border-prime-dark font-medium text-center p-2 rounded' onClick={toggleMenu}>
+                    {/* <Link href='/contact-us' className='border-2 border-prime-dark font-medium text-center p-2 rounded' onClick={toggleMenu}>
                         Buy Now!
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </div>
