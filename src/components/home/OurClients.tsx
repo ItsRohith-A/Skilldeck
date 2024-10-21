@@ -39,7 +39,7 @@ const OurClients: React.FC = () => {
                 <ul ref={logosRef} className="flex items-center justify-center md:justify-start [&_li]:mx-6 lg:[&_li]:mx-20 [&_img]:max-w-none animate-infinite-scroll">
                     {logos.map((logo, index) => (
                         <li key={index} className='flex-shrink-0'>
-                            <Image src={logo} alt={`client logo ${index}`} className='lg:h-12 w-auto' />
+                            <Image src={logo} alt={`client logo ${index}`} className='h-8 lg:h-12 w-auto' />
                         </li>
                     ))}
                 </ul>

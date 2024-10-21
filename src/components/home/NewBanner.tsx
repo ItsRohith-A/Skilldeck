@@ -7,7 +7,7 @@ import PopupForm from '../others/PopupForm';
 const NewBanner = () => {
     const [showModal, setShowModal] = useState(false);
     return (
-        <div className='container mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 mt-8 lg:mt-24 items-center px-4'>
+        <div className='container mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-24 mt-8 lg:my-40 items-center px-4'>
             <div className="relative">
                 <Image src={lap} alt='-' className='w-full' />
                 <Image src={ele} alt='-' className='absolute bottom-4 right-4 lg:bottom-6 lg:right-6 w-32 lg:w-64' />
@@ -26,11 +26,11 @@ const NewBanner = () => {
                     <br /><br />
                     It's a simplified tech and marketing solution for training companies.
                 </div>
-                <button onClick={() => setShowModal(true)} className=" flex justify-center  items-center lg:justify-start">
-                    <div className="w-fit lg:h-14 px-8 lg:px-10 py-3 lg:py-4 bg-prime-blue rounded-full ">
+                <div className=" flex justify-center  items-center lg:justify-start">
+                    <button onClick={() => setShowModal(true)} className="w-fit lg:h-14 px-8 lg:px-10 py-3 lg:py-4 bg-prime-blue rounded-full ">
                         <div className="text-white text-base lg:text-lg font-bold leading-tight">Try our platform</div>
-                    </div>
-                </button>
+                    </button>
+                </div>
             </div>
             <PopupForm
                 isVisible={showModal}
