@@ -179,8 +179,8 @@ function Footer() {
                                     <div className="flex justify-center md:justify-start">
                                         <CiMail size={25} className="mr-3" />
                                     </div>
-                                    <Link href="mailto:clients@kandradigital.com" className="hover:text-prime-blue">
-                                        growth@kandradigital.com
+                                    <Link href="mailto:hello@skilldeck.net" className="hover:text-prime-blue">
+                                        hello@skilldeck.net
                                     </Link>
                                 </div>
                             </div>
