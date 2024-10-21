@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 
 interface SuccessModalProps {
@@ -7,8 +8,20 @@ interface SuccessModalProps {
 }
 
 const SuccessModal: React.FC<SuccessModalProps> = ({ isVisible, onClose, onReset }) => {
-    if (!isVisible) return null;
+    const router = useRouter()
 
+    console.log(router.asPath)
+
+    const home = () => {
+        if (router.asPath === '/contact-us') {
+            router.push('/')
+        } else {
+            onClose()
+            onReset()
+        }
+    }
+
+    if (!isVisible) return null;
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white rounded-lg p-6 shadow-lg w-80">
@@ -20,15 +33,13 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isVisible, onClose, onReset
                             onClose();
                             onReset(); // Reset form data
                         }}
-                        className="flex-1 bg-prime-blue text-white py-2 rounded-md"
+                        className="flex-1 bg-prime-blue text-white py-2 px-4 rounded-md"
                     >
                         Fill Another Form
                     </button>
                     <button
-                        onClick={() => {
-                            window.location.href = '/'; // Redirect to Home
-                        }}
-                        className="flex-1 bg-gray-300 text-gray-700 py-2 rounded-md"
+                        onClick={home}
+                        className="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md"
                     >
                         Go Back to Home
                     </button>
