@@ -231,7 +231,6 @@ const ContactusForm: React.FC = () => {
                 onClose={() => setIsSubmitted(false)}
                 onReset={handleReset}
             />
-
         </div>
     );
 };

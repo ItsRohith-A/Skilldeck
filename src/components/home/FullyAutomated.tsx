@@ -1,20 +1,34 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import cardimg1 from '../../../public/images/empowering/fully1.png';
 import cardimg2 from '../../../public/images/empowering/fully2.png';
 import cardimg3 from '../../../public/images/empowering/fully3.png';
 import cardimg4 from '../../../public/images/empowering/fully4.png';
 import Image from "next/image";
-import { IoIosArrowDown } from "react-icons/io";
+import { FaChevronRight } from "react-icons/fa";
+import PopupForm from "../others/PopupForm";
 
 function FullyAutomated() {
+
+  const [showModal, setShowModal] = useState(false);
+
+
   const points = [
     "Training Companies Using this Software and automating their process across various departments (Sales, Operations, Marketing & Business) & Preponing their success. 4x more quick growth with marketing metrics",
     "Conversion and revenues are up by up to 8X times on average",
     "Global expansion, Time Zones, and Multi-Currency optimization in just a few clicks",
     "Automation of content and Marketing Implementations",
   ];
+
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById("features");
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
   return (
     <div>
       <div className="container mx-auto my-12 px-4 lg:px-0">
@@ -70,15 +84,19 @@ function FullyAutomated() {
 
         {/* Buttons Section */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 my-8">
-          <button className="px-6 py-3 flex items-center gap-3 bg-prime-dark text-white rounded-lg text-lg w-full sm:w-auto justify-center">
+          <button onClick={() => setShowModal(true)} className="px-6 py-3 flex items-center gap-3 bg-prime-dark text-white rounded-lg text-lg w-full sm:w-auto justify-center">
             Book A Demo
-            <IoIosArrowDown />
+            <FaChevronRight />
           </button>
-          <button className="px-6 py-3 border border-prime-dark rounded-lg text-lg w-full sm:w-auto justify-center">
+          <button onClick={scrollToFeatures} className="px-6 py-3 border border-prime-dark rounded-lg text-lg w-full sm:w-auto justify-center">
             Explore More!
           </button>
         </div>
       </div>
+      <PopupForm
+        isVisible={showModal}
+        onClose={() => setShowModal(false)}
+      />
     </div>
   );
 }

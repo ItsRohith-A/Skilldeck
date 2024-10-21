@@ -44,7 +44,7 @@ const UserTable = () => {
     const renderRows = (data: Array<any>) => {
         return data.map((row, index) => (
             <tr key={index} className="hover:bg-gray-50">
-                <td className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base font-semibold">
+                <td className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-xs md:text-base font-semibold">
                     {row.feature}
                 </td>
                 <td className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
@@ -156,8 +156,8 @@ const UserTable = () => {
                                 Feature
                             </th>
                             <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
-                                <div className="flex items-center gap-3 text-[#1b769c] justify-center text-xl">
-                                    <FaWordpress className='text-2xl' />
+                                <div className="flex items-center gap-3 text-[#1b769c] justify-center text-base">
+                                    <FaWordpress className='text-xl' />
                                     WordPress
                                 </div>
                             </th>
@@ -173,35 +173,35 @@ const UserTable = () => {
                                 <Image
                                     src={logo}
                                     alt="SkillDeck Logo"
-                                    className="h-8 mx-auto w-auto md:h-10"
+                                    className="h-6 mx-auto w-auto md:h-10"
                                 />
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-xl md:text-2xl">
+                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-base md:text-2xl">
                                 Technical Stack
                             </td>
                         </tr>
                         {renderRows(tableData)}
 
                         <tr>
-                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-xl md:text-2xl">
+                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-base md:text-2xl">
                                 Features
                             </td>
                         </tr>
                         {renderRows(featureData)}
 
                         <tr>
-                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="py-4 text-center font-bold text-xl md:text-2xl">
+                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="py-4 text-center font-bold text-base md:text-2xl">
                                 Operations
                             </td>
                         </tr>
                         {renderRows(operationalData)}
 
                         <tr>
-                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-xl md:text-2xl">
+                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-base md:text-2xl">
                                 Marketing
                             </td>
                         </tr>
@@ -214,14 +214,14 @@ const UserTable = () => {
                         </tr>
 
                         <tr>
-                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-xl md:text-2xl">
+                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center  font-bold text-base md:text-2xl">
                                 Content Management
                             </td>
                         </tr>
                         {renderRows(contentManagementData)}
 
                         <tr>
-                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-xl md:text-2xl">
+                            <td colSpan={(screenWidth === 'large' || screenWidth === 'medium') ? 4 : 1} className="text-prime-dark py-4 text-center font-bold text-base md:text-2xl">
                                 Sales Team
                             </td>
                         </tr>
