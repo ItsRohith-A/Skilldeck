@@ -12,7 +12,7 @@ const PricingTable = () => {
                             <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg"> </th>
                             <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">Wordpress (USD)</th>
                             <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">Custom (USD)</th>
-                            <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">SkillDeck Basic ($)</th>
+                            <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">SkillDeck Economical ($)</th>
                             <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">Skilldeck Elite ($)</th>
                             <th className="px-4 py-2 md:px-6 md:py-4 font-bold text-sm md:text-lg">SkillDeck Pro ($)</th>
                         </tr>
@@ -29,10 +29,12 @@ const PricingTable = () => {
                                     {item.custom}
                                 </td>
                                 <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base font-semibold text-prime-dark border border-prime-blue">
-                                    {item.skilldeckGold}
+                                    {item.skilldeckSilver}
+
                                 </td>
                                 <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base font-semibold text-prime-dark border border-prime-blue">
-                                    {item.skilldeckSilver}
+                                    {item.skilldeckGold}
+
                                 </td>
                                 <td className="px-4 py-2 md:px-6 md:py-4 text-sm md:text-base font-semibold text-prime-dark border border-prime-blue">
                                     {item.skilldeckPlatinum}

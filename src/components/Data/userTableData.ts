@@ -562,17 +562,36 @@ export const salesTeamData = [
     },
 ];
 
+// export const pricingData = [
+//     { label: 'Hosting Monthly', wordpress: 35, custom: 100, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
+//     { label: 'Themes/Frontend (Onetime)', wordpress: 60, custom: 3000, skilldeckGold: 2000, skilldeckSilver: 2500, skilldeckPlatinum: 3000 },
+//     { label: 'Backend Features/Plugins (Onetime)', wordpress: 200, custom: 5000, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
+//     { label: 'Developer Onetime cost', wordpress: 400, custom: 2000, skilldeckGold: 600, skilldeckSilver: 700, skilldeckPlatinum: 800 },
+//     { label: 'Developer Recurring Costs', wordpress: 300, custom: 700, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
+//     { label: 'Publishing Resources Cost (Content, Schedules, etc.)', wordpress: 500, custom: 500, skilldeckGold: 100, skilldeckSilver: 100, skilldeckPlatinum: 100 },
+//     { label: 'Marketing Team/Implementation Cost', wordpress: 500, custom: 500, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
+//     { label: 'Monthly Retainer', wordpress: 0, custom: 0, skilldeckGold: 149, skilldeckSilver: 250, skilldeckPlatinum: 350 },
+//     { label: 'Total Sum Annual Cost', wordpress: 16680, custom: 31600, skilldeckGold: 5600, skilldeckSilver: 7400, skilldeckPlatinum: 9200 },
+//     { label: 'Monthly average Cost', wordpress: 1390, custom: 2633, skilldeckGold: 467, skilldeckSilver: 617, skilldeckPlatinum: 767 },
+//     { label: 'Subsequent Years Cost', wordpress: 15600, custom: 20400, skilldeckGold: 3000, skilldeckSilver: 4200, skilldeckPlatinum: 5400 },
+//     { label: 'One decade Cost', wordpress: 156000, custom: 204000, skilldeckGold: 30000, skilldeckSilver: 42000, skilldeckPlatinum: 54000 },
+// ];
+
 export const pricingData = [
-    { label: 'Hosting Monthly', wordpress: 35, custom: 100, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
-    { label: 'Themes/Frontend (Onetime)', wordpress: 60, custom: 3000, skilldeckGold: 2000, skilldeckSilver: 2500, skilldeckPlatinum: 3000 },
-    { label: 'Backend Features/Plugins (Onetime)', wordpress: 200, custom: 5000, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
-    { label: 'Developer Onetime cost', wordpress: 400, custom: 2000, skilldeckGold: 600, skilldeckSilver: 700, skilldeckPlatinum: 800 },
-    { label: 'Developer Recurring Costs', wordpress: 300, custom: 700, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
-    { label: 'Publishing Resources Cost (Content, Schedules, etc.)', wordpress: 500, custom: 500, skilldeckGold: 100, skilldeckSilver: 100, skilldeckPlatinum: 100 },
-    { label: 'Marketing Team/Implementation Cost', wordpress: 500, custom: 500, skilldeckGold: 0, skilldeckSilver: 0, skilldeckPlatinum: 0 },
-    { label: 'Monthly Retainer', wordpress: 0, custom: 0, skilldeckGold: 149, skilldeckSilver: 250, skilldeckPlatinum: 350 },
-    { label: 'Total Sum Annual Cost', wordpress: 16680, custom: 31600, skilldeckGold: 5600, skilldeckSilver: 7400, skilldeckPlatinum: 9200 },
-    { label: 'Monthly average Cost', wordpress: 1390, custom: 2633, skilldeckGold: 467, skilldeckSilver: 617, skilldeckPlatinum: 767 },
-    { label: 'Subsequent Years Cost', wordpress: 15600, custom: 20400, skilldeckGold: 3000, skilldeckSilver: 4200, skilldeckPlatinum: 5400 },
-    { label: 'One decade Cost', wordpress: 156000, custom: 204000, skilldeckGold: 30000, skilldeckSilver: 42000, skilldeckPlatinum: 54000 },
+    { label: 'Hosting Monthly', wordpress: 35, custom: 100, skilldeckSilver: 0, skilldeckGold: 0, skilldeckPlatinum: 0 },
+    { label: 'Themes/Frontend (Onetime)', wordpress: 60, custom: 3000, skilldeckSilver: 0, skilldeckGold: 0, skilldeckPlatinum: 0 },
+    { label: 'Backend Features/Plugins (Onetime)', wordpress: 200, custom: 5000, skilldeckSilver: 0, skilldeckGold: 0, skilldeckPlatinum: 0 },
+    { label: 'Developer Onetime cost', wordpress: 400, custom: 2000, skilldeckSilver: 600, skilldeckGold: 700, skilldeckPlatinum: 800 },
+    { label: 'Developer Recurring Costs', wordpress: 300, custom: 700, skilldeckSilver: 0, skilldeckGold: 0, skilldeckPlatinum: 0 },
+    { label: 'Publishing Resources Cost (Content, Schedules, etc.)', wordpress: 500, custom: 500, skilldeckSilver: 100, skilldeckGold: 100, skilldeckPlatinum: 100 },
+    { label: 'Marketing Team/Implementation Cost', wordpress: 500, custom: 500, skilldeckSilver: 0, skilldeckGold: 0, skilldeckPlatinum: 0 },
+    { label: 'Web Chat', wordpress: 10, custom: 10, skilldeckSilver: 0, skilldeckGold: 0, skilldeckPlatinum: 0 },
+    { label: 'Monthly Retainer', wordpress: 0, custom: 0, skilldeckSilver: 149, skilldeckGold: 249, skilldeckPlatinum: 349 },
+    { label: 'Total Sum Annual Cost', wordpress: 16800, custom: 31720, skilldeckSilver: 3588, skilldeckGold: 4888, skilldeckPlatinum: 6188 },
+    { label: 'Monthly average Cost', wordpress: 1400, custom: 2643, skilldeckSilver: 299, skilldeckGold: 407, skilldeckPlatinum: 516 },
+    { label: 'Subsequent Years Cost', wordpress: 15600, custom: 20400, skilldeckSilver: 2988, skilldeckGold: 4188, skilldeckPlatinum: 5388 },
+    { label: 'One decade Cost', wordpress: 156000, custom: 204000, skilldeckSilver: 29880, skilldeckGold: 41880, skilldeckPlatinum: 53880 },
 ];
+
+
+
