@@ -8,7 +8,7 @@ function Pricing() {
 
     const plans = [
         {
-            plan: 'Basic',
+            plan: 'Economical',
             price: 149,
             features: [
                 'Automation Of Schedules',
