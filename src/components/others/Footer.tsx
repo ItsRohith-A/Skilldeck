@@ -191,10 +191,10 @@ function Footer() {
             {/* Footer Bottom Section */}
             <div className="bg-black border-t border-gray-800 py-4 text-white">
                 <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-                    <p>© 2023 ✣ All rights reserved.</p>
-                    <Link href="https://kandradigital.com/" className="hover:underline hover:text-prime-blue">
+                    <p>© All rights reserved skilldeck 2024</p>
+                    {/* <Link href="https://kandradigital.com/" className="hover:underline hover:text-prime-blue">
                         KandraDigital
-                    </Link>
+                    </Link> */}
                     <button className="flex items-center gap-1 text-xs lg:hidden" onClick={scrollToTop}>
                         <IoIosArrowDropupCircle className="text-xl text-prime-dark lg:hover:text-prime-dark/70" />
                         Top

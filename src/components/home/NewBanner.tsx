@@ -7,10 +7,10 @@ import PopupForm from '../others/PopupForm';
 const NewBanner = () => {
     const [showModal, setShowModal] = useState(false);
     return (
-        <div className='container mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-24 mt-8 lg:my-40 items-center px-4'>
+        <div className='container mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-24 mt-8 lg:my-20 items-center px-4'>
             <div className="relative">
                 <Image src={lap} alt='-' className='w-full' />
-                <Image src={ele} alt='-' className='absolute bottom-4 right-4 lg:bottom-6 lg:right-6 w-32 lg:w-64' />
+                <Image src={ele} alt='-' className='absolute bottom-4 right-4 lg:bottom-6 lg:-right-6 w-32 lg:w-64 ' />
             </div>
             <div className="space-y-6">
                 <div className="flex items-center lg:justify-start justify-center space-x-2 lg:space-x-4">
