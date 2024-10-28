@@ -7,6 +7,10 @@ body {
 }
 
 @layer utilities {
+  .feature {
+    text-align: start;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

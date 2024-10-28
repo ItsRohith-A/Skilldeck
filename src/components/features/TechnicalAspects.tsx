@@ -69,16 +69,16 @@ const UserTable = () => {
                     {/* make this as top sticky  */}
                     <thead >
                         <tr className="sticky top-0 bg-gray-100">
-                            <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
+                            <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base text-start">
                                 Feature
                             </th>
                             <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
-                                <div className="flex items-center gap-3 text-[#1b769c] justify-center text-xl">
+                                <div className="flex items-center gap-3 text-[#1b769c] justify-start text-xl">
                                     <FaWordpress className='text-2xl' />
                                     WordPress
                                 </div>
                             </th>
-                            <th className="px-2 md:px-4 h-16 border border-gray-200 text-sm md:text-base flex items-center justify-center text-[#F48B19] gap-3">
+                            <th className="px-2 md:px-4 h-16 border border-gray-200 text-sm md:text-base flex items-center justify-start text-[#F48B19] gap-3">
                                 <Image
                                     src={custom}
                                     alt="custom"
@@ -87,11 +87,11 @@ const UserTable = () => {
                                 Custom
                             </th>
                             <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base ">
-                                <div className="relative flex items-center ">
+                                <div className="relative flex items-center  ">
                                     <Image
                                         src={logo}
                                         alt="SkillDeck Logo"
-                                        className="h-8 mx-auto w-auto md:h-10 "
+                                        className="h-8  w-auto md:h-10 "
                                     />
                                 </div>
                             </th>
@@ -144,20 +144,20 @@ const UserTable = () => {
 
                 {/* Mobile view */}
                 <div className='parent'>
-                    <table className="child scrollbar min-w-full table-auto border-collapse border border-gray-200 md:hidden block ">
+                    <table className="child scrollbar min-w-full table-auto border-collapse lg:border border-gray-200 md:hidden block ">
                         {/* make this as top sticky  */}
                         <thead >
                             <tr className="sticky top-0 bg-gray-100">
-                                <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
+                                <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base text-start">
                                     Feature
                                 </th>
                                 <th className="px-2 py-1 md:px-4 md:py-2 border border-gray-200 text-sm md:text-base">
-                                    <div className="flex items-center gap-3 text-[#1b769c] justify-center text-base">
+                                    <div className="flex items-center gap-3 text-[#1b769c] justify-start text-base">
                                         <FaWordpress className='text-xl' />
                                         WordPress
                                     </div>
                                 </th>
-                                <th className="px-2 md:px-4 h-16 border border-gray-200 text-sm md:text-base flex items-center justify-center text-[#F48B19] gap-3">
+                                <th className="px-2 md:px-4 h-16 border border-gray-200 text-sm md:text-base flex items-center justify-start text-[#F48B19] gap-3">
                                     <Image
                                         src={custom}
                                         alt="custom"
@@ -169,7 +169,7 @@ const UserTable = () => {
                                     <Image
                                         src={logo}
                                         alt="SkillDeck Logo"
-                                        className="h-6 mx-auto w-auto md:h-10"
+                                        className="h-6  w-auto md:h-10"
                                     />
                                 </th>
                             </tr>
