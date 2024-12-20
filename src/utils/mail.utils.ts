@@ -5,10 +5,10 @@ import { send } from 'process';
 
 const transport = nodemailer.createTransport({
     service: 'gmail',
-    secure: process.env.NODE_ENV !== 'development',
+    host: 'smtp.gmail.com',
     auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASSWORD,
+        user: 'hello@skilldeck.net',
+        pass: 'zeifsttwgnyxsswg',
     },
 } as SMTPTransport.Options)
 
