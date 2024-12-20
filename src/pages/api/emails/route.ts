@@ -12,7 +12,7 @@ export default async function handler(
             console.log(req.body)
             await sendEmail({ receipients: data.email, subject: "Enquery Response", message: thankYouTemplate(data) });
 
-            await sendEmail({ receipients: process.env.MAIL_USER, subject: "New Lead", message: getHtmlTemplate(data) });
+            await sendEmail({ receipients: 'hello@skilldeck.net', subject: "New Lead", message: getHtmlTemplate(data) });
 
             res.status(200).json({ message: "Email sent successfully" });
         } catch (error) {

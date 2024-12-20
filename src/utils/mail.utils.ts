@@ -22,7 +22,7 @@ export type SendEmailDto = {
 export const sendEmail = async (dto: any) => {
     const { receipients, subject, message } = dto;
     return await transport.sendMail({
-        from: process.env.MAIL_USER,
+        from: 'hello@skilldeck.net',
         to: receipients,
         subject,
         html: message,
