@@ -7,7 +7,6 @@ import { error } from 'console';
 const ContactusForm: React.FC = () => {
 
     const [result, setResult] = useState<Record<string, string>>({});
-    const [loading, setLoading] = useState<boolean>(false);
 
     const initialFormData = {
         name: '',
@@ -37,7 +36,9 @@ const ContactusForm: React.FC = () => {
 
         if (!formData.name) newErrors.name = 'Name is required';
         if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'A valid email is required';
-        if (!formData.phone || !/^\d{10}$/.test(formData.phone)) newErrors.phone = 'A valid 10-digit phone number is required';
+        if (!formData.phone || !/^\d{10}$/.test(formData.phone)) {
+            newErrors.phone = 'A valid phone number is required (e.g., 1234567890)';
+        }
         if (!formData.designation) newErrors.designation = 'Designation is required';
         // if (!formData.website || !/^https?:\/\/.+\..+/.test(formData.website)) newErrors.website = 'A valid website URL is required';
         if (!formData.country) newErrors.country = 'Country is required';
@@ -49,22 +50,29 @@ const ContactusForm: React.FC = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type, checked } = e.target as HTMLInputElement;
+
         setFormData((prev) => ({
             ...prev,
             [name]: type === 'checkbox' ? checked : value,
+        }));
+
+        // Re-validate the specific field
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            [name]: value.trim() ? '' : `${name.charAt(0).toUpperCase() + name.slice(1)} is required`,
         }));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (validate()) {
-            setIsSubmitted(true);
+
         }
     };
     console.log(handleSubmit)
 
     const sendEmail = async () => {
-        setLoading(true);
+        setIsSubmitted(true); // Show the modal on success
 
         try {
             const response = await fetch('/api/emails/route', {
@@ -75,7 +83,6 @@ const ContactusForm: React.FC = () => {
                 body: JSON.stringify(formData),
             });
 
-            // Check if the response is ok (status code 2xx)
             if (!response.ok) {
                 throw new Error(`Error: ${response.status} ${response.statusText}`);
             }
@@ -86,9 +93,10 @@ const ContactusForm: React.FC = () => {
             console.error("Error occurred while sending email:", error);
             setResult({ error: error.message });  // Handle error
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
+
 
     const handleReset = () => {
         setFormData(initialFormData);
@@ -97,7 +105,6 @@ const ContactusForm: React.FC = () => {
 
     return (
         <div className="container mx-auto px-4">
-            {loading && <div className="text-prime-dark text-xl">Processing</div>}
             <form onSubmit={handleSubmit} className="p-6 rounded-2xl border border-prime-blue flex flex-col gap-4">
                 <h2 className="text-prime-blue text-lg text-center font-semibold leading-relaxed">
                     Fill out the following form with all the details
