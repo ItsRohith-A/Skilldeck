@@ -61,6 +61,9 @@ function Footer() {
                 const data = await response.json();
                 setResult(data);
                 setIsSubmitted(true);
+
+                // Reset the form after successful submission
+                handleReset();
             } catch (error: any) {
                 console.error("Error occurred while sending email:", error);
                 setResult({ error: error.message });

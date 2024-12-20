@@ -35,14 +35,14 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isVisible, onClose, onReset
                         }}
                         className="flex-1 bg-prime-blue text-white py-2 px-4 rounded-md"
                     >
-                        Fill Another Form
+                        Close and Continue
                     </button>
-                    <button
+                    {/* <button
                         onClick={home}
                         className="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-md"
                     >
                         Go Back to Home
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>
