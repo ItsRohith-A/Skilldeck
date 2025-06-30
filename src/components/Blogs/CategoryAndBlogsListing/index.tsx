@@ -23,11 +23,18 @@ export const getValidMonthsAgo = (date?: string) => {
 
 const CategoryAndCourseListing = ({ title }: { title: string }) => {
     const { categories, blogsByCategory, loading } = useSelector((state: RootState) => state.blogs_and_categories);
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(categories ? categories[0].name : null);
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [visibleBlogs, setVisibleBlogs] = useState(8);
     const [loadingMore, setLoadingMore] = useState(false);
     const dispatch = useDispatch();
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+    // When categories load, auto-select the first one
+    useEffect(() => {
+        if (!selectedCategory && categories && categories.length > 0) {
+            setSelectedCategory(categories[0].name);
+        }
+    }, [categories, selectedCategory]);
     const params = useParams();
 
     const handleCategoryClick = (name: string) => {
@@ -71,7 +78,7 @@ const CategoryAndCourseListing = ({ title }: { title: string }) => {
         }
     };
 
-    const currentCourses = blogsByCategory[selectedCategory || '']?.blogs || [];
+    const currentCourses = blogsByCategory?.[selectedCategory || '']?.blogs || [];
     const selectedCategoryData = blogsByCategory[selectedCategory || 'agile'];
 
     return (
@@ -158,7 +165,7 @@ const CategoryAndCourseListing = ({ title }: { title: string }) => {
                                                         </div>
                                                     </div>
                                                     <div className="flex items-center gap-3">
-                                                    <Image src={blog.author.photo || profile} width={100} height={100} alt="profile" className="w-10" unoptimized />
+                                                        <Image src={blog.author.photo || profile} width={100} height={100} alt="profile" className="w-10" unoptimized />
                                                         <div className="text-black text-sm font-inter">{blog?.author?.name || 'Author'}</div>
                                                     </div>
                                                 </div>
