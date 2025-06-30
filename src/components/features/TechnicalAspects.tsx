@@ -39,8 +39,6 @@ const UserTable = () => {
         };
     }, []);
 
-    console.log(screenWidth)
-
     const renderRows = (data: Array<any>) => {
         return data.map((row, index) => (
             <tr key={index} className="hover:bg-gray-50">

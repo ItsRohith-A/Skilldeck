@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { IoIosArrowDropupCircle, IoMdPricetags } from 'react-icons/io';
-import { FaRegStar, FaRegSmileBeam, FaArrowCircleUp } from 'react-icons/fa';
+import { FaRegStar, FaRegSmileBeam, FaArrowCircleUp, FaBloggerB } from 'react-icons/fa';
 import { FiAirplay } from 'react-icons/fi';
 
 const sections = [
     { id: 'benefits', label: 'Benefits', icon: <FaRegSmileBeam className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
     { id: 'demo', label: 'Demo', icon: <FiAirplay className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
     { id: 'features', label: 'Features', icon: <FaRegStar className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
+    // { id: 'blogs', label: 'Blogs', icon: <FaBloggerB className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
     { id: 'pricing', label: 'Pricing', icon: <IoMdPricetags className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
 ];
 

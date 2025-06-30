@@ -35,9 +35,9 @@ function MainNav() {
                     <Link href="/pricing" className="text-prime-dark text-sm font-bold capitalize">
                         Pricing
                     </Link>
-                    {/* <Link href="/blog" className="text-prime-dark text-sm font-bold capitalize">
-                        Blog
-                    </Link> */}
+                    <Link href="/blog" className="text-prime-dark text-sm font-bold capitalize">
+                        Blogs
+                    </Link>
                     <Link href="/about-us" className="text-prime-dark text-sm font-bold capitalize">
                         About Us
                     </Link>

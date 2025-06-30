@@ -65,3 +65,17 @@ body {
     transform: rotateX(180deg); /* Rotate child element upside down */
   }
 }
+.scroll-bar::-webkit-scrollbar {
+  @apply rounded-lg;
+  width: 7px;
+  height: 10px;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+  @apply bg-gray-200 rounded-lg;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  @apply rounded-lg bg-prime-blue;
+  border: 2px solid #f3f4f6;
+}
