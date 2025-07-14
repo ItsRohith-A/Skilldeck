@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['cloud.nevolearn.co'], 
+    domains: ['cloud.nevolearn.co','kandra-storage-bucket.blr1.cdn.digitaloceanspaces.com'], 
   },
 };
 

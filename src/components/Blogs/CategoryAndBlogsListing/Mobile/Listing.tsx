@@ -77,11 +77,11 @@ const Listing = (
                 {/* Next button and Previous */}
                 <div className=" flex gap-x-20 mt-4">
                     {/* Prev Button */}
-                    <button onClick={handlePrev} disabled={activeIndex == 0} className={` p-2 rounded-full text-white hover:bg-prime-dark transition disabled:cursor-not-allowed ${activeIndex == 0 ? "bg-gray-500 text-white" : 'bg-prime'}  border rounded-full shadow`}>
+                    <button onClick={handlePrev} disabled={activeIndex == 0} className={` p-2 rounded-full text-prime-blue hover:bg-prime-blue border ${activeIndex===0?'border-none':'border-prime-blue'}   hover:text-white transition disabled:cursor-not-allowed ${activeIndex == 0 ? "bg-gray-500 text-white" : 'bg-prime'}  border rounded-full shadow`}>
                         <MdKeyboardArrowLeft size={24} />
                     </button>
                     {/* Next Button */}
-                    <button onClick={handleNext} disabled={activeIndex >= currentCourses.length} className={` p-2 rounded-full text-white hover:bg-prime-dark transition disabled:cursor-not-allowed ${activeIndex >= currentCourses.length ? "bg-gray-500 text-white" : 'bg-prime'}  border rounded-full shadow`}>
+                    <button onClick={handleNext} disabled={activeIndex >= currentCourses.length} className={` p-2 rounded-full text-prime-blue border border-prime-blue hover:bg-prime-blue hover:text-white transition disabled:cursor-not-allowed ${activeIndex >= currentCourses.length ? "bg-gray-500 text-white" : 'bg-prime'}  border rounded-full shadow`}>
                         <MdKeyboardArrowRight size={24} />
                     </button>
                 </div>

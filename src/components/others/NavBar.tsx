@@ -76,6 +76,9 @@ function MainNav() {
                     <Link href="/pricing" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Pricing
                     </Link>
+                    <Link href="/blog" className="text-prime-dark text-lg font-bold capitalize">
+                        Blogs
+                    </Link>
                     <Link href="/about-us" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         About Us
                     </Link>
