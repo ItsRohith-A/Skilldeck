@@ -41,6 +41,9 @@ function MainNav() {
                     <Link href="/about-us" className="text-prime-dark text-sm font-bold capitalize">
                         About Us
                     </Link>
+                    <Link href="/become-a-guest-author" className="text-prime-dark text-sm font-bold capitalize">
+                        Guest Author
+                    </Link>
 
                 </div>
 
@@ -84,6 +87,9 @@ function MainNav() {
                     </Link>
                     <Link href="/contact-us" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Contact Us
+                    </Link>
+                    <Link href="/become-a-guest-author" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
+                        Guest Author
                     </Link>
                     {/* <Link href='/contact-us' className='border-2 border-prime-dark font-medium text-center p-2 rounded' onClick={toggleMenu}>
                         Buy Now!

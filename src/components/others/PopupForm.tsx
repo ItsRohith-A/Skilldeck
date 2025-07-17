@@ -130,7 +130,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ isVisible, onClose }) => {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed inset-0 z-20 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+        <div className="fixed inset-0 z-50 bg-gray-800 bg-opacity-75 flex justify-center items-center">
             <div className="bg-white p-6 rounded-lg  md:w-full max-w-lg relative mx-2">
                 <h2 className="text-prime-blue text-lg text-center font-semibold mb-4">Contact Us</h2>
                 <button

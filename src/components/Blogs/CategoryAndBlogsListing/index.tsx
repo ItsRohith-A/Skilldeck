@@ -82,7 +82,7 @@ const CategoryAndCourseListing = ({ title }: { title: string }) => {
     const selectedCategoryData = blogsByCategory[selectedCategory || 'agile'];
 
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:px-0">
             <div className="md:py-10">
                 <div className="lg:grid lg:grid-cols-12 gap-6">
                     <div className="col-span-4 flex flex-col justify-center gap-y-2">
@@ -140,7 +140,7 @@ const CategoryAndCourseListing = ({ title }: { title: string }) => {
                                 </div>
                             ) : (
                                 <div className="">
-                                    <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
+                                    <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-6">
                                         {/* Display already loaded blogs */}
                                         {currentCourses.slice(0, visibleBlogs).map((blog: Blogs) => (
                                             <Link href={`/blog/${blog.slug}`} key={blog._id} className="bg-white flex flex-col border border-prime-dark/20 rounded-lg p-3">

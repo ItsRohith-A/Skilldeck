@@ -7,12 +7,22 @@ import cardimg3 from '../../../public/images/empowering/fully3.png';
 import cardimg4 from '../../../public/images/empowering/fully4.png';
 import Image from "next/image";
 import { FaChevronRight } from "react-icons/fa";
-import PopupForm from "../others/PopupForm";
+import { useDispatch } from "react-redux";
+import { openForm, updateFormFields } from "@/Redux/slices/Forms/FormSlice";
 
 function FullyAutomated() {
+  const dispatch = useDispatch();
 
-  const [showModal, setShowModal] = useState(false);
-
+  const triggerForm = () => {
+      dispatch(openForm());
+      dispatch(updateFormFields({
+          id: 'home-banner',
+          type: 'enquiry',
+          formId: 1,
+          curriculum: false,
+          slug: '',
+      }));
+  };
 
   const points = [
     "Training Companies Using this Software and automating their process across various departments (Sales, Operations, Marketing & Business) & Preponing their success. 4x more quick growth with marketing metrics",
@@ -84,7 +94,7 @@ function FullyAutomated() {
 
         {/* Buttons Section */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 my-8">
-          <button onClick={() => setShowModal(true)} className="px-6 py-3 flex items-center gap-3 bg-prime-dark text-white rounded-lg text-lg w-full sm:w-auto justify-center">
+          <button onClick={triggerForm} className="px-6 py-3 flex items-center gap-3 bg-prime-dark text-white rounded-lg text-lg w-full sm:w-auto justify-center">
             Book A Demo
             <FaChevronRight />
           </button>
@@ -93,10 +103,6 @@ function FullyAutomated() {
           </button>
         </div>
       </div>
-      <PopupForm
-        isVisible={showModal}
-        onClose={() => setShowModal(false)}
-      />
     </div>
   );
 }

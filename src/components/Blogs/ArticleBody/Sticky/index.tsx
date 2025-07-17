@@ -11,10 +11,11 @@ import { getMonthsAgo } from '@/components/others/getDaysAgo';
 const BlogSticky = () => {
     const { recentBlogs } = useSelector((state: RootState) => state.blogs_and_categories);
 
+
     if (recentBlogs)
         return (
             <div>
-                <div className="sticky top-16">
+                <div className="sticky top-16 z-10 bg-white">
                     <div className="">
                         <h4 className="font-bold text-lg">Recent Blogs</h4>
                         <div className="">
@@ -29,7 +30,7 @@ const BlogSticky = () => {
                                             className="bg-white flex flex-col justify-between border-b p-1 lg:p-3"
                                         >
                                             <div className="flex gap-x-2">
-                                                <Image src={blog.thumbnail || defaultImage} width={100} height={100} alt="blogimg" className="w-16 h-16 rounded-md object-cover broder border-gray-500" />
+                                                <Image src={blog.thumbnail || defaultImage} unoptimized width={100} height={100} alt="blogimg" className="w-16 h-16 rounded-md object-cover broder border-gray-500" />
                                                 <div>
                                                     <div className="text-xs font-semibold mb-2 hover:text-prime/80 ">
                                                         <Link href={`/blog/${blog.slug}`}>

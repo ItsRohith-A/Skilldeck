@@ -2,9 +2,22 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import lap from '../../../public/images/newbanner.png';
 import ele from '../../../public/images/bannerel.png';
-import PopupForm from '../others/PopupForm';
+import { useDispatch } from 'react-redux';
+import { openForm, updateFormFields } from '@/Redux/slices/Forms/FormSlice';
 
 const NewBanner = () => {
+    const dispatch = useDispatch();
+
+    const triggerForm = () => {
+        dispatch(openForm());
+        dispatch(updateFormFields({
+            id: 'home-banner',
+            type: 'enquiry',
+            formId: 1,
+            curriculum: false,
+            slug: '',
+        }));
+    };
     const [showModal, setShowModal] = useState(false);
     return (
         <div className='container mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-24 mt-8 lg:my-20 items-center px-4'>
@@ -27,15 +40,12 @@ const NewBanner = () => {
                     It's a simplified tech and marketing solution for training companies.
                 </div>
                 <div className=" flex justify-center  items-center lg:justify-start">
-                    <button onClick={() => setShowModal(true)} className="w-fit lg:h-14 px-8 lg:px-10 py-3 lg:py-4 bg-prime-blue rounded-full ">
+                    <button onClick={triggerForm} className="w-fit lg:h-14 px-8 lg:px-10 py-3 lg:py-4 bg-prime-blue rounded-full ">
                         <div className="text-white text-base lg:text-lg font-bold leading-tight">Try our platform</div>
                     </button>
                 </div>
             </div>
-            <PopupForm
-                isVisible={showModal}
-                onClose={() => setShowModal(false)}
-            />
+
         </div>
     );
 };
