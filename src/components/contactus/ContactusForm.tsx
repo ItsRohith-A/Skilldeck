@@ -1,245 +1,218 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { formValidation } from '../others/forms/FormValidation';
+import { submitForm, setThankyou } from '@/Redux/slices/Forms/FormSlice';
 import SuccessModal from '../others/SuccessModal';
-import { error } from 'console';
+import { usePathname } from 'next/navigation';
+import ToastNotification from '../others/Notification';
 
 const ContactusForm: React.FC = () => {
+  const dispatch = useDispatch();
+  const pathname = usePathname();
+  const formtype = 'enquiry';
 
-    const [result, setResult] = useState<Record<string, string>>({});
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstname: '',
+    designation: '',
+    email: '',
+    phone: '',
+    company: '',
+    website: '',
+    mainBranchAddress: '',
+    otherBranches: '',
+    trainingsOffered: '',
+    country: '',
+    message: '',
+    demo: false,
+    page: '',
+    requirements: []
+  });
 
-    const initialFormData = {
-        name: '',
-        email: '',
-        phone: '',
-        designation: '',
-        website: '',
-        country: '',
-        message: '',
-        needDemo: true,
-    };
+  useEffect(() => {
+    const slug = pathname.split('/').filter(Boolean).pop();
+    setFormData(prev => ({ ...prev, page: slug || 'homepage' }));
+  }, [pathname]);
 
-    const [formData, setFormData] = useState(initialFormData);
-    const [errors, setErrors] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        designation: '',
-        website: '',
-        country: '',
-        message: '',
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
+    }));
+  };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
+
+    if (name === 'demo') {
+      setFormData(prev => ({ ...prev, demo: checked }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        requirements: {
+          ...prev.requirements,
+          [name]: checked,
+        },
+      }));
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const errorMessage = formValidation(formData);
+    if (errorMessage) {
+      setError(errorMessage);
+      return;
+    }
+
+    dispatch(submitForm({
+      ...formData,
+      formtype,
+      curriculum: false,
+      slug: '',
+    }) as any);
+    dispatch(setThankyou());
+    setIsSubmitted(true);
+  };
+
+  const handleReset = () => {
+    setFormData({
+      firstname: '',
+      designation: '',
+      email: '',
+      phone: '',
+      company: '',
+      website: '',
+      mainBranchAddress: '',
+      otherBranches: '',
+      trainingsOffered: '',
+      country: '',
+      message: '',
+      demo: false,
+      page: '',
+      requirements: []
     });
-    const [isSubmitted, setIsSubmitted] = useState(false);
+  };
 
-    const validate = () => {
-        const newErrors = { ...errors };
+  return (
+    <div className="container mx-auto px-4">
+      {error && <ToastNotification message={error} onClose={() => setError(null)} />}
+      <form onSubmit={handleSubmit} className="p-6 rounded-2xl border border-prime-blue flex flex-col gap-4">
+        <h2 className="text-prime-blue text-lg text-center font-semibold">
+          Fill out the following form with all the details
+        </h2>
 
-        if (!formData.name) newErrors.name = 'Name is required';
-        if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'A valid email is required';
-        if (!formData.phone || !/^\d{10}$/.test(formData.phone)) {
-            newErrors.phone = 'A valid phone number is required (e.g., 1234567890)';
-        }
-        if (!formData.designation) newErrors.designation = 'Designation is required';
-        // if (!formData.website || !/^https?:\/\/.+\..+/.test(formData.website)) newErrors.website = 'A valid website URL is required';
-        if (!formData.country) newErrors.country = 'Country is required';
-        if (!formData.message) newErrors.message = 'Message is required';
+        <label className="text-prime-dark font-medium">
+          First Name
+          <input
+            type="text"
+            name="firstname"
+            value={formData.firstname}
+            onChange={handleChange}
+            className="w-full p-3 mt-1 bg-white rounded-md border border-zinc-200"
+          />
+        </label>
 
-        setErrors(newErrors);
-        return !Object.values(newErrors).some((error) => error);
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value, type, checked } = e.target as HTMLInputElement;
-
-        setFormData((prev) => ({
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value,
-        }));
-
-        // Re-validate the specific field
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            [name]: value.trim() ? '' : `${name.charAt(0).toUpperCase() + name.slice(1)} is required`,
-        }));
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (validate()) {
-
-        }
-    };
-    console.log(handleSubmit)
-
-    const sendEmail = async () => {
-        setIsSubmitted(true); // Show the modal on success
-
-        try {
-            const response = await fetch('/api/emails/route', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                throw new Error(`Error: ${response.status} ${response.statusText}`);
-            }
-
-            const data = await response.json();
-            setResult(data);  // Handle success
-        } catch (error: any) {
-            console.error("Error occurred while sending email:", error);
-            setResult({ error: error.message });  // Handle error
-        } finally {
-            // setLoading(false);
-        }
-    };
-
-
-    const handleReset = () => {
-        setFormData(initialFormData);
-    };
-
-
-    return (
-        <div className="container mx-auto px-4">
-            <form onSubmit={handleSubmit} className="p-6 rounded-2xl border border-prime-blue flex flex-col gap-4">
-                <h2 className="text-prime-blue text-lg text-center font-semibold leading-relaxed">
-                    Fill out the following form with all the details
-                </h2>
-
-                <label className="text-prime-dark font-medium">
-                    Name
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className={`w-full p-3 mt-1 bg-white rounded-md border ${errors.name ? 'border-red-500' : 'border-zinc-200'
-                            }`}
-                    />
-                    {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
-                </label>
-
-                <div className="flex flex-col sm:flex-row justify-center gap-6">
-                    <label className="text-prime-dark font-medium w-full">
-                        Email Id
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className={`w-full p-3 mt-1 bg-white rounded-md border ${errors.email ? 'border-red-500' : 'border-zinc-200'
-                                }`}
-                        />
-                        {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
-                    </label>
-                    <label className="text-prime-dark font-medium w-full">
-                        Phone No.
-                        <input
-                            type="tel"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            className={`w-full p-3 mt-1 bg-white rounded-md border ${errors.phone ? 'border-red-500' : 'border-zinc-200'
-                                }`}
-                        />
-                        {errors.phone && <span className="text-red-500 text-sm">{errors.phone}</span>}
-                    </label>
-                </div>
-
-                <label className="text-prime-dark font-medium">
-                    Designation
-                    <input
-                        type="text"
-                        name="designation"
-                        value={formData.designation}
-                        onChange={handleChange}
-                        className={`w-full p-3 mt-1 bg-white rounded-md border ${errors.designation ? 'border-red-500' : 'border-zinc-200'
-                            }`}
-                    />
-                    {errors.designation && <span className="text-red-500 text-sm">{errors.designation}</span>}
-                </label>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center">
-                    <label className="text-prime-dark font-medium">
-                        Website link
-                        <input
-                            type="url"
-                            name="website"
-                            value={formData.website}
-                            onChange={handleChange}
-                            className={`w-full p-3 mt-1 bg-white rounded-md border ${errors.website ? 'border-red-500' : 'border-zinc-200'
-                                }`}
-                        />
-                        {errors.website && <span className="text-red-500 text-sm">{errors.website}</span>}
-                    </label>
-                    <label className="text-prime-dark font-medium">
-                        Country
-                        <input
-                            type="text"
-                            name="country"
-                            value={formData.country}
-                            onChange={handleChange}
-                            className={`w-full p-3 mt-1 bg-white rounded-md border ${errors.country ? 'border-red-500' : 'border-zinc-200'
-                                }`}
-                        />
-                        {errors.country && <span className="text-red-500 text-sm">{errors.country}</span>}
-                    </label>
-                </div>
-
-                <label className="text-prime-dark font-medium">
-                    Message
-                    <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        className={`w-full p-3 mt-1 bg-white rounded-md border ${errors.message ? 'border-red-500' : 'border-zinc-200'
-                            }`}
-                    />
-                    {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
-                </label>
-
-                <div className="sm:flex gap-4 items-center justify-center">
-                    <label className="flex items-center gap-2">
-                        <input
-                            type="radio"
-                            name="needDemo"
-                            value="true"
-                            checked={formData.needDemo === true}
-                            onChange={() => setFormData((prev) => ({ ...prev, needDemo: true }))}
-                            className="form-radio text-prime-blue"
-                        />
-                        Need A Demo
-                    </label>
-                    <label className="flex items-center gap-2">
-                        <input
-                            type="radio"
-                            name="needDemo"
-                            value="false"
-                            checked={formData.needDemo === false}
-                            onChange={() => setFormData((prev) => ({ ...prev, needDemo: false }))}
-                            className="form-radio text-prime-blue"
-                        />
-                        Demo Not Needed
-                    </label>
-                </div>
-                <div className="flex justify-center">
-                    <button type="submit" onClick={sendEmail} className="lg:w-2/5 py-3 px-4 mt-4 bg-prime-dark hover:text-prime-blue text-white rounded-md ">
-                        Send Message
-                    </button>
-                </div>
-            </form>
-
-            <SuccessModal
-                isVisible={isSubmitted}
-                onClose={() => setIsSubmitted(false)}
-                onReset={handleReset}
+        <div className="flex flex-col sm:flex-row gap-6">
+          <label className="text-prime-dark font-medium w-full">
+            Email
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 bg-white rounded-md border border-zinc-200"
             />
+          </label>
+
+          <label className="text-prime-dark font-medium w-full">
+            Phone
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 bg-white rounded-md border border-zinc-200"
+            />
+          </label>
         </div>
-    );
+
+        <label className="text-prime-dark font-medium">
+          Designation
+          <input
+            type="text"
+            name="designation"
+            value={formData.designation}
+            onChange={handleChange}
+            className="w-full p-3 mt-1 bg-white rounded-md border border-zinc-200"
+          />
+        </label>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <label className="text-prime-dark font-medium">
+            Website
+            <input
+              type="url"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 bg-white rounded-md border border-zinc-200"
+            />
+          </label>
+
+          <label className="text-prime-dark font-medium">
+            Country
+            <input
+              type="text"
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              className="w-full p-3 mt-1 bg-white rounded-md border border-zinc-200"
+            />
+          </label>
+        </div>
+
+        <label className="text-prime-dark font-medium">
+          Message
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full p-3 mt-1 bg-white rounded-md border border-zinc-200"
+          />
+        </label>
+
+        <div className="flex items-center gap-3">
+          <input
+            type="checkbox"
+            name="demo"
+            checked={formData.demo}
+            onChange={handleCheckboxChange}
+          />
+          <label className="text-prime-dark font-medium">Demo Required?</label>
+        </div>
+
+        <div className="mt-4 flex justify-center gap-4">
+          <button
+            type="submit"
+            className="lg:w-2/5 py-3 px-4 bg-prime-dark hover:text-prime-blue text-white rounded-md"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+
+      <SuccessModal
+        isVisible={isSubmitted}
+        onClose={() => setIsSubmitted(false)}
+        onReset={handleReset}
+      />
+    </div>
+  );
 };
 
 export default ContactusForm;

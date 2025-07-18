@@ -8,9 +8,9 @@ const StickyRight = () => {
 
 
     return (
-        <div className='sticky top-2'>
+        <div className='lg:sticky top-2'>
 
-            <div className="md:flex flex-col items-center space-y-4 rounded-lg md:p-3 mt-2">
+            <div className="md:flex flex-row gap-5 lg:flex-col items-center space-y-4 rounded-lg lg:p-3 mt-2">
                 <RightForm />
                 <BlogSticky />
             </div>

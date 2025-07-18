@@ -3,13 +3,13 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 // Update this to match your backend fields
 interface FormData {
   firstname: string;
-  lastname: string;
   phone: string;
   email: string;
   company?: string;
   designation?: string;
   headcount?: string;
-  message: string;
+  message?: string;
+  about_company?: string;
   curriculum: boolean;
   slug: string;
   id?: string;
@@ -21,15 +21,9 @@ interface FormData {
   mainBranchAddress?: string;
   otherBranches?: string;
   trainingsOffered?: string;
+  demo?: boolean;
   country?: string;
-  requirements?: {
-    website?: boolean;
-    globalScheduleAndCurrency?: boolean;
-    webChat?: boolean;
-    elearningPlatform?: boolean;
-    digitalMarketing?: boolean;
-    leadGeneration?: boolean;
-  };
+  requirements?: string[]
 }
 
 
@@ -53,7 +47,6 @@ export const submitForm = createAsyncThunk(
     try {
       const adaptedData = {
         firstname: formData.firstname,
-        lastname: formData.lastname,
         phone: formData.phone,
         email: formData.email,
         company: formData.company || '',
@@ -62,16 +55,15 @@ export const submitForm = createAsyncThunk(
         page: formData.page || '',
         date: formData.date || '',
         website: formData.website || '',
+        about_company: formData.about_company || '',
+        demo: formData.demo || false,
         mainBranchAddress: formData.mainBranchAddress || '',
         otherBranches: formData.otherBranches || '',
         trainingsOffered: formData.trainingsOffered || '',
-        requirements: formData.requirements || {},
+        requirements: formData.requirements || [],
       };
 
       const url = `${process.env.NEXT_PUBLIC_SERVER_URL}/form/mail`;
-
-      console.log(' Submitting to:', url);
-      console.log(' Payload:', adaptedData);
 
       const response = await fetch(url, {
         method: 'POST',

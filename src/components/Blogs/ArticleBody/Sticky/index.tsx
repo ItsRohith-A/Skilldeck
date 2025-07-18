@@ -15,7 +15,7 @@ const BlogSticky = () => {
     if (recentBlogs)
         return (
             <div>
-                <div className="sticky top-16 z-10 bg-white">
+                <div className="lg:sticky top-16 z-10 bg-white">
                     <div className="">
                         <h4 className="font-bold text-lg">Recent Blogs</h4>
                         <div className="">

@@ -17,14 +17,14 @@ const RightForm = () => {
   };
   return (
     <>
-      <div className="space-y-2 p-4 rounded-2xl border border-gray-200 shadow-md bg-white sticky top-4">
+      <div className="space-y-2 p-4 rounded-2xl border border-gray-200 shadow-md bg-gradient-to-br from-blue-50 to-white lg:sticky top-4">
         <div className="text-center">
           <h2 className="text-lg 2xl:text-xl font-semibold text-prime-dark flex items-center justify-center gap-2">
             Get Your Training Institute Listed!
           </h2>
         </div>
 
-        <div className=" text-sm text-gray-700">
+        <div className="space-y-2 text-sm text-gray-800">
           <p className="text-sm 2xl:text-base text-center">
             To get your institute listed, <strong>please do not call</strong> our phone numbers.
             Kindly send us an email with your company details.

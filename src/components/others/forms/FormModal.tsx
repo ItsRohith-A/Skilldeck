@@ -13,9 +13,9 @@ const FormModal = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-      <div className="bg-white rounded-xl p-4 md:p-6 relative w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-xl animate-fadeIn">
+      <div className="bg-white rounded-xl p-4 md:p-6 relative w-full md:max-w-4xl 2xl:max-w-5xl md:max-h-[100vh]  2xl:max-h-[200vh] overflow-y-auto shadow-xl animate-fadeIn">
         <button
-          className="absolute top-3 right-3 text-xl font-bold text-gray-500 hover:text-gray-700"
+          className="absolute -top-2 right-1 md:-top-1 md:right-2 text-xl font-bold text-gray-500 hover:text-gray-700"
           onClick={() => dispatch(closeForm())}
           aria-label="Close form"
         >

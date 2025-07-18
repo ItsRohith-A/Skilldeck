@@ -2,7 +2,7 @@ import { getMonthsAgo } from '@/components/others/getDaysAgo';
 import { RootState } from '@/Redux/rootReducer';
 import { fetch_blogs } from '@/Redux/slices/Blogs/HomePage/blogs_category_listing_slice';
 import { BlogCategory, Blogs } from '@/Redux/slices/Blogs/HomePage/types';
-import { useParams } from 'next/navigation';
+import { useParams, usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { MdKeyboardDoubleArrowRight, MdOutlineAccessTime, MdOutlineArrowDownward, MdOutlineRemoveRedEye, MdRadioButtonChecked } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,6 +29,8 @@ const CategoryAndCourseListing = ({ title }: { title: string }) => {
     const dispatch = useDispatch();
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
+    const pathname = usePathname();
+    const isBlogDetailPage = /^\/blog\/[^\/]+$/.test(pathname);
     // When categories load, auto-select the first one
     useEffect(() => {
         if (!selectedCategory && categories && categories.length > 0) {
@@ -95,7 +97,7 @@ const CategoryAndCourseListing = ({ title }: { title: string }) => {
                             {categories?.map((item: BlogCategory) => (
                                 <div
                                     key={item.id}
-                                    className={`flex text-nowrap items-center gap-x-2 px-3 py-2 text-xs lg:text-base font-['Inter'] capitalize ${selectedCategory === item.name ? 'font-bold rounded shadow-sm border-prime-blue border-2 ' : 'font-medium bg-white'} rounded-md`}
+                                    className={`flex text-nowrap items-center gap-x-2 px-3 py-2 text-xs lg:text-base capitalize ${selectedCategory === item.name ? 'font-bold rounded shadow-sm border-prime-blue border-2 ' : 'font-medium bg-white'} rounded-md`}
                                     onClick={() => handleCategoryClick(item.name)}
                                 >
                                     <MdRadioButtonChecked className={`${selectedCategory === item.name ? '' : 'hidden'} text-prime-blue`} />
@@ -140,7 +142,8 @@ const CategoryAndCourseListing = ({ title }: { title: string }) => {
                                 </div>
                             ) : (
                                 <div className="">
-                                    <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-6">
+                                    <div className={`hidden md:grid grid-cols-1 sm:grid-cols-2 ${isBlogDetailPage ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} 2xl:grid-cols-3 gap-6`}>
+
                                         {/* Display already loaded blogs */}
                                         {currentCourses.slice(0, visibleBlogs).map((blog: Blogs) => (
                                             <Link href={`/blog/${blog.slug}`} key={blog._id} className="bg-white flex flex-col border border-prime-dark/20 rounded-lg p-3">

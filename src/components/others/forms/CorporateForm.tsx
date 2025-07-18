@@ -14,9 +14,20 @@ interface CorporateFormProps {
     onClose: () => void;
     formtype?: any;
 }
-
+const requirementOptions = [
+    { label: 'Website', value: 'website' },
+    { label: 'Global Schedule Time Zone & Currency Management', value: 'globalScheduleAndCurrency' },
+    { label: 'Web Chat', value: 'webChat' },
+    { label: 'E-learning Platform', value: 'elearningPlatform' },
+    { label: 'Digital Marketing Services', value: 'digitalMarketing' },
+    { label: 'Lead Generation', value: 'leadGeneration' },
+    { label: 'CRM', value: 'crm' },
+    { label: 'CMS', value: 'cms' },
+    { label: 'Event Management for global currencies & timezones', value: 'eventManagementForGlobalCurrenciesAndTimezones' },
+];
 const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corporate' }) => {
     const dispatch = useDispatch();
+    const [showThankyou, setShowThankyou] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState({
         firstname: '',
@@ -30,16 +41,10 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
         trainingsOffered: '',
         country: '',
         message: '',
-        demoRequired: false,
+        about_company: '',
+        demo: false,
         page: '',
-        requirements: {
-            website: false,
-            globalScheduleAndCurrency: false,
-            webChat: false,
-            elearningPlatform: false,
-            digitalMarketing: false,
-            leadGeneration: false,
-        },
+        requirements: [] as string[],
     });
 
     const pathname = usePathname();
@@ -54,20 +59,26 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+
     const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, checked } = e.target;
 
-        if (name === 'demoRequired') {
-            setFormData(prev => ({ ...prev, demoRequired: checked }));
+        if (name === 'demo') {
+            setFormData(prev => ({ ...prev, demo: checked }));
         } else {
-            setFormData(prev => ({
-                ...prev,
-                requirements: {
-                    ...prev.requirements,
-                    [name]: checked,
-                },
-            }));
+            if (checked) {
+                setFormData(prev => ({
+                    ...prev,
+                    requirements: [...prev.requirements, name],
+                }));
+            } else {
+                setFormData(prev => ({
+                    ...prev,
+                    requirements: prev.requirements.filter(req => req !== name),
+                }));
+            }
         }
+
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -80,19 +91,19 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
 
         dispatch(submitForm({
             ...formData, formtype,
-            lastname: '',
             curriculum: false,
             slug: ''
         }) as any);
         dispatch(setThankyou());
+        setShowThankyou(true);
     };
 
     return (
         <div className="rounded-xl overflow-hidden text-sm">
             {error && <ToastNotification message={error} onClose={() => setError(null)} />}
-            <div className="grid grid-cols-1 md:grid-cols-7 items-center gap-x-5">
-               
-                <div className="relative h-[440px] bg-prime-blue col-span-2 rounded-lg text-white p-6 pb-10 flex flex-col justify-between space-y-4">
+            <div className="lg:grid grid-cols-1 md:grid-cols-7 items-center gap-x-5">
+
+                <div className="hidden lg:block relative h-[480px] bg-prime-blue col-span-2 rounded-lg text-white p-6 pb-10  flex-col justify-between space-y-4">
                     <div>
                         <h3 className="text-lg font-semibold mb-1">Contact Information</h3>
                         <p className="text-xs mb-4">Fill up the form and our Team will get back to you within 24 hours.</p>
@@ -127,10 +138,10 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
                 </div>
 
                 {/* Right Form */}
-                <form onSubmit={handleSubmit} className="space-y-5 col-span-5">
-                {formtype === 'enquiry' && (
-                    <div className="text-2xl text-prime-blue font-semibold text-center">Contact Us</div>
-                )}
+                <form onSubmit={handleSubmit} className="space-y-3 col-span-5">
+                    {formtype === 'enquiry' && (
+                        <div className="text-2xl text-prime-blue font-semibold text-center">Contact Us</div>
+                    )}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <input type="text" name="firstname" placeholder="Name" value={formData.firstname} onChange={handleChange} className="py-2 px-2 rounded-md border focus:outline-prime-blue/80" />
                         <input type="text" name="designation" placeholder="Designation" value={formData.designation} onChange={handleChange} className="py-2 px-2 rounded-md border focus:outline-prime-blue/80" />
@@ -143,7 +154,8 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
                                 <input type="text" name="mainBranchAddress" placeholder="Main Branch Address" value={formData.mainBranchAddress} onChange={handleChange} className="py-2 px-2 rounded-md border focus:outline-prime-blue/80" />
                                 <input type="text" name="otherBranches" placeholder="Other Branches" value={formData.otherBranches} onChange={handleChange} className="py-2 px-2 rounded-md border focus:outline-prime-blue/80" />
                                 <input type="text" name="company" placeholder="Company Name" value={formData.company} onChange={handleChange} className="py-2 px-2 rounded-md border focus:outline-prime-blue/80" />
-                                <textarea name="trainingsOffered" placeholder="Trainings Offered" rows={2} value={formData.trainingsOffered} onChange={handleChange} className="input col-span-2 py-2 px-2 rounded-md border focus:outline-prime-blue/80 " />
+                                <textarea name="trainingsOffered" placeholder="Trainings Offered" rows={1} value={formData.trainingsOffered} onChange={handleChange} className="input col-span-2 py-2 px-2 rounded-md border focus:outline-prime-blue/80 " />
+                                <textarea name="about_company" placeholder="About Company" rows={2} value={formData.about_company} onChange={handleChange} className="input col-span-2 py-2 px-2 rounded-md border focus:outline-prime-blue/80 " />
                             </>
                         )}
 
@@ -156,37 +168,72 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
                     </div>
 
                     {formtype === 'corporate' && (
-                        <div className="flex gap-4 items-start">
-                            <p className="font-medium text-nowrap">I Need :</p>
-                            <div className="flex flex-wrap gap-4">
-                                {[
-                                    ['website', 'Website'],
-                                    ['globalScheduleAndCurrency', 'Global Schedule Time Zone & Currency Management'],
-                                    ['webChat', 'Web Chat'],
-                                    ['elearningPlatform', 'E-learning Platform'],
-                                    ['digitalMarketing', 'Digital Marketing Services'],
-                                    ['leadGeneration', 'Lead Generation'],
-                                ].map(([key, label]) => (
-                                    <label key={key} className="inline-flex text-sm items-center gap-2">
-                                        <input
-                                            type="checkbox"
-                                            name={key}
-                                            checked={formData.requirements[key as keyof typeof formData.requirements]}
-                                            onChange={handleCheckboxChange}
-                                        />
-                                        {label}
-                                    </label>
-                                ))}
+                        <div className="w-full space-y-2">
+
+                            {/* Dropdown */}
+                            <div className="flex items-center gap-4">
+                                <label className="font-medium text-nowrap block mb-2">I Need : </label>
+                                <select
+                                    className="w-full border px-3 py-2 rounded-md focus:outline-prime-blue/80"
+                                    onChange={(e) => {
+                                        const value = e.target.value;
+                                        if (value && !formData.requirements.includes(value)) {
+                                            setFormData(prev => ({
+                                                ...prev,
+                                                requirements: [...prev.requirements, value],
+                                            }));
+                                        }
+                                        e.target.value = ''; // Reset after select
+                                    }}
+                                >
+                                    <option value="">Select an options</option>
+                                    {requirementOptions
+                                        .filter(opt => !formData.requirements.includes(opt.value))
+                                        .map(opt => (
+                                            <option key={opt.value} value={opt.value}>
+                                                {opt.label}
+                                            </option>
+                                        ))}
+                                </select>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                                {/* <label className="font-medium text-nowrap block mb-2"></label> */}
+
+                                {/* Tag List */}
+                                <div className="flex flex-wrap gap-1 mb-2">
+                                    {formData.requirements.map((item) => (
+                                        <div
+                                            key={item}
+                                            className="flex items-center gap-1 bg-prime-blue/10 text-prime-blue border border-prime-blue rounded-full px-2 py-0.5 text-xs"
+                                        >
+                                            {requirementOptions.find(opt => opt.value === item)?.label || item}
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    setFormData(prev => ({
+                                                        ...prev,
+                                                        requirements: prev.requirements.filter(req => req !== item),
+                                                    }))
+                                                }
+                                                className="text-prime-blue text-sm hover:text-red-500"
+                                            >
+                                                ×
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     )}
+
 
                     {formtype === 'enquiry' && (
                         <div className="flex items-center gap-3">
                             <input
                                 type="checkbox"
-                                name="demoRequired"
-                                checked={formData.demoRequired}
+                                name="demo"
+                                checked={formData.demo}
                                 onChange={handleCheckboxChange}
                             />
                             <label>Demo Required?</label>
@@ -194,12 +241,30 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
                     )}
 
                     <div className="mt-4 flex justify-center gap-4">
-                        <button type="submit" className="px-20 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold">
+                        <button type="submit" className="px-20 py-2 bg-prime-blue/80 hover:bg-prime-blue duration-300 text-white rounded-md font-semibold">
                             Send Message
                         </button>
                     </div>
                 </form>
             </div>
+            {showThankyou && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+                    <div className="bg-white p-6 rounded-lg shadow-md text-center max-w-sm w-full">
+                        <h2 className="text-xl font-semibold text-prime-blue mb-3">Thank You!</h2>
+                        <p className="text-sm mb-5">We have received your request. Our team will get back to you within 24 hours.</p>
+                        <button
+                            onClick={() => {
+                                setShowThankyou(false);
+                                onClose(); // Close the form
+                            }}
+                            className="bg-prime-blue text-white px-5 py-2 rounded hover:bg-prime-blue/90"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 };

@@ -2,6 +2,7 @@
 import React from 'react'
 import CategoryAndCourseListing from './CategoryAndBlogsListing'
 import RightForm from './CategoryAndBlogsListing/RightForm'
+import SkillDeckIntro from './ArticleBody/SkillDeckInfi'
 
 const Blogs = () => {
   return (
@@ -23,6 +24,7 @@ const Blogs = () => {
             <RightForm/>
           </div>
         </div>
+        <SkillDeckIntro/>
       </div>
 
     </React.Fragment>

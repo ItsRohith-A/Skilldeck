@@ -21,7 +21,7 @@ const ArticleBody = () => {
 
 
             {/* Right Sticky Section */}
-            <div className="sticky top-20 hidden md:block lg:col-span-3 px-4 lg:px-0 2xl:col-span-3">
+            <div className="lg:sticky top-20 block lg:col-span-3 px-4 md:px-0 2xl:col-span-3">
               <StickyRight />
             </div>
           </div>
