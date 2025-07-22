@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { IoCallOutline, IoLocationOutline, IoMailOutline } from 'react-icons/io5';
 import { TfiWorld } from 'react-icons/tfi';
 import img from '../../../../public/Blogs/popupimg.png';
@@ -28,6 +28,7 @@ const requirementOptions = [
 const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corporate' }) => {
     const dispatch = useDispatch();
     const [showThankyou, setShowThankyou] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [formData, setFormData] = useState({
         firstname: '',
@@ -48,6 +49,24 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
     });
 
     const pathname = usePathname();
+
+    const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+
+    useEffect(() => {
+        const handleClickOutside = (event: { target: any; }) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+
 
     useEffect(() => {
         const slug = pathname.split('/').filter(Boolean).pop();
@@ -88,7 +107,7 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
             setError(errorMessage);
             return;
         }
-
+        console.log("Submitted Form Data:", formData);
         dispatch(submitForm({
             ...formData, formtype,
             curriculum: false,
@@ -168,64 +187,76 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
                     </div>
 
                     {formtype === 'corporate' && (
-                        <div className="w-full space-y-2">
+                        <div className="w-full space-y-2 relative" ref={dropdownRef}>
+                            <label className="font-medium block mb-1">I Need:</label>
 
-                            {/* Dropdown */}
-                            <div className="flex items-center gap-4">
-                                <label className="font-medium text-nowrap block mb-2">I Need : </label>
-                                <select
-                                    className="w-full border px-3 py-2 rounded-md focus:outline-prime-blue/80"
-                                    onChange={(e) => {
-                                        const value = e.target.value;
-                                        if (value && !formData.requirements.includes(value)) {
-                                            setFormData(prev => ({
-                                                ...prev,
-                                                requirements: [...prev.requirements, value],
-                                            }));
-                                        }
-                                        e.target.value = ''; // Reset after select
-                                    }}
-                                >
-                                    <option value="">Select an options</option>
-                                    {requirementOptions
-                                        .filter(opt => !formData.requirements.includes(opt.value))
-                                        .map(opt => (
-                                            <option key={opt.value} value={opt.value}>
-                                                {opt.label}
-                                            </option>
-                                        ))}
-                                </select>
+                            {/* Trigger */}
+                            <div
+                                className="w-full border px-3 py-2 rounded-md bg-white cursor-pointer relative"
+                                onClick={() => setDropdownOpen(prev => !prev)}
+                            >
+                                {formData.requirements.length > 0
+                                    ? `${formData.requirements.length} selected`
+                                    : 'Select options'}
+                                <span className="absolute right-3 top-2.5 text-gray-500 text-sm">▾</span>
                             </div>
 
-                            <div className="flex items-center gap-2">
-                                {/* <label className="font-medium text-nowrap block mb-2"></label> */}
-
-                                {/* Tag List */}
-                                <div className="flex flex-wrap gap-1 mb-2">
-                                    {formData.requirements.map((item) => (
-                                        <div
-                                            key={item}
-                                            className="flex items-center gap-1 bg-prime-blue/10 text-prime-blue border border-prime-blue rounded-full px-2 py-0.5 text-xs"
+                            {/* Dropdown */}
+                            {dropdownOpen && (
+                                <div
+                                    className="absolute bottom-12 w-full bg-white border border-gray-300 rounded-md shadow-md z-50 max-h-48 overflow-y-auto"
+                                >
+                                    {requirementOptions.map(opt => (
+                                        <label
+                                            key={opt.value}
+                                            className="flex items-center px-3 py-2 hover:bg-gray-100 cursor-pointer gap-2"
                                         >
-                                            {requirementOptions.find(opt => opt.value === item)?.label || item}
-                                            <button
-                                                type="button"
-                                                onClick={() =>
+                                            <input
+                                                type="checkbox"
+                                                checked={formData.requirements.includes(opt.value)}
+                                                onChange={(e) => {
+                                                    e.stopPropagation();
+                                                    const exists = formData.requirements.includes(opt.value);
                                                     setFormData(prev => ({
                                                         ...prev,
-                                                        requirements: prev.requirements.filter(req => req !== item),
-                                                    }))
-                                                }
-                                                className="text-prime-blue text-sm hover:text-red-500"
-                                            >
-                                                ×
-                                            </button>
-                                        </div>
+                                                        requirements: exists
+                                                            ? prev.requirements.filter(req => req !== opt.value)
+                                                            : [...prev.requirements, opt.value],
+                                                    }));
+                                                }}
+                                            />
+                                            <span>{opt.label}</span>
+                                        </label>
                                     ))}
                                 </div>
+                            )}
+
+                            {/* Selected Tags */}
+                            <div className="flex flex-wrap gap-1 mt-2">
+                                {formData.requirements.map((item) => (
+                                    <div
+                                        key={item}
+                                        className="flex items-center gap-1 bg-prime-blue/10 text-prime-blue border border-prime-blue rounded-full px-2 py-0.5 text-xs"
+                                    >
+                                        {requirementOptions.find(opt => opt.value === item)?.label || item}
+                                        <button
+                                            type="button"
+                                            onClick={() =>
+                                                setFormData(prev => ({
+                                                    ...prev,
+                                                    requirements: prev.requirements.filter(req => req !== item),
+                                                }))
+                                            }
+                                            className="text-prime-blue text-sm hover:text-red-500"
+                                        >
+                                            ×
+                                        </button>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     )}
+
 
 
                     {formtype === 'enquiry' && (
