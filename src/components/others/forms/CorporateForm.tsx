@@ -129,15 +129,15 @@ const CorporateForm: React.FC<CorporateFormProps> = ({ onClose, formtype = 'corp
                         <ul className="space-y-2 text-sm">
                             <li className="flex items-center gap-4">
                                 <div className="bg-white rounded-full p-2"><IoCallOutline className="text-prime-blue" /></div>
-                                +91 98765 43210
+                                +91 9036707847
                             </li>
                             <li className="flex items-center gap-4">
                                 <div className="bg-white rounded-full p-2"><IoMailOutline className="text-prime-blue" /></div>
-                                info@skilldeck.com
+                                hello@skilldeck.net
                             </li>
                             <li className="flex items-center gap-4">
                                 <div className="bg-white rounded-full p-2"><TfiWorld className="text-prime-blue" /></div>
-                                https://skilldeck.com
+                                https://skilldeck.net/
                             </li>
                             <li className="flex items-center gap-4">
                                 <div className="bg-white rounded-full p-2"><IoLocationOutline className="text-prime-blue" /></div>

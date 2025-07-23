@@ -23,7 +23,7 @@ const Article = () => {
         <meta property="og:title" content={singleArticle?.meta_title || singleArticle?.title} />
         <meta property="og:description" content={singleArticle?.meta_description} />
         {/* <meta property="og:image" content={singleArticle?.} /> */}
-        <meta property="og:url" content={`https://skilldeck.com/blog/${singleArticle?.slug}`} />
+        <meta property="og:url" content={`https://skilldeck.net/blog/${singleArticle?.slug}`} />
       </Head>
       <NavBar />
       {/* Main Body */}
