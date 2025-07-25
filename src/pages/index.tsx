@@ -1,24 +1,17 @@
-import FeaturesTable from "@/components/features/FeaturesTable";
 import TechnicalAspects from "@/components/features/TechnicalAspects";
-import Banner from "@/components/home/Banner";
-import BannerImage from "@/components/home/BannerImage";
 import Benefit from "@/components/home/Benefit";
 import Collaborative from "@/components/home/Collaborative";
 import DemoVideo from "@/components/home/DemoVideo";
 import EdtechSpace from "@/components/home/EdtechSpace";
 import Faq from "@/components/home/Faq";
-import Features from "@/components/home/Features";
-import Founder from "@/components/home/Founder";
 import FullyAutomated from "@/components/home/FullyAutomated";
 import NewBanner from "@/components/home/NewBanner";
 import OurClients from "@/components/home/OurClients";
 import Pricing from "@/components/home/Pricing";
 import StickyNavbar from "@/components/home/StickyNavbar";
 import Unique from "@/components/home/Unique";
-import BottomContent from "@/components/others/BottomContent";
 import Footer from "@/components/others/Footer";
 import NavBar from "@/components/others/NavBar";
-import localFont from "next/font/local";
 import Head from "next/head";
 
 // const sans = localFont({
@@ -39,10 +32,27 @@ export default function Home() {
         <title>Fully Automated Platform For Training Companies | SkillDeck</title>
         <meta name="title" content="Fully Automated Platform For Training Companies | SkillDeck" />
         <meta name="description" content="Automate your marketing, sales, operations and various other functional departments at 5X times lesser cost and Skyrocket your leads and sales. 4X times faster growth & 6X higher conversions." />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://skilldeck.net/" />
+        <meta property="og:title" content="Fully Automated Platform For Training Companies | SkillDeck" />
+        <meta property="og:description" content="Automate your marketing, sales, operations and various other functional departments at 5X times lesser cost and Skyrocket your leads and sales. 4X times faster growth & 6X higher conversions." />
+        <meta property="og:image" content="https://skilldeck.net/_next/static/media/img1.e9fe5ca3.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://skilldeck.net/" />
+        <meta name="twitter:title" content="Fully Automated Platform For Training Companies | SkillDeck" />
+        <meta name="twitter:description" content="Automate your marketing, sales, operations and various other functional departments at 5X times lesser cost and Skyrocket your leads and sales. 4X times faster growth & 6X higher conversions." />
+        <meta name="twitter:image" content="https://skilldeck.net/_next/static/media/img1.e9fe5ca3.png" />
       </Head>
+
       <NavBar />
       <NewBanner />
-      <OurClients />
+      <div className="my-6 lg:my-20">
+        <OurClients />
+      </div>
       {/* <BannerImage /> */}
       <StickyNavbar />
       <FullyAutomated />
