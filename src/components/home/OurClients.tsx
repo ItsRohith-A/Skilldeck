@@ -31,7 +31,7 @@ const OurClients: React.FC = () => {
     }, []);
 
     return (
-        <div className="my-6 lg:my-20 container mx-auto">
+        <div className="container mx-auto">
 
             <div
                 className="w-full py-6 inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"

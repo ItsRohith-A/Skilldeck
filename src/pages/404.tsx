@@ -4,8 +4,24 @@ import notfound from '../../public/notfound/404img.svg';
 import Link from 'next/link';
 import NavBar from '@/components/others/NavBar';
 import Footer from '@/components/others/Footer';
+import { useDispatch } from 'react-redux';
+import { openForm, updateFormFields } from '@/Redux/slices/Forms/FormSlice';
 
 function Notfound() {
+
+    const dispatch = useDispatch();
+
+    const triggerForm = () => {
+        dispatch(openForm());
+        dispatch(updateFormFields({
+            id: 'home-banner',
+            type: 'enquiry',
+            formId: 1,
+            curriculum: false,
+            slug: '',
+        }));
+    };
+
     return (
         <>
             <NavBar />
@@ -26,9 +42,9 @@ function Notfound() {
                                 <Link href="/" className="w-fit my-2 border rounded py-3 px-6 text-center bg-prime-blue text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-prime-blue focus:ring-opacity-50">
                                     Take me there!
                                 </Link>
-                                <Link href="/contact-us" className="w-fit my-2 border-2 rounded py-3 px-6 text-center  border-prime-blue text-prime-dark hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-prime-blue focus:ring-opacity-50">
+                                <button onClick={triggerForm} className="w-fit my-2 border-2 rounded py-3 px-6 text-center  border-prime-blue text-prime-dark hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-prime-blue focus:ring-opacity-50">
                                     Get In Touch
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>
