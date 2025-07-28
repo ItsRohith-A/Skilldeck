@@ -1,6 +1,8 @@
+import { openForm, updateFormFields } from '@/Redux/slices/Forms/FormSlice';
 import Link from 'next/link';
 import React from 'react';
 import { FaGlobe, FaChalkboardTeacher, FaMobileAlt, FaCogs, FaRegListAlt, FaUserCog, FaTasks, FaRobot, FaComments } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 
 const services = [
     {
@@ -51,6 +53,20 @@ const services = [
 ];
 
 const DevelopmentServices = () => {
+
+    const dispatch = useDispatch();
+
+    const triggerForm = () => {
+        dispatch(openForm());
+        dispatch(updateFormFields({
+            id: 'home-banner',
+            type: 'enquiry',
+            formId: 1,
+            curriculum: false,
+            slug: '',
+        }));
+    };
+
     return (
         <div className="container mx-auto mt-12 xl:mt-24">
             <div className="grid grid-cols-3 gap-12 items-center border border-prime-blue rounded-3xl p-12">
@@ -61,7 +77,7 @@ const DevelopmentServices = () => {
                     <div className="text-zinc-800 text-base font-bold leading-normal mt-4">
                         I specialize in UI/UX design and development. My passion is solving problems through user-centric systems and digital innovation.
                     </div>
-                    <button className="px-4 py-4 w-fit text-white text-base font-bold bg-prime-blue rounded-xl hover:shadow-[0px_10px_32px_0px_rgba(0,103,236,0.20)]" >
+                    <button onClick={triggerForm} className="px-4 py-4 w-fit text-white text-base font-bold bg-prime-blue rounded-xl hover:shadow-[0px_10px_32px_0px_rgba(0,103,236,0.20)]" >
                         Hire Me
                     </button>
                 </div>

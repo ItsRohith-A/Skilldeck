@@ -1,5 +1,6 @@
 // components/ServicesWorkflow.tsx
 
+import { openForm, updateFormFields } from '@/Redux/slices/Forms/FormSlice';
 import React from 'react';
 import {
     FaRegLightbulb,
@@ -7,6 +8,7 @@ import {
     FaCode,
     FaRocket,
 } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 
 const workflowSteps = [
     {
@@ -41,6 +43,20 @@ const hiringBenefits = [
 ];
 
 const ServicesWorkflow = () => {
+
+    const dispatch = useDispatch();
+
+    const triggerForm = () => {
+        dispatch(openForm());
+        dispatch(updateFormFields({
+            id: 'home-banner',
+            type: 'enquiry',
+            formId: 1,
+            curriculum: false,
+            slug: '',
+        }));
+    };
+
     return (
         <section className="bg-prime-dark py-12 xl:py-24 mt-12 xl:mt-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-12">
@@ -88,8 +104,8 @@ const ServicesWorkflow = () => {
                         </p>
 
                         <div className="flex flex-wrap gap-4">
-                            <button className="px-6 py-3 bg-prime-blue text-prime-dark rounded-xl font-bold hover:bg-opacity-90 transition">Hire Us</button>
-                            <button className="px-6 py-3 bg-white text-prime-dark rounded-xl font-bold hover:bg-gray-200 transition">Get in Touch</button>
+                            <button onClick={triggerForm} className="px-6 py-3 bg-prime-blue text-prime-dark rounded-xl font-bold hover:bg-opacity-90 transition">Hire Us</button>
+                            <button onClick={triggerForm} className="px-6 py-3 bg-white text-prime-dark rounded-xl font-bold hover:bg-gray-200 transition">Get in Touch</button>
                         </div>
                     </div>
                 </div>
