@@ -22,8 +22,13 @@ function MainNav() {
             <div className='container mx-auto flex justify-between items-center px-4'>
                 {/* Logo */}
                 <div className="flex items-center gap-6">
-                    <Link href='/'>
-                        <Image src={logo} alt='logo' className='w-40 h-auto' />
+                    <div className="flex items-center gap-6">
+                        <Link href='/'>
+                            <Image src={logo} alt='logo' className='w-40 h-auto' />
+                        </Link>
+                    </div>
+                    <Link href='/portfolio' className='bg-prime-blue text-white font-medium px-4 ml-12 py-2 rounded '>
+                        View Portfolio
                     </Link>
                 </div>
 
@@ -47,19 +52,17 @@ function MainNav() {
 
                 </div>
 
-                {/* Phone Number and Buy Now */}
-                <div className="hidden md:flex">
-
-                    <Link href='/contact-us' className='border-2 border-prime-dark font-medium px-4 ml-12 py-2 rounded '>
-                        Contact Us
-                    </Link>
-                </div>
-
                 {/* Mobile Menu Button */}
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="text-gray-700">
                         <IoMdMenu className="h-6 w-6" />
                     </button>
+                </div>
+                {/* Phone Number and Buy Now */}
+                <div className="hidden md:flex">
+                    <Link href='/contact-us' className='border-2 border-prime-dark font-medium px-4 ml-12 py-2 rounded '>
+                        Contact Us
+                    </Link>
                 </div>
             </div>
 

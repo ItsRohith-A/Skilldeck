@@ -52,9 +52,9 @@ const index = () => {
                     <li><span>Support whenever the server has an issue</span></li>
                 </ol>
                 <p>&nbsp;</p>
-                <p><span>For any custom development or additional features in the application, we charge based on the efforts, and it can be either a fixed amount or billed hourly at INR 999 per hour as per the client's decisions.&nbsp;</span></p>
+                <p><span>For any custom development or additional features in the application, we charge based on the efforts, and it can be either a fixed amount or billed hourly at INR 999 per hour as per the client&apos;s decisions.&nbsp;</span></p>
                 <p><br /><br /></p>
-                <p><strong>What's chargeable?</strong></p>
+                <p><strong>What&apos;s chargeable?</strong></p>
                 <p>&nbsp;</p>
                 <p><span>The following are all charged based on the effort put into building/implementing it.</span></p>
                 <p>&nbsp;</p>
@@ -63,7 +63,7 @@ const index = () => {
                     <li><span>Custom changes in the frontend design and development</span></li>
                     <li><span>Custom features or changes in the backend application</span></li>
                     <li><span>Integration of the platform with third-party applications</span></li>
-                    <li><span>Development of new features or options as per the client's requirements</span></li>
+                    <li><span>Development of new features or options as per the client&apos;s requirements</span></li>
                     <li><span>Migration of the current platform to a new website</span></li>
                     <li><span>Adding new features to the application</span></li>
                     <li><span>New payment gateway integration</span></li>

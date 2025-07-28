@@ -16,18 +16,18 @@ const index = () => {
                 <p>The application has most of the features needed for the training companies and comes with all the features as it is based on the plan you subscribe</p>
                 <p>&nbsp;</p>
                 <p>The application license offers hosting as well</p>
-                <p>The application price doesn't include the front-end, as it's going to be unique and based on the company's requirements and the same is available at a buy at one time and use it forever at a price of 1500 USD.</p>
+                <p>The application price doesn't include the front-end, as it&apos;s going to be unique and based on the company&apos;s requirements and the same is available at a buy at one time and use it forever at a price of 1500 USD.</p>
                 <p>The front end has to be designed as per the backend options/fields and some of them can be altered or renamed within the scope of the application without developing or assuring any new fields development or customization.</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p><strong>Application Brief.</strong></p>
                 <p>&nbsp;</p>
-                <p>The application is purchased and used by the client under the configurations or conditions while the application is delivered/purchased by the client, and it can be used for an indefinite period without any extra charges for the application usage the application will be hosted on the client's server or the server for which client also has access.</p>
+                <p>The application is purchased and used by the client under the configurations or conditions while the application is delivered/purchased by the client, and it can be used for an indefinite period without any extra charges for the application usage the application will be hosted on the client&apos;s server or the server for which client also has access.</p>
                 <p>&nbsp;</p>
-                <p>This license allows the client to use this application indefinitely under the prescribed software host configurations, and this doesn&rsquo;t allow or encourage the client to resell or reuse it on other websites. It's a violation of the terms and conditions.</p>
+                <p>This license allows the client to use this application indefinitely under the prescribed software host configurations, and this doesn&rsquo;t allow or encourage the client to resell or reuse it on other websites. It&apos;s a violation of the terms and conditions.</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
-                <p><strong>What's not covered in this</strong>,</p>
+                <p><strong>What&apos;s not covered in this</strong>,</p>
                 <p>&nbsp;</p>
                 <ol>
                     <li>
@@ -125,10 +125,10 @@ const index = () => {
                     </li>
                 </ol>
                 <p>&nbsp;</p>
-                <p>For any custom development or additional features in the application, we charge based on the efforts, and it can be either a fixed amount or billed hourly at INR 999 per hour as per the client's decisions.&nbsp;</p>
+                <p>For any custom development or additional features in the application, we charge based on the efforts, and it can be either a fixed amount or billed hourly at INR 999 per hour as per the client&apos;s decisions.&nbsp;</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
-                <p><strong>What's charged from the following year(After the first year) ?</strong></p>
+                <p><strong>What&apos;s charged from the following year(After the first year) ?</strong></p>
                 <p>&nbsp;</p>
                 <p>The following are all charged based on the effort put into building/implementing it.</p>
                 <p>&nbsp;</p>
@@ -146,7 +146,7 @@ const index = () => {
                         <p>Integration of the platform with third-party applications</p>
                     </li>
                     <li>
-                        <p>Development of new features or options as per the client's requirements</p>
+                        <p>Development of new features or options as per the client&apos;s requirements</p>
                     </li>
                     <li>
                         <p>Migration of the current platform to a new website</p>
@@ -172,7 +172,7 @@ const index = () => {
                 <p>&nbsp;</p>
                 <ol>
                     <li>
-                        <p>Support on upgradation of the servers as per the website content and traffic or client's needs</p>
+                        <p>Support on upgradation of the servers as per the website content and traffic or client&apos;s needs</p>
                     </li>
                     <li>
                         <p>Renewals of domains and servers support</p>
@@ -181,7 +181,7 @@ const index = () => {
                         <p>Support on renewals and configuration of the existing third-party applications</p>
                     </li>
                     <li>
-                        <p>Support on renewals/upgradations of the APIs if the client's activities demand</p>
+                        <p>Support on renewals/upgradations of the APIs if the client&apos;s activities demand</p>
                     </li>
                     <li>
                         <p>Updating the technology/code to the new versions if the client insists or if it is necessary</p>

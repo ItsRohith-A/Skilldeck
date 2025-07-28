@@ -312,7 +312,7 @@ const GuestAuthor = () => {
                     <div className="mt-16 text-center">
                         <div className="bg-white rounded-2xl p-5 md:p-10 border border-gray-200 shadow-xl inline-block max-w-xl w-full hover:shadow-2xl transition-all">
                             <h3 className="text-lg md:text-2xl font-bold mb-4 text-blue-700">
-                                Let's Build the Future of Learning, Together
+                                Let&apos;s Build the Future of Learning, Together
                             </h3>
                             <p className="text-sm md:text-base text-gray-700 mb-6">
                                 Join a growing list of guest authors, trainers, thought leaders, and professionals who are shaping how India and the world approach learning, careers, and upskilling.

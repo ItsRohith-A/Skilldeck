@@ -27,7 +27,7 @@ const index = () => {
                     <li><strong>Training Data:</strong><span> Records of attendance, assessments, progress, certifications, and feedback.</span></li>
                     <li><strong>User-generated Content:</strong><span> Any information the trainee submits through the Platform, including forms, responses, and comments.</span></li>
                 </ul>
-                <p><span>All the data collected will be the asset or property of the respective training provider and it's all secure.</span></p>
+                <p><span>All the data collected will be the asset or property of the respective training provider and it&apos;s all secure.</span></p>
                 <h4><strong>c. Automatically Collected Information</strong></h4>
                 <p><span>When users (both Customers and End Users) interact with the Platform, we may collect information automatically:</span></p>
                 <ul>

@@ -69,19 +69,19 @@ const DevelopmentServices = () => {
 
     return (
         <div className="container mx-auto mt-12 xl:mt-24">
-            <div className="grid grid-cols-3 gap-12 items-center border border-prime-blue rounded-3xl p-12">
+            <div className="  lg:grid lg:grid-cols-3 gap-12 items-center border-y lg:border border-prime-blue lg:rounded-3xl lg:p-12  p-4">
                 <div className="col-span-1 space-y-4">
-                    <div className="text-neutral-950 text-4xl font-bold leading-[54px]">
+                    <div className="text-neutral-950 text-2xl lg:text-3xl xl:text-4xl font-bold lg:leading-[54px]">
                         I provide end-to-end <span className="text-prime-blue">development services</span> for
                     </div>
-                    <div className="text-zinc-800 text-base font-bold leading-normal mt-4">
+                    <div className="text-zinc-800 text-sm lg:text-base font-bold leading-normal mt-4">
                         I specialize in UI/UX design and development. My passion is solving problems through user-centric systems and digital innovation.
                     </div>
-                    <button onClick={triggerForm} className="px-4 py-4 w-fit text-white text-base font-bold bg-prime-blue rounded-xl hover:shadow-[0px_10px_32px_0px_rgba(0,103,236,0.20)]" >
+                    <button onClick={triggerForm} className="px-4 py-4 w-fit text-white text-sm lg:text-base font-bold bg-prime-blue rounded-xl hover:shadow-[0px_10px_32px_0px_rgba(0,103,236,0.20)]" >
                         Hire Me
                     </button>
                 </div>
-                <div className="col-span-2">
+                <div className="hidden lg:block col-span-2">
                     <div className="grid grid-cols-2 gap-8 overflow-y-auto overflow-hidden h-96 pr-2">
                         <div className="space-y-12 px-5 py-6">
                             {services.slice(0, Math.ceil(services.length / 2)).map((service, index) => (
@@ -102,6 +102,18 @@ const DevelopmentServices = () => {
                             ))}
                         </div>
                     </div>
+                </div>
+                {/* mobile view */}
+                <div className="lg:hidden mt-10 space-y-6 ">
+                    {services.map((service, index) => (
+                        <div key={index} className="border border-dashed border-prime-blue rounded-xl p-4 hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                            <div className="flex items-center gap-4 mb-3">
+                                <div className="pt-1">{service.icon}</div>
+                                <div className="text-black text-base font-bold leading-tight">{service.title}</div>
+                            </div>
+                            <div className="text-zinc-800 text-sm font-medium leading-snug">{service.description}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
