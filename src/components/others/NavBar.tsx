@@ -27,11 +27,11 @@ function MainNav() {
                             <Image src={logo} alt='logo' className='w-40 h-auto' />
                         </Link>
                     </div>
-                    <Link href='/portfolio' className='flex items-center gap-2 bg-prime-blue text-white font-medium px-4 py-2 rounded-lg hover:rounded-full transition-transform duration-1000 ease-in-out'>
+                    <Link href='/portfolio' className='flex items-center gap-2 bg-prime-blue text-white font-medium px-4 py-2 rounded-lg hover:scale-105 transition-all duration-300 ease-in-out'>
                         <div className="">
                             <IoGitBranch />
                         </div>
-                        <div className="">View Portfolio</div>
+                        <div className="text-xs sm:text-sm lg:text-base">View Portfolio</div>
                     </Link>
                 </div>
 
@@ -84,6 +84,12 @@ function MainNav() {
                     {/* <Link href="/features" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Features
                     </Link> */}
+                    <Link href='/portfolio' className='flex items-center gap-2 bg-prime-blue text-white font-medium px-4 py-2 rounded-lg hover:rounded-full transition-transform duration-1000 ease-in-out'>
+                        <div className="">
+                            <IoGitBranch />
+                        </div>
+                        <div className="text-sm lg:text-base">View Portfolio</div>
+                    </Link>
                     <Link href="/pricing" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Pricing
                     </Link>

@@ -28,7 +28,6 @@ const ApplicationFeatures = () => {
                 The <span className="text-prime-blue">Application</span> & Their{" "}
                 <span className="text-prime-blue">Features</span> Brief
             </h2>
-
             <div className="grid md:grid-cols-6 gap-6 mt-10">
                 {/* Mobile: Dropdown */}
                 <div className="md:hidden col-span-6">
@@ -112,7 +111,6 @@ const ApplicationFeatures = () => {
                         </div>
                     )
                     }
-
                 </div>
             </div>
         </div>
