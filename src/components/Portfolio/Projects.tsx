@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import preview1 from '../../../public/portfolio/pojectpreview/preview1.png'
 import preview2 from '../../../public/portfolio/pojectpreview/preview2.png'
 import preview3 from '../../../public/portfolio/pojectpreview/preview3.png'
+import preview4 from '../../../public/portfolio/pojectpreview/preview4.png'
+import preview5 from '../../../public/portfolio/pojectpreview/preview5.png'
+import preview6 from '../../../public/portfolio/pojectpreview/preview6.png'
 import { useDispatch } from 'react-redux'
 import { openForm, updateFormFields } from '@/Redux/slices/Forms/FormSlice'
 import { useRouter } from 'next/router'
@@ -10,41 +13,48 @@ import { useRouter } from 'next/router'
 const projectData = [
     {
         img: preview1,
-        title: 'Training Website',
+        title: 'Skilluped',
         subtitle: 'E-Learning Platform',
-        previewLink: 'https://kandradigital.com/',
+        previewLink: 'https://skilluped.com/',
+        showPreview: true,
     },
     {
         img: preview2,
-        title: 'Marketing Agency Site',
-        subtitle: 'Lead Generation',
-        previewLink: 'https://kandradigital.com/',
+        title: 'The Indian Flavour',
+        subtitle: 'E-commerce & Whole sell',
+        previewLink: 'https://frontend-indian-flavours.vercel.app/',
+        showPreview: true,
     },
     {
         img: preview3,
-        title: 'Portfolio Website',
-        subtitle: 'Freelancer Showcase',
-        previewLink: 'https://kandradigital.com/',
+        title: 'NevoLearn',
+        subtitle: 'Training & E-Learning Website',
+        previewLink: 'https://nevolearn.com/',
+        showPreview: true,
     },
     {
-        img: preview2,
-        title: 'Travel Booking App',
+        img: preview4,
+        title: 'VlSIFirst',
+        subtitle: 'VLSI Training Website',
+        previewLink: 'https://vlsifirst.com/',
+        showPreview: true,
+    },
+    {
+        img: preview5,
+        title: 'Mentoring App for IOS & Android',
         subtitle: 'Mobile UI Design',
-        previewLink: 'https://kandradigital.com/',
+        previewLink: '',
+        showPreview: false, // No preview for mobile app
     },
     {
-        img: preview1,
-        title: 'Corporate Website',
-        subtitle: 'Consulting Firm',
-        previewLink: 'https://kandradigital.com/',
-    },
-    {
-        img: preview3,
-        title: 'Event Platform',
-        subtitle: 'Registration & Ticketing',
-        previewLink: 'https://kandradigital.com/',
+        img: preview6,
+        title: 'onefolds',
+        subtitle: 'Interior Design Websites',
+        previewLink: 'https://onefolds.com/',
+        showPreview: true,
     },
 ]
+
 
 const Projects = () => {
     const [visibleCount, setVisibleCount] = useState(3)
@@ -82,12 +92,18 @@ const Projects = () => {
                             <div className="border border-prime-blue overflow-hidden rounded-2xl relative transition-all duration-300 ease-in-out hover:scale-[1.02]">
                                 <div className="absolute inset-0 z-10 hidden group-hover:flex bg-black/30 items-center justify-center transition-opacity duration-300 ease-in-out">
                                     <div className="flex gap-2.5">
-                                        <button
-                                            onClick={() => router.push(item.previewLink)}
-                                            className="px-5 py-2.5 bg-prime-blue rounded-xl shadow-md transition hover:bg-prime-dark"
-                                        >
-                                            <div className="text-white text-sm font-bold">Preview</div>
-                                        </button>
+                                        {item.showPreview && (
+                                            <a
+                                                href={item.previewLink}
+                                                target="_blank"
+                                                rel="noopener noreferrer noindex nofollow"
+                                                className="px-5 py-2.5 bg-prime-blue rounded-xl shadow-md transition hover:bg-prime-dark"
+                                            >
+                                                <div className="text-white text-sm font-bold">Preview</div>
+                                            </a>
+                                        )}
+
+
                                         <button
                                             onClick={() => triggerForm(`poertfolio-project-${index + 1}`)}
                                             className="px-5 py-2.5 bg-prime-dark rounded-xl shadow-md transition hover:bg-prime-blue"
