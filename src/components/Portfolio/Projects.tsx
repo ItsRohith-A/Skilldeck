@@ -67,12 +67,12 @@ const Projects = () => {
     }
 
     return (
-        <div className="container mx-auto mt-12 xl:mt-24">
-            <div className="space-y-6">
-                <div className="text-neutral-950 text-4xl font-bold leading-[54px] text-center">
+        <div id='portfolio' className="container mx-auto mt-12 xl:mt-24">
+            <div className="space-y-3 lg:space-y-6 p-4 lg-p-0">
+                <div className="text-neutral-950 text-2xl lg:text-4xl font-bold leading-[40px] lg:leading-[54px] text-center">
                     My Creative Works & <span className="text-prime-blue">Latest Projects</span> for
                 </div>
-                <div className="text-center text-zinc-800 text-base font-bold">
+                <div className="text-center text-zinc-800 text-sm lg:text-base font-bold">
                     I have selected and mentioned here some of my latest projects to share with you.
                 </div>
 

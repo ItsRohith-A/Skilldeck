@@ -2,7 +2,7 @@ import Image from 'next/image';
 import logo from '../../../public/logos/mainlogo.svg';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { IoClose } from 'react-icons/io5';
+import { IoClose, IoGitBranch } from 'react-icons/io5';
 import { IoMdMenu } from 'react-icons/io';
 
 function MainNav() {
@@ -22,37 +22,44 @@ function MainNav() {
             <div className='container mx-auto flex justify-between items-center px-4'>
                 {/* Logo */}
                 <div className="flex items-center gap-6">
-                    <Link href='/'>
-                        <Image src={logo} alt='logo' className='w-40 h-auto' />
+                    <div className="flex items-center gap-6">
+                        <Link href='/'>
+                            <Image src={logo} alt='logo' className='w-40 h-auto' />
+                        </Link>
+                    </div>
+                    <Link href='/portfolio' className='flex items-center gap-2 bg-prime-blue text-white font-medium px-4 py-2 rounded-lg hover:rounded-full transition-transform duration-1000 ease-in-out'>
+                        <div className="">
+                            <IoGitBranch />
+                        </div>
+                        <div className="">View Portfolio</div>
                     </Link>
                 </div>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex md:items-center space-x-6">
-                    {/* <Link href="/features" className="text-prime-dark text-sm font-bold capitalize">
-                        Features
-                    </Link> */}
-                    <Link href="/pricing" className="text-prime-dark text-sm font-bold capitalize">
-                        Pricing
-                    </Link>
-                    <Link href="/blog" className="text-prime-dark text-sm font-bold capitalize">
-                        Blogs
-                    </Link>
-                    <Link href="/about-us" className="text-prime-dark text-sm font-bold capitalize">
-                        About Us
-                    </Link>
-                    <Link href="/become-a-guest-author" className="text-prime-dark text-sm font-bold capitalize">
-                        Guest Author
-                    </Link>
-
-                </div>
-
-                {/* Phone Number and Buy Now */}
-                <div className="hidden md:flex">
-
-                    <Link href='/contact-us' className='border-2 border-prime-dark font-medium px-4 ml-12 py-2 rounded '>
-                        Contact Us
-                    </Link>
+                <div className=" flex items-center gap-6">
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex md:items-center space-x-6">
+                        {/* <Link href="/features" className="text-prime-dark text-sm font-bold capitalize">
+                            Features
+                        </Link> */}
+                        <Link href="/pricing" className="text-prime-dark text-sm font-bold capitalize">
+                            Pricing
+                        </Link>
+                        <Link href="/blog" className="text-prime-dark text-sm font-bold capitalize">
+                            Blogs
+                        </Link>
+                        <Link href="/about-us" className="text-prime-dark text-sm font-bold capitalize">
+                            About Us
+                        </Link>
+                        <Link href="/become-a-guest-author" className="text-prime-dark text-sm font-bold capitalize">
+                            Guest Author
+                        </Link>
+                    </div>
+                    {/* Phone Number and Buy Now */}
+                    <div className="hidden md:flex">
+                        <Link href='/contact-us' className='border-2 border-prime-dark font-medium px-4 py-2 rounded '>
+                            Contact Us
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -61,6 +68,7 @@ function MainNav() {
                         <IoMdMenu className="h-6 w-6" />
                     </button>
                 </div>
+
             </div>
 
             {/* Mobile Menu */}

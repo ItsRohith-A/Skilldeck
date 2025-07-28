@@ -38,14 +38,14 @@ const techLogos = [
     { img: nestjs, name: 'NestJS' },
     { img: docker, name: 'Docker' },
     { img: reactnative, name: 'React Native' },
-    { img: styledcomponents, name: 'Styled Components' },
     { img: laravel, name: 'Laravel' },
+    { img: styledcomponents, name: 'Styled Components' },
 ];
 
 const ToolsTech = () => {
     return (
         <div className="container mx-auto mt-12 xl:mt-24 px-4">
-            <h2 className="text-prime-dark text-3xl sm:text-4xl text-center font-bold leading-relaxed mb-10">
+            <h2 className="text-prime-dark text-2xl md:text-3xl lg:text-4xl text-center font-bold leading-relaxed mb-6 lg:mb-10">
                 Tools & <span className="text-prime-blue">Tech Used</span>
             </h2>
 

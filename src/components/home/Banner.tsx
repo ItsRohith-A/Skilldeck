@@ -23,7 +23,7 @@ function Banner() {
             </p>
           </div>
           <p className="text-sm lg:text-base font-semibold mt-4">
-            It's a simplified tech and marketing solution for training companies.
+            It&apos;s a simplified tech and marketing solution for training companies.
           </p>
           <div className="flex justify-center mt-8">
             <button className="w-60 h-14 bg-prime-dark text-white rounded-lg bg-cover hover:bg-prime-blue flex items-center justify-center" style={{ backgroundImage: "url('/btngif.gif')" }}>

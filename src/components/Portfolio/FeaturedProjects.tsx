@@ -56,9 +56,8 @@ const FeaturedProjects = () => {
     }, []);
 
     return (
-        <section className="container mx-auto mt-12 xl:mt-24">
-            <h2 className="text-3xl font-bold text-center mb-12">Featured <span className='text-prime-blue'>Projects</span></h2>
-
+        <section className="container mx-auto mt-12 xl:mt-24 px-4 lg:px-0">
+            <h2 className="text-2xl lg:text-4xl font-bold text-center mb-12">Featured <span className='text-prime-blue'>Projects</span></h2>
             <div className="grid md:grid-cols-3 gap-6">
                 {projects.map((project, i) => (
                     <div

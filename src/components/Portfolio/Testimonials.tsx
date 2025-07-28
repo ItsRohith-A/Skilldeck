@@ -107,57 +107,63 @@ const Testimonials = () => {
 
     return (
         <section className="container mx-auto mt-12 xl:mt-24">
-            <div className="p-8 sm:p-12 rounded-2xl bg-prime-dark relative">
-                <div className="text-center text-red-50 text-sm font-normal mb-2">OUR CLIENTS SAY</div>
-                <h2 className="text-center text-white text-3xl sm:text-4xl font-semibold mb-6">
+            <div className="p-4 sm:p-12 lg:rounded-2xl bg-prime-dark relative">
+                <div className="text-center text-red-50 text-xs sm:text-sm font-normal mb-2">OUR CLIENTS SAY</div>
+                <h2 className="text-center text-white text-2xl sm:text-4xl font-semibold mb-6 leading-snug">
                     What Our Satisfied Clients Are Saying
                 </h2>
-                <div className=" px-4 sm:px-16 space-y-8">
-                    <FaQuoteLeft className="text-5xl text-prime-blue absolute top-6 left-6 animate-pulse" />
-                    {/* Testimonial Content */}
+
+                <div className="relative space-y-4 lg:space-y-8">
+                    <FaQuoteLeft className="hidden lg:block text-4xl sm:text-5xl text-prime-blue absolute top-4 left-4 animate-pulse" />
+
+                    {/* Testimonial Quote */}
                     <div className="min-h-28 flex items-center justify-center text-center px-2 sm:px-10">
-                        <p className="text-stone-300 text-lg sm:text-xl font-normal max-w-3xl">{quote}</p>
+                        <p className="text-stone-300 text-base sm:text-xl font-normal max-w-3xl">{quote}</p>
                     </div>
-                    {/* Author Details + Arrows */}
-                    <div className="flex flex-col sm:flex-row justify-between items-center gap-6 px-24">
+
+                    {/* Author & Navigation */}
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-12 px-4 sm:px-24">
                         {/* Author Info */}
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-4 w-full sm:w-auto">
                             <Image
                                 src={image}
                                 alt={author}
                                 width={48}
                                 height={48}
-                                className="rounded-md object-cover h-16 w-auto"
+                                className="rounded-md object-cover h-14 w-14"
                             />
-                            <div className='h-16 flex flex-col justify-center'>
-                                <p className="text-white font-semibold text-base">{author}</p>
-                                <p className="text-gray-400 text-sm">{authordec}</p>
+                            <div className='flex flex-col'>
+                                <p className="text-white font-semibold text-sm sm:text-base">{author}</p>
+                                <p className="text-gray-400 text-xs sm:text-sm">{authordec}</p>
                             </div>
                         </div>
-                        {/* Arrow Buttons */}
-                        <div className="flex gap-4">
+
+                        {/* Arrows */}
+                        <div className="flex gap-3 sm:gap-4">
                             <button
                                 onClick={handlePrev}
-                                className="p-3 bg-prime-blue  text-prime-dark rounded-xl font-bold hover:bg-opacity-90 transition active:bg-prime-blue duration-75"
+                                className="p-2 sm:p-3 bg-prime-blue text-prime-dark rounded-xl font-bold hover:bg-opacity-90 transition active:bg-prime-blue duration-75"
                             >
-                                <IoIosArrowRoundBack className="text-3xl" />
+                                <IoIosArrowRoundBack className="text-2xl sm:text-3xl" />
                             </button>
                             <button
                                 onClick={handleNext}
-                                className="p-3 bg-white text-prime-dark rounded-xl font-bold active:bg-prime-blue transition duration-75"
+                                className="p-2 sm:p-3 bg-white text-prime-dark rounded-xl font-bold active:bg-prime-blue transition duration-75"
                             >
-                                <IoIosArrowRoundForward className="text-3xl" />
+                                <IoIosArrowRoundForward className="text-2xl sm:text-3xl" />
                             </button>
                         </div>
                     </div>
-                    {/* Our Clients */}
-                    <div className="bg-white rounded-xl overflow-hidden h-20 flex items-center justify-center">
+
+                    {/* Our Clients Logos */}
+                    <div className="bg-white rounded-xl overflow-x-auto h-20 flex items-center justify-center w-full px-2">
                         <OurClients />
                     </div>
                 </div>
             </div>
         </section>
     );
+
 };
 
 export default Testimonials;

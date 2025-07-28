@@ -21,7 +21,7 @@ function Unique() {
                 <div className="self-center pb-6 space-y-4">
                   <div className="flex items-center gap-3">
                     <Image src={codingIcon} alt="coding icon" className="" />
-                    <div className="text-center text-prime-blue text-xl font-black tracking-wide">What's So Unique about this Application?</div>
+                    <div className="text-center text-prime-blue text-xl font-black tracking-wide">What&apos;s So Unique about this Application?</div>
                   </div>
                   <div className=" text-black text-lg font-medium leading-normal">This application was developed by a team with expertise in building applications for leading companies in the Ed-tech space and others that have grown from zero to a significant level in a short span
                   </div>
@@ -104,7 +104,7 @@ function Unique() {
                   <div className="flex items-center gap-3">
                     <Image src={codingIcon} alt="coding icon" className="" />
                     <div className="text-start text-prime-blue text-lg font-black">
-                      What's So Unique about this Application?
+                      What&apos;s So Unique about this Application?
                     </div>
                   </div>
                   <div className="text-black text-sm font-medium">

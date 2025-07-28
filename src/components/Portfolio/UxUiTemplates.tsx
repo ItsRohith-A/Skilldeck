@@ -40,17 +40,16 @@ const otherTemplates = [
 const UxUiTemplates = () => {
     return (
         <section className="mt-12 xl:mt-24 container mx-auto px-4">
-            <h2 className="text-neutral-800 text-3xl sm:text-4xl text-center font-bold leading-tight mb-12">
+            <h2 className="text-neutral-800 text-2xl sm:text-3xl lg:text-4xl text-center font-bold leading-tight mb-12">
                 <span className="text-prime-blue">UI/UX Templates</span> & Resources
             </h2>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Main Template Card */}
                 <div
                     className="relative p-5 rounded-2xl overflow-hidden space-y-5 group "
                     style={{ backgroundColor: mainTemplate.bgColor }}
                 >
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-center gap-4">
                         <div className="bg-white p-3 rounded-lg w-fit">
                             <Image
                                 src={mainTemplate.icon}
@@ -58,7 +57,7 @@ const UxUiTemplates = () => {
                                 className="w-12 h-auto"
                             />
                         </div>
-                        <p className="text-right text-dark text-lg sm:text-2xl font-semibold leading-snug pr-4">
+                        <p className="text-start lg:text-right text-dark text-lg sm:text-2xl font-semibold leading-snug pr-4">
                             {mainTemplate.titleTop}
                         </p>
                     </div>
@@ -68,7 +67,7 @@ const UxUiTemplates = () => {
                         alt="App Mockup"
                         className="absolute -bottom-3 w-60 h-auto right-8 sm:right-16 group-hover:-bottom-96 transition-all duration-1000"
                     />
-                    <p className="text-white text-xl sm:text-2xl font-semibold leading-tight pl-4 pb-4 whitespace-pre-line">
+                    <p className="text-center lg:text-start  text-white text-xl sm:text-2xl font-semibold leading-tight pl-4 pb-4 whitespace-pre-line">
                         {mainTemplate.titleBottom}
                     </p>
                 </div>

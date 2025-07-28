@@ -10,6 +10,7 @@ import FeaturedProjects from '@/components/Portfolio/FeaturedProjects'
 import ServicesWorkflow from '@/components/Portfolio/ServicesWorkflow'
 import Testimonials from '@/components/Portfolio/Testimonials'
 import UxUiTemplates from '@/components/Portfolio/UxUiTemplates'
+import ApplicationFeatures from '@/components/Portfolio/ApplicationFeatures'
 
 const index = () => {
     return (
@@ -22,6 +23,7 @@ const index = () => {
             <ServicesWorkflow />
             <FeaturedProjects />
             <UxUiTemplates />
+            <ApplicationFeatures />
             <Testimonials />
             <Faq />
             <Footer />

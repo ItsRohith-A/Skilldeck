@@ -37,7 +37,7 @@ const NewBanner = () => {
                 <div className="text-slate-500 text-center lg:text-start text-base lg:text-lg font-normal">
                     Skilldeck is a fully automated ed-tech platform for training companies. This has built-in modules or options that automate the work of marketing, sales, business, and operation teams.
                     <br /><br />
-                    It's a simplified tech and marketing solution for training companies.
+                    It&apos;s a simplified tech and marketing solution for training companies.
                 </div>
                 <div className=" flex justify-center  items-center lg:justify-start">
                     <button onClick={triggerForm} className="w-fit lg:h-14 px-8 lg:px-10 py-3 lg:py-4 bg-prime-blue rounded-full ">
