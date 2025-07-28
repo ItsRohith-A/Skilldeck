@@ -48,12 +48,12 @@ export const featuresData = [
         icon: FaGlobe,
         technologies: ["Next.js", "React.js", "Tailwind CSS", "Bootstrap"],
         points: [
-            "A fully automated events/training schedule management module",
-            "Trainer Management application",
-            "Advanced lead management module",
-            "Insightful sales and revenue dashboards",
+            "Easy-to-manage web structures with CMS integration",
+            "Modern UI design optimized for performance",
+            "Responsive layout across all devices",
+            "SEO-optimized static and dynamic content delivery",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "We design and develop modern websites that serve both marketing and functional purposes. Whether you're launching a simple landing page or a fully dynamic portal, our team ensures fast load times, robust security, and seamless performance across devices. Using cutting-edge technologies like Next.js and Tailwind CSS, we bring your ideas to life with a responsive and accessible design that drives conversions and user engagement.",
         buttonstatus: "active",
         buttontxt: "Request A Demo"
     },
@@ -68,7 +68,7 @@ export const featuresData = [
             "Optimized UI for mobile devices",
             "Secure authentication and user management",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "We build scalable, cross-platform mobile apps that deliver native performance and user experiences. From MVPs to enterprise-grade solutions, our apps are powered by Firebase and Node.js for real-time data sync, robust backend support, and secure user authentication. With intuitive interfaces and blazing-fast performance, we help brands engage users on mobile like never before.",
         buttonstatus: "active",
         buttontxt: "Request A Demo"
     },
@@ -83,7 +83,7 @@ export const featuresData = [
             "Assessment and tracking",
             "Student-teacher communication tools",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "We design e-learning systems tailored for schools, coaching centers, and training platforms. Our solutions include course modules, video hosting, quizzes, and completion certificates. Teachers and learners benefit from real-time feedback and interactive sessions. Built on Laravel and React.js, these systems are secure, easy to scale, and flexible to evolving academic needs.",
         buttonstatus: "active",
         buttontxt: "Request A Demo"
     },
@@ -98,7 +98,7 @@ export const featuresData = [
             "Follow-up reminders and notes",
             "Integration with marketing platforms",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "Our CRM solutions simplify sales workflows, automate outreach, and centralize client data. With real-time analytics and seamless integration into tools like email, SMS, and WhatsApp, teams can nurture leads more efficiently. We develop custom CRMs that adapt to your process — not the other way around. Perfect for B2B, retail, and service-driven businesses.",
         buttonstatus: "active",
         buttontxt: "Request A Demo"
     },
@@ -113,7 +113,7 @@ export const featuresData = [
             "User role-based access controls",
             "SEO-friendly content delivery",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "Our headless CMS platforms let you create, update, and publish content seamlessly. Designed for marketing and editorial teams, they include image management, version control, and real-time collaboration. Built with performance in mind, our CMS solutions support global scaling, multilingual content, and SEO enhancements out of the box.",
         buttonstatus: "active",
         buttontxt: "Request A Demo"
     },
@@ -128,7 +128,7 @@ export const featuresData = [
             "A/B testing of marketing assets",
             "Performance analytics dashboards",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "We empower marketing teams to automate workflows and target the right audiences at the right time. Our tools manage drip campaigns, customer journeys, engagement scoring, and more. With seamless API integration and real-time performance dashboards, you'll gain deeper insights and higher ROI from every campaign you run.",
         buttonstatus: "active",
         buttontxt: "Request A Demo"
     },
@@ -143,7 +143,7 @@ export const featuresData = [
             "Event reminders and check-in support",
             "Real-time attendance tracking",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "Our event platforms support everything from workshops to large conferences. Built with React and PostgreSQL, they offer intuitive scheduling, ticket sales, automated emails, and badge generation. Admins can manage registrations, monitor attendance, and gather real-time feedback for future improvements — all from a centralized dashboard.",
         buttonstatus: "active",
         buttontxt: "Request A Demo"
     },
@@ -158,7 +158,7 @@ export const featuresData = [
             "Offline messaging and email fallback",
             "Chatbot integration capability",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "We integrate powerful chat modules into websites and apps, allowing businesses to communicate with customers in real time. Our system supports file sharing, chat transcripts, and agent performance analytics. Whether you're running a helpdesk or an eCommerce platform, our chat integration enhances support and drives customer satisfaction.",
         buttonstatus: "inactive",
         buttontxt: "Development in process!"
     },
@@ -173,8 +173,9 @@ export const featuresData = [
             "Notification system for deadlines",
             "Workflow automation and approval flows",
         ],
-        desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        desc: "Our task management systems help teams stay aligned and productive. With drag-and-drop boards, reminders, and customizable flows, they support agile sprints, marketing campaigns, HR processes, and more. Built with NestJS and React, our platforms offer secure access, fast performance, and a collaborative user experience.",
         buttonstatus: "active",
         buttontxt: "Request A Demo"
     },
 ];
+
