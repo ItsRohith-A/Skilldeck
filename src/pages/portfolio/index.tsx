@@ -1,16 +1,16 @@
 import Faq from '@/components/home/Faq'
-import DevelopmentServices from '@/components/Portfolio/DevelopmentServices'
-import LandingBanner from '@/components/Portfolio/LandingBanner'
-import Projects from '@/components/Portfolio/Projects'
+import DevelopmentServices from '@/components/PortfolioEnveto/DevelopmentServices'
+import LandingBanner from '@/components/PortfolioEnveto/LandingBanner'
+import Projects from '@/components/PortfolioEnveto/Projects'
 import Footer from '@/components/others/Footer'
 import MainNav from '@/components/others/NavBar'
 import React from 'react'
-import ToolsTech from '@/components/Portfolio/ToolsTech'
-import FeaturedProjects from '@/components/Portfolio/FeaturedProjects'
-import ServicesWorkflow from '@/components/Portfolio/ServicesWorkflow'
-import Testimonials from '@/components/Portfolio/Testimonials'
-import UxUiTemplates from '@/components/Portfolio/UxUiTemplates'
-import ApplicationFeatures from '@/components/Portfolio/ApplicationFeatures'
+import ToolsTech from '@/components/PortfolioEnveto/ToolsTech'
+import FeaturedProjects from '@/components/PortfolioEnveto/FeaturedProjects'
+import ServicesWorkflow from '@/components/PortfolioEnveto/ServicesWorkflow'
+import Testimonials from '@/components/PortfolioEnveto/Testimonials'
+import UxUiTemplates from '@/components/PortfolioEnveto/UxUiTemplates'
+import ApplicationFeatures from '@/components/PortfolioEnveto/ApplicationFeatures'
 
 const index = () => {
     return (
@@ -18,6 +18,7 @@ const index = () => {
             <MainNav />
             <LandingBanner />
             <DevelopmentServices />
+
             <Projects />
             <ToolsTech />
             <ServicesWorkflow />
