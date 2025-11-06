@@ -94,7 +94,7 @@ const Projects = () => {
                                     <div className="flex gap-2.5">
                                         {item.showPreview && (
                                             <a
-                                                // href={item.previewLink}
+                                                href={item.previewLink}
                                                 target="_blank"
                                                 rel="noopener noreferrer noindex nofollow"
                                                 className="px-5 py-2.5 bg-prime-blue rounded-xl shadow-md transition hover:bg-prime-dark"
@@ -105,7 +105,7 @@ const Projects = () => {
 
 
                                         <button
-                                            // onClick={() => triggerForm(`poertfolio-project-${index + 1}`)}
+                                            onClick={() => triggerForm(`poertfolio-project-${index + 1}`)}
                                             className="px-5 py-2.5 bg-prime-dark rounded-xl shadow-md transition hover:bg-prime-blue"
                                         >
                                             <div className="text-white text-sm font-bold">Get Now</div>
