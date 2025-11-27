@@ -10,7 +10,7 @@ function DemoVideo() {
         <div className="relative w-full pb-[56.25%] lg:pb-[45%] h-0"> {/* 16:9 aspect ratio */}
           <iframe
             className="absolute top-0 left-0 w-full h-full rounded-xl"
-            src="https://www.youtube.com/embed/UkJ7hQaBSkE?rel=0&si=kVQFsh2SnnV7tGpr"
+            src="https://www.youtube.com/embed/A-y-PXFigPI?si=rv07PnxoYMsmuMbL"
             title="Demo"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
