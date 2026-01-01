@@ -41,9 +41,9 @@ function MainNav() {
                         {/* <Link href="/features" className="text-prime-dark text-sm font-bold capitalize">
                             Features
                         </Link> */}
-                        <Link href="/pricing" className="text-prime-dark text-sm font-bold capitalize">
+                        {/* <Link href="/pricing" className="text-prime-dark text-sm font-bold capitalize">
                             Pricing
-                        </Link>
+                        </Link> */}
                         <Link href="/blog" className="text-prime-dark text-sm font-bold capitalize">
                             Blogs
                         </Link>
