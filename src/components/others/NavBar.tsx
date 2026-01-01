@@ -90,9 +90,9 @@ function MainNav() {
                         </div>
                         <div className="text-sm lg:text-base">View Portfolio</div>
                     </Link>
-                    <Link href="/pricing" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
+                    {/* <Link href="/pricing" className="text-prime-dark text-lg font-bold capitalize" onClick={toggleMenu}>
                         Pricing
-                    </Link>
+                    </Link> */}
                     <Link href="/blog" className="text-prime-dark text-lg font-bold capitalize">
                         Blogs
                     </Link>
