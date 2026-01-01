@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IoIosArrowDropupCircle, IoMdPricetags } from 'react-icons/io';
-import { FaRegStar, FaRegSmileBeam, FaArrowCircleUp, FaBloggerB } from 'react-icons/fa';
+import { FaRegStar, FaRegSmileBeam, FaArrowCircleUp, FaBloggerB, FaQuoteLeft } from 'react-icons/fa';
 import { FiAirplay } from 'react-icons/fi';
 
 const sections = [
@@ -8,7 +8,8 @@ const sections = [
     { id: 'demo', label: 'Demo', icon: <FiAirplay className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
     { id: 'features', label: 'Features', icon: <FaRegStar className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
     // { id: 'blogs', label: 'Blogs', icon: <FaBloggerB className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
-    { id: 'pricing', label: 'Pricing', icon: <IoMdPricetags className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
+    // { id: 'pricing', label: 'Pricing', icon: <IoMdPricetags className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
+    { id: 'faqs', label: 'FAQs', icon: <FaQuoteLeft className="text-xl text-prime-dark lg:hover:text-prime-dark/70" /> },
 ];
 
 const StickyNavbar: React.FC = () => {
