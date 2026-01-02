@@ -15,7 +15,7 @@ const Faq: React.FC = () => {
     };
 
     return (
-        <div className="lg:container mt-12 lg:mt-24 mx-4 lg:mx-auto">
+        <div id='faqs' className="lg:container mt-12 lg:mt-24 mx-4 lg:mx-auto">
             <div className="text-center font-bold text-lg lg:text-2xl">FAQ</div>
             <div className="space-y-4 border-2 border-prime-gray rounded-lg overflow-clip mt-6 lg:mt-12">
                 {/* Map over the FAQ data */}

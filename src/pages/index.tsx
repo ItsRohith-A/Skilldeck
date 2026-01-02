@@ -64,7 +64,7 @@ export default function Home() {
       {/* <Founder /> */}
       {/* <Features /> */}
       <Benefit />
-      <Pricing />
+      {/* <Pricing /> */}
       {/* <FeaturesTable /> */}
       {/* <BottomContent
         title1="What browsers are supported?"
