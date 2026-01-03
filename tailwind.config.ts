@@ -86,6 +86,9 @@ const config: Config = {
         'hero-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
         'cta-gradient': 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
         'card-gradient': 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)',
+        'gradient-ai-color': 'linear-gradient(90deg, #e91cff, #43baff 75%)',
+        'brand-gradient': 'linear-gradient(90deg, #155dfc, #432dd7)',
+
       },
       boxShadow: {
         'glow': '0 0 40px rgba(59, 130, 246, 0.15)',

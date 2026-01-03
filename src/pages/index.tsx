@@ -1,15 +1,7 @@
-import TechnicalAspects from "@/components/features/TechnicalAspects";
-import Benefit from "@/components/home/Benefit";
-import Collaborative from "@/components/home/Collaborative";
-import DemoVideo from "@/components/home/DemoVideo";
-import EdtechSpace from "@/components/home/EdtechSpace";
-import Faq from "@/components/home/Faq";
-import FullyAutomated from "@/components/home/FullyAutomated";
-import NewBanner from "@/components/home/NewBanner";
-import OurClients from "@/components/home/OurClients";
-import Pricing from "@/components/home/Pricing";
+import GameChanger from "@/components/home/GameChanger";
+import HeroSection from "@/components/home/HeroSection";
 import StickyNavbar from "@/components/home/StickyNavbar";
-import Unique from "@/components/home/Unique";
+
 import Footer from "@/components/others/Footer";
 import NavBar from "@/components/others/NavBar";
 import Head from "next/head";
@@ -49,31 +41,17 @@ export default function Home() {
       </Head>
 
       <NavBar />
-      <NewBanner />
-      <div className="my-6 lg:my-20">
-        <OurClients />
-      </div>
+
+      <HeroSection />
+
+      <GameChanger />
+
       {/* <BannerImage /> */}
       <StickyNavbar />
-      <FullyAutomated />
-      <Unique />
-      <DemoVideo />
-      <Collaborative />
-      <EdtechSpace />
-      <TechnicalAspects />
-      {/* <Founder /> */}
-      {/* <Features /> */}
-      <Benefit />
-      {/* <Pricing /> */}
-      {/* <FeaturesTable /> */}
-      {/* <BottomContent
-        title1="What browsers are supported?"
-        desc1="Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our documentation for additional information."
-        title2="How can I contact customer support?"
-        desc2="Reach out to our dedicated support team via email at support@example.com or call our toll-free number at 1-800-123-4567 during business hours."
-      /> */}
 
-      <Faq />
+
+
+
       <Footer />
     </>
   );
