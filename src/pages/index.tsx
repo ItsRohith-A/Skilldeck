@@ -1,7 +1,9 @@
+import BookADemo from "@/components/home/BookADemo";
 import BuiltForTrainers from "@/components/home/BuiltForTrainers";
 import GameChanger from "@/components/home/GameChanger";
 import HeroSection from "@/components/home/HeroSection";
 import ProvenExperience from "@/components/home/ProvenExperience";
+import RecentProjects from "@/components/home/RecentProjects";
 import SkilldSolution from "@/components/home/SkilldSolution";
 import StickyNavbar from "@/components/home/StickyNavbar";
 import TheProblem from "@/components/home/TheProblem";
@@ -10,18 +12,7 @@ import WhatYouGet from "@/components/home/WhatYouGet";
 import Footer from "@/components/others/Footer";
 import NavBar from "@/components/others/NavBar";
 import Head from "next/head";
-
-// const sans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
+// Force rebuild
 export default function Home() {
   return (
     <>
@@ -56,6 +47,13 @@ export default function Home() {
       <ProvenExperience />
       {/* <BannerImage /> */}
       {/* <StickyNavbar /> */}
+      <StickyNavbar />
+
+      <RecentProjects />
+
+      <BookADemo />
+
+
       <Footer />
     </>
   );
