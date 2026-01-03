@@ -37,6 +37,7 @@ const config: Config = {
       colors: {
         // Legacy colors (keeping for backward compatibility)
         "prime-blue": "#6374ff",
+        "prime-background": "#0D9184",
         "prime-dark": "#0c213a",
         "prime-lightblue": "#b3bbfd",
         "prime-bg": "#b3bbfd33",

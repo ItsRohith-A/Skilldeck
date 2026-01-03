@@ -1,22 +1,13 @@
+import BookADemo from "@/components/home/BookADemo";
 import GameChanger from "@/components/home/GameChanger";
 import HeroSection from "@/components/home/HeroSection";
+import RecentProjects from "@/components/home/RecentProjects";
 import StickyNavbar from "@/components/home/StickyNavbar";
 
 import Footer from "@/components/others/Footer";
 import NavBar from "@/components/others/NavBar";
 import Head from "next/head";
-
-// const sans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
+// Force rebuild
 export default function Home() {
   return (
     <>
@@ -49,7 +40,9 @@ export default function Home() {
       {/* <BannerImage /> */}
       <StickyNavbar />
 
+      <RecentProjects />
 
+      <BookADemo />
 
 
       <Footer />
