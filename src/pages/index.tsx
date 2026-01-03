@@ -1,6 +1,11 @@
+import BuiltForTrainers from "@/components/home/BuiltForTrainers";
 import GameChanger from "@/components/home/GameChanger";
 import HeroSection from "@/components/home/HeroSection";
+import ProvenExperience from "@/components/home/ProvenExperience";
+import SkilldSolution from "@/components/home/SkilldSolution";
 import StickyNavbar from "@/components/home/StickyNavbar";
+import TheProblem from "@/components/home/TheProblem";
+import WhatYouGet from "@/components/home/WhatYouGet";
 
 import Footer from "@/components/others/Footer";
 import NavBar from "@/components/others/NavBar";
@@ -43,15 +48,14 @@ export default function Home() {
       <NavBar />
 
       <HeroSection />
-
+      <TheProblem />
+      <SkilldSolution />
+      <WhatYouGet />
       <GameChanger />
-
+      <BuiltForTrainers />
+      <ProvenExperience />
       {/* <BannerImage /> */}
-      <StickyNavbar />
-
-
-
-
+      {/* <StickyNavbar /> */}
       <Footer />
     </>
   );

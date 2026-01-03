@@ -2,87 +2,26 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { CiLocationOn, CiMail } from 'react-icons/ci';
-import { IoIosArrowDropupCircle } from 'react-icons/io';
+import { Mail, Linkedin, Twitter, Instagram, Youtube, ArrowUp, Sparkles, Check } from 'lucide-react';
+import Image from 'next/image';
+import logo from '../../../public/images/logo/logo-alt.png';
 
 function Footer() {
-
-    const [formData, setFormData] = useState({
-        email: '',
-        phone: '',
-    });
-    const [errors, setErrors] = useState({
-        email: '',
-        phone: '',
-    });
+    const [email, setEmail] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [result, setResult] = useState<Record<string, string>>({});
-
-    const validate = () => {
-        const newErrors = { email: '', phone: '' };
-
-        if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = 'A valid email is required';
-        }
-        if (!formData.phone || !/^\d{10}$/.test(formData.phone)) {
-            newErrors.phone = 'A valid 10-digit phone number is required';
-        }
-
-        setErrors(newErrors);
-        return !Object.values(newErrors).some((error) => error);
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (validate()) {
+        if (email && /\S+@\S+\.\S+/.test(email)) {
             setLoading(true);
-            try {
-                const response = await fetch('/api/emails/route', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Error: ${response.status} ${response.statusText}`);
-                }
-
-                const data = await response.json();
-                setResult(data);
+            // Simulate API call
+            setTimeout(() => {
                 setIsSubmitted(true);
-
-                // Reset the form after successful submission
-                handleReset();
-            } catch (error: any) {
-                console.error("Error occurred while sending email:", error);
-                setResult({ error: error.message });
-            } finally {
                 setLoading(false);
-            }
+                setEmail('');
+            }, 1000);
         }
-    };
-
-    const handleReset = () => {
-        setFormData({
-            email: '',
-            phone: '',
-        });
-        setErrors({
-            email: '',
-            phone: '',
-        });
-        setIsSubmitted(false);
     };
 
     const scrollToTop = () => {
@@ -92,120 +31,239 @@ function Footer() {
         });
     };
 
+    const productLinks = [
+        { label: 'Features', href: '/features' },
+        { label: 'Pricing', href: '/pricing' },
+        { label: 'Demo', href: '/demo' },
+        { label: 'Portfolio', href: '/portfolio' },
+    ];
+
+    const companyLinks = [
+        { label: 'About Us', href: '/about-us' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'Contact', href: '/contact-us' },
+        { label: 'Guest Author', href: '/guest-author' },
+    ];
+
+    const legalLinks = [
+        { label: 'Privacy Policy', href: '/privacy-policy' },
+        { label: 'Terms & Conditions', href: '/terms-and-condition' },
+        { label: 'Refund Policy', href: '/cancellation-and-refund' },
+    ];
+
+    const features = [
+        'No setup fees',
+        'Free migration',
+        '24/7 support',
+    ];
+
     return (
-        <div className="mt-12 lg:mt-24" id='footer'>
-            <div className="bg-black text-white py-12 px-4">
-                <div className="lg:container lg:mx-auto">
-                    <div className="flex  lg:flex-row flex-col items-center lg:items-start justify-between gap-8">
-                        {/* Start Journey Section */}
-                        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-8">
-                            <h4 className="text-xl font-bold mb-4">Start your journey now.</h4>
-                            <form onSubmit={handleSubmit}>
-                                <div className="mb-4 space-y-4">
+        <footer className="bg-surface-900 relative overflow-hidden" id="footer">
+            {/* Background elements */}
+            <div className="absolute inset-0 gradient-mesh opacity-20" />
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent-violet/10 rounded-full blur-3xl" />
+
+            {/* CTA Section */}
+            <div className="relative z-10 pt-16 md:pt-24 pb-12 md:pb-16">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="text-center max-w-3xl mx-auto">
+                        {/* Badge */}
+                        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+                            <Sparkles className="w-4 h-4 text-brand-400" />
+                            <span className="text-surface-300 text-sm">Ready to Transform Your Business?</span>
+                        </div>
+
+                        {/* Heading */}
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                            Stay Ahead. Stay Focused.
+                        </h2>
+
+                        {/* Description */}
+                        <p className="text-surface-400 text-base md:text-lg mb-6 max-w-2xl mx-auto">
+                            Skilldeck is built for trainers & training companies who want to focus on what truly matters — <span className="text-white font-semibold">delivering great training and growing their business.</span>
+                        </p>
+
+                        {/* Checkmarks */}
+                        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 mb-8 text-surface-400 text-sm">
+                            <span className="flex items-center gap-2">
+                                <Check className="w-4 h-4 text-surface-400" />
+                                Stop managing tools.
+                            </span>
+                            <span className="flex items-center gap-2">
+                                <Check className="w-4 h-4 text-surface-400" />
+                                Stop wasting money.
+                            </span>
+                            <span className="flex items-center gap-2">
+                                <Check className="w-4 h-4 text-surface-400" />
+                                Start scaling with Skilldeck.
+                            </span>
+                        </div>
+
+                        {/* CTA Buttons */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                            <Link
+                                href="/demo"
+                                className="inline-flex items-center gap-2 bg-brand-gradient text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity shadow-lg"
+                            >
+                                Get Started Today
+                                <ArrowUp className="w-4 h-4 rotate-45" />
+                            </Link>
+                            <Link
+                                href="/contact-us"
+                                className="inline-flex items-center gap-2 bg-surface-800 border border-surface-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-surface-700 transition-colors"
+                            >
+                                Talk to Sales
+                            </Link>
+                        </div>
+
+                        {/* Feature Pills */}
+                        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+                            {features.map((feature, index) => (
+                                <span key={index} className="flex items-center gap-2 text-surface-400 text-sm">
+                                    <div className="w-4 h-4 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                                        <Check className="w-2.5 h-2.5 text-emerald-400" />
+                                    </div>
+                                    {feature}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Main Footer Content */}
+            <div className="relative z-10 border-t border-surface-800 py-12 md:py-16">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+
+                        {/* Brand Column */}
+                        <div className="lg:col-span-4">
+                            {/* Logo */}
+                            <div className="flex items-center gap-2 mb-4">
+                                <div className="w-8 h-8 bg-brand-gradient rounded-lg flex items-center justify-center">
+                                    <span className="text-white font-bold text-lg">S</span>
+                                </div>
+                                <span className="text-white text-xl font-bold">SkillDeck</span>
+                            </div>
+
+                            <p className="text-surface-400 text-sm mb-6 max-w-xs">
+                                The all-in-one platform for training companies. Website, LMS, CRM, and marketing—all in one place.
+                            </p>
+
+                            {/* Newsletter */}
+                            <div className="mb-6">
+                                <p className="text-white text-sm font-medium mb-3">Subscribe to our newsletter</p>
+                                <form onSubmit={handleSubmit} className="flex gap-2">
                                     <input
                                         type="email"
-                                        name="email"
-                                        className="form-input rounded-lg py-2 px-4 w-full text-prime-dark"
-                                        placeholder="Email"
-                                        value={formData.email}
-                                        onChange={handleChange}
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="Enter your email"
+                                        className="flex-1 bg-surface-800 border border-surface-700 rounded-lg px-4 py-2 text-white text-sm placeholder:text-surface-500 focus:outline-none focus:border-brand-500 transition-colors"
                                     />
-                                    {errors.email && <p className="text-red-500">{errors.email}</p>}
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        className="form-input rounded-lg py-2 px-4 w-full text-prime-dark"
-                                        placeholder="Phone no."
-                                        pattern="[0-9]*"
-                                        inputMode="numeric"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                    />
-                                    {errors.phone && <p className="text-red-500">{errors.phone}</p>}
-                                </div>
-                                <button
-                                    type="submit"
-                                    className="w-full md:w-fit bg-prime-blue text-white py-2 px-4 rounded-lg border border-transparent hover:bg-blue-600"
-                                    disabled={loading}
-                                >
-                                    {loading ? 'Submitting...' : 'Submit'}
-                                </button>
-                            </form>
-                        </div>
-                        {/* Features Section */}
-                        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 mb-8">
-                            <p className="font-semibold text-gray-400 text-center md:text-start mb-4">Features</p>
-                            <div className="flex flex-col items-center lg:items-start space-y-2">
-                                <Link href="/" className="hover:text-prime-blue">
-                                    Demo
+                                    <button
+                                        type="submit"
+                                        disabled={loading}
+                                        className="bg-brand-gradient text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
+                                    >
+                                        {loading ? '...' : 'Subscribe'}
+                                    </button>
+                                </form>
+                                {isSubmitted && (
+                                    <p className="text-emerald-400 text-xs mt-2">Thanks for subscribing!</p>
+                                )}
+                            </div>
+
+                            {/* Social Links */}
+                            <div className="flex items-center gap-3">
+                                <Link href="#" className="w-9 h-9 rounded-lg bg-surface-800 border border-surface-700 flex items-center justify-center text-surface-400 hover:text-white hover:border-brand-500 transition-colors">
+                                    <Linkedin className="w-4 h-4" />
                                 </Link>
-                                <Link href="/" className="hover:text-prime-blue">
-                                    Release Overload
+                                <Link href="#" className="w-9 h-9 rounded-lg bg-surface-800 border border-surface-700 flex items-center justify-center text-surface-400 hover:text-white hover:border-brand-500 transition-colors">
+                                    <Twitter className="w-4 h-4" />
                                 </Link>
-                                <Link href="/contact-us" className="hover:text-prime-blue">
-                                    Contact Us
+                                <Link href="#" className="w-9 h-9 rounded-lg bg-surface-800 border border-surface-700 flex items-center justify-center text-surface-400 hover:text-white hover:border-brand-500 transition-colors">
+                                    <Instagram className="w-4 h-4" />
                                 </Link>
-                                <Link href="/about-us" className="hover:text-prime-blue">
-                                    About us
+                                <Link href="#" className="w-9 h-9 rounded-lg bg-surface-800 border border-surface-700 flex items-center justify-center text-surface-400 hover:text-white hover:border-brand-500 transition-colors">
+                                    <Youtube className="w-4 h-4" />
                                 </Link>
                             </div>
                         </div>
-                        {/* Company Section */}
-                        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 mb-8">
-                            <p className="font-semibold text-gray-400 text-center md:text-start mb-4">Company</p>
-                            <div className="flex flex-col items-center lg:items-start space-y-2">
-                                <Link href="/privacy-policy" className="hover:text-prime-blue">
-                                    Privacy Policy
-                                </Link>
-                                <Link href="/terms-and-condition" className="hover:text-prime-blue">
-                                    Terms & Conditions
-                                </Link>
-                                <Link href="/cancellation-and-refund" className="hover:text-prime-blue">
-                                    Cancellation & Refund Policy
-                                </Link>
-                            </div>
+
+                        {/* Product Links */}
+                        <div className="lg:col-span-2">
+                            <h4 className="text-surface-500 text-xs uppercase tracking-wider font-semibold mb-4">Product</h4>
+                            <ul className="space-y-3">
+                                {productLinks.map((link, index) => (
+                                    <li key={index}>
+                                        <Link href={link.href} className="text-surface-300 text-sm hover:text-white transition-colors">
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-                        {/* Offices Section */}
-                        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-8">
-                            <p className="font-semibold text-center md:text-start text-gray-400 mb-4">Offices</p>
-                            <div className="space-y-4">
-                                {/* <div className="mb-4 text-center md:text-start space-y-3 md:flex md:items-center">
-                                    <div className="flex justify-center md:justify-start">
-                                        <CiLocationOn size={25} className="mr-3" />
-                                    </div>
-                                    <p className="text-sm">
-                                        2nd floor, Sri Lakshmi, 39, 24th Main Rd, Agara Village, 1st
-                                        Sector, HSR Layout, Bengaluru, Karnataka 560102
-                                    </p>
-                                </div> */}
-                                <div className="mb-4 text-center md:text-start md:flex ">
-                                    <div className="flex justify-center md:justify-start">
-                                        <CiMail size={25} className="mr-3" />
-                                    </div>
-                                    <Link href="mailto:hello@skilldeck.net" className="hover:text-prime-blue">
-                                        hello@skilldeck.net
-                                    </Link>
-                                </div>
+
+                        {/* Company Links */}
+                        <div className="lg:col-span-2">
+                            <h4 className="text-surface-500 text-xs uppercase tracking-wider font-semibold mb-4">Company</h4>
+                            <ul className="space-y-3">
+                                {companyLinks.map((link, index) => (
+                                    <li key={index}>
+                                        <Link href={link.href} className="text-surface-300 text-sm hover:text-white transition-colors">
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Legal Links */}
+                        <div className="lg:col-span-2">
+                            <h4 className="text-surface-500 text-xs uppercase tracking-wider font-semibold mb-4">Legal</h4>
+                            <ul className="space-y-3">
+                                {legalLinks.map((link, index) => (
+                                    <li key={index}>
+                                        <Link href={link.href} className="text-surface-300 text-sm hover:text-white transition-colors">
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {/* Contact */}
+                            <div className="mt-6">
+                                <h4 className="text-surface-500 text-xs uppercase tracking-wider font-semibold mb-3">Contact</h4>
+                                <Link href="mailto:hello@skilldeck.net" className="flex items-center gap-2 text-surface-300 text-sm hover:text-white transition-colors">
+                                    <Mail className="w-4 h-4" />
+                                    hello@skilldeck.net
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* Footer Bottom Section */}
-            <div className="bg-black border-t border-gray-800 py-4 text-white">
-                <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-                    <p>© All rights reserved skilldeck 2024</p>
-                    {/* <Link href="https://kandradigital.com/" className="hover:underline hover:text-prime-blue">
-                        KandraDigital
-                    </Link> */}
-                    <button className="flex items-center gap-1 text-xs lg:hidden" onClick={scrollToTop}>
-                        <IoIosArrowDropupCircle className="text-xl text-prime-dark lg:hover:text-prime-dark/70" />
-                        Top
-                    </button>
+
+            {/* Footer Bottom */}
+            <div className="relative z-10 border-t border-surface-800 py-6">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <p className="text-surface-500 text-sm">
+                            © 2026 Skilldeck. All rights reserved.
+                        </p>
+                        <button
+                            onClick={scrollToTop}
+                            className="flex items-center gap-2 text-surface-400 text-sm hover:text-white transition-colors"
+                        >
+                            Back to top
+                            <ArrowUp className="w-4 h-4" />
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-
+        </footer>
     );
 }
 
