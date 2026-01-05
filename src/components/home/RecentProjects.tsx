@@ -156,7 +156,7 @@ const RecentProjects = () => {
                     <div className="space-y-2 md:space-y-3 sm:space-y-4 max-w-3xl">
                         <div className="inline-block px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-prime-background/10 text-[10px] sm:text-xs tracking-wider uppercase">
                             <span className='bg-brand-gradient bg-clip-text text-transparent font-bold'>
-                                Recent Projects
+                                Our Features
                             </span>
                         </div>
 

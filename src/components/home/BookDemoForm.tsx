@@ -219,7 +219,7 @@ const BookDemoForm = () => {
                 type="submit"
                 disabled={localStatus === 'loading'}
                 className={`w-full py-2 md:py-3 px-6 rounded-full text-white font-bold text-base lg:text-lg shadow-[0_10px_20px_rgba(0,103,236,0.2)] transition-all transform hover:-translate-y-1 active:translate-y-0
-                    ${localStatus === 'loading' ? 'bg-blue-400 cursor-not-allowed' : 'bg-prime-blue hover:shadow-[0_15px_30px_rgba(0,103,236,0.3)]'}
+                    ${localStatus === 'loading' ? 'bg-blue-400 cursor-not-allowed' : 'bg-brand-gradient hover:shadow-[0_15px_30px_rgba(0,103,236,0.3)]'}
                 `}
             >
                 {localStatus === 'loading' ? 'Sending...' : 'Request Demo Credentials'}

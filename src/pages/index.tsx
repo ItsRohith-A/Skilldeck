@@ -1,9 +1,12 @@
 import BookADemo from "@/components/home/BookADemo";
+import BuiltForTrainers from "@/components/home/BuiltForTrainers";
 import GameChanger from "@/components/home/GameChanger";
 import HeroSection from "@/components/home/HeroSection";
+import ProvenExperience from "@/components/home/ProvenExperience";
 import RecentProjects from "@/components/home/RecentProjects";
-import StickyNavbar from "@/components/home/StickyNavbar";
-
+import SkilldSolution from "@/components/home/SkilldSolution";
+import TheProblem from "@/components/home/TheProblem";
+import WhatYouGet from "@/components/home/WhatYouGet";
 import Footer from "@/components/others/Footer";
 import NavBar from "@/components/others/NavBar";
 import Head from "next/head";
@@ -33,18 +36,33 @@ export default function Home() {
 
       <NavBar />
 
-      <HeroSection />
-
-      <GameChanger />
-
-      {/* <BannerImage /> */}
-      <StickyNavbar />
-
-      <RecentProjects />
-
-      <BookADemo />
-
-
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="problem">
+        <TheProblem />
+      </section>
+      <section id="solutions">
+        <SkilldSolution />
+      </section>
+      <section id="features">
+        <WhatYouGet />
+      </section>
+      <section id="platform">
+        <GameChanger />
+      </section>
+      <section id="trainers">
+        <BuiltForTrainers />
+      </section>
+      <section id="experience">
+        <ProvenExperience />
+      </section>
+      <section id="projects">
+        <RecentProjects />
+      </section>
+      <section id="contact">
+        <BookADemo />
+      </section>
       <Footer />
     </>
   );

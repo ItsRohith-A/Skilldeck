@@ -75,7 +75,7 @@ const GameChanger = () => {
                     <span className="badge-dark mb-4">Why Skilldeck</span>
                     <h2 className="heading-lg text-white mb-6">
                         Why Skilldeck Is a{' '}
-                        <span className="gradient-text">Game Changer</span>
+                        <span className="bg-gradient-ai-color bg-clip-text text-transparent">Game Changer</span>
                     </h2>
                     <p className="text-xl text-surface-300 mb-4">
                         Do More With Just 5–10% of the Resources
