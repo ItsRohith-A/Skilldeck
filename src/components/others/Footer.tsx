@@ -6,7 +6,8 @@ import { useDispatch } from 'react-redux';
 import { openForm, updateFormFields } from '@/Redux/slices/Forms/FormSlice';
 import { Mail, Linkedin, Twitter, Instagram, Youtube, ArrowUp, Sparkles, Check } from 'lucide-react';
 import Image from 'next/image';
-import logo from '../../../public/images/logo/logo-alt.png';
+import logo from '../../../public/logos/mainlogo.svg';
+
 
 function Footer() {
     const dispatch = useDispatch();
@@ -56,7 +57,7 @@ function Footer() {
         { label: 'About Us', href: '/about-us' },
         { label: 'Blog', href: '/blog' },
         { label: 'Contact', href: '/contact-us' },
-        { label: 'Guest Author', href: '/guest-author' },
+        { label: 'Guest Author', href: '/become-a-guest-author' },
     ];
 
     const legalLinks = [
@@ -149,19 +150,16 @@ function Footer() {
             {/* Main Footer Content */}
             <div className="relative z-10 border-t border-surface-800 py-12 md:py-16">
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-8 lg:gap-12">
 
                         {/* Brand Column */}
                         <div className="lg:col-span-4">
                             {/* Logo */}
-                            <div className="flex items-center gap-2 mb-4">
-                                <div className="w-8 h-8 bg-brand-gradient rounded-lg flex items-center justify-center">
-                                    <span className="text-white font-bold text-lg">S</span>
-                                </div>
-                                <span className="text-white text-xl font-bold">SkillDeck</span>
+                            <div className="flex items-center gap-2 mb-4 px-4 py-2 w-fit bg-white rounded-full">
+                                <Image src={logo} alt="Logo" className="w-40 h-auto" />
                             </div>
 
-                            <p className="text-surface-400 text-sm mb-6 max-w-xs">
+                            <p className="text-surface-400 text-sm mb-6 max-w-lg">
                                 The all-in-one platform for training companies. Website, LMS, CRM, and marketing—all in one place.
                             </p>
 
