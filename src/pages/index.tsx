@@ -36,15 +36,33 @@ export default function Home() {
 
       <NavBar />
 
-      <HeroSection />
-      <TheProblem />
-      <SkilldSolution />
-      <WhatYouGet />
-      <GameChanger />
-      <BuiltForTrainers />
-      <ProvenExperience />
-      <RecentProjects />
-      <BookADemo />
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="problem">
+        <TheProblem />
+      </section>
+      <section id="solutions">
+        <SkilldSolution />
+      </section>
+      <section id="features">
+        <WhatYouGet />
+      </section>
+      <section id="platform">
+        <GameChanger />
+      </section>
+      <section id="trainers">
+        <BuiltForTrainers />
+      </section>
+      <section id="experience">
+        <ProvenExperience />
+      </section>
+      <section id="projects">
+        <RecentProjects />
+      </section>
+      <section id="contact">
+        <BookADemo />
+      </section>
       <Footer />
     </>
   );
