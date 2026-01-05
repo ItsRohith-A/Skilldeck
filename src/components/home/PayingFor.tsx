@@ -13,8 +13,8 @@ const payingItems = [
 const PayingFor = () => {
     return (
         <section className="py-12 md:py-16 ">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="bg-[#EEEDF2] rounded-3xl p-6 md:p-10 lg:p-12 shadow-sm">
+            <div className="container mx-auto md:px-6">
+                <div className="bg-[#EEEDF2] md:rounded-3xl p-6 md:p-10 lg:p-12 shadow-sm">
                     <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                         {/* Right Side - Bento Grid */}
                         <div className="w-full lg:w-4/12">
@@ -95,7 +95,7 @@ const PayingFor = () => {
                                     className="object-contain"
                                 />
                                 {/* Disappointing Results Banner */}
-                                <div className="w-fit bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full px-6 py-2.5 shadow-lg">
+                                <div className="w-fit bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full px-6 py-2.5 shadow-lg mx-auto">
                                     <p className="text-white text-sm md:text-base font-medium text-center lg:text-nowrap">
                                         And yet... results remain disappointing.
                                     </p>

@@ -24,7 +24,7 @@ const withSkilldeck = [
 
 const SkilldSolution = () => {
     return (
-        <section className="py-16 md:py-24 bg-white">
+        <section className="bg-white">
             <div className="container mx-auto px-4 md:px-6">
                 {/* Header Section */}
                 <div className="text-center mb-10 md:mb-14">
@@ -81,9 +81,9 @@ const SkilldSolution = () => {
                 </div>
 
                 {/* Comparison Cards */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-0">
                     {/* Without Skilldeck Card */}
-                    <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-sm">
+                    <div className="col-span-2 bg-white border border-gray-200 rounded-3xl p-6 md:p-8 shadow-sm md:mr-10">
                         <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
                             {/* Image Placeholder */}
                             <div className="w-full md:w-2/5 flex-shrink-0">
@@ -92,7 +92,7 @@ const SkilldSolution = () => {
 
                             {/* Content */}
                             <div className="flex-1 w-full">
-                                <div className="flex items-center gap-3 mb-5">
+                                <div className="space-y-6 mb-5">
                                     <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
                                         <ChartColumn className="text-white font-bold text-sm" />
                                     </div>
@@ -115,7 +115,7 @@ const SkilldSolution = () => {
 
                     {/* With Skilldeck Card */}
                     <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 rounded-3xl p-6 md:p-8 shadow-lg relative overflow-hidden">
-                        <div className="flex items-center gap-3 mb-6">
+                        <div className="space-y-6 mb-5">
                             <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
                                 <Sparkles className="w-5 h-5 text-white" />
                             </div>

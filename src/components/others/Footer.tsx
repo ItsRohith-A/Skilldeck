@@ -2,14 +2,28 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { openForm, updateFormFields } from '@/Redux/slices/Forms/FormSlice';
 import { Mail, Linkedin, Twitter, Instagram, Youtube, ArrowUp, Sparkles, Check } from 'lucide-react';
 import Image from 'next/image';
 import logo from '../../../public/images/logo/logo-alt.png';
 
 function Footer() {
+    const dispatch = useDispatch();
     const [email, setEmail] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
+
+    const triggerForm = (id: string) => {
+        dispatch(openForm());
+        dispatch(updateFormFields({
+            id,
+            type: 'enquiry',
+            formId: 1,
+            curriculum: false,
+            slug: '',
+        }));
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -102,19 +116,19 @@ function Footer() {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                            <Link
-                                href="/demo"
-                                className="inline-flex items-center gap-2 bg-brand-gradient text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity shadow-lg"
+                            <button
+                                onClick={() => triggerForm('footer-get-started')}
+                                className="inline-flex items-center gap-2 bg-brand-gradient text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity shadow-lg cursor-pointer"
                             >
                                 Get Started Today
                                 <ArrowUp className="w-4 h-4 rotate-45" />
-                            </Link>
-                            <Link
-                                href="/contact-us"
-                                className="inline-flex items-center gap-2 bg-surface-800 border border-surface-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-surface-700 transition-colors"
+                            </button>
+                            <button
+                                onClick={() => triggerForm('footer-talk-to-sales')}
+                                className="inline-flex items-center gap-2 bg-surface-800 border border-surface-700 text-white px-8 py-3 rounded-lg font-medium hover:bg-surface-700 transition-colors cursor-pointer"
                             >
                                 Talk to Sales
-                            </Link>
+                            </button>
                         </div>
 
                         {/* Feature Pills */}

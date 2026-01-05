@@ -50,7 +50,7 @@ const BookADemo = () => {
                         </div>
 
                         {/* What You'll Get Card */}
-                        <div className=" bg-[#1B2336] rounded-2xl p-5 text-white shadow-xl">
+                        <div className=" bg-brand-gradient rounded-2xl p-5 text-white shadow-xl">
                             <h3 className="text-xl font-bold mb-2">What You'll Get</h3>
                             <ul className="space-y-2">
                                 {[
@@ -61,8 +61,8 @@ const BookADemo = () => {
                                     'Q&A with product experts'
                                 ].map((item, index) => (
                                     <li key={index} className="flex items-start gap-3">
-                                        <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-gray-500/30 flex items-center justify-center">
-                                            <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                                        <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg- flex items-center justify-center">
+                                            <Check className="w-3 h-3 text-brand-gradient" strokeWidth={3} />
                                         </div>
                                         <span className="text-gray-300 text-sm">{item}</span>
                                     </li>
@@ -72,7 +72,7 @@ const BookADemo = () => {
                     </div>
 
                     {/* Right Form */}
-                    <div className="bg-white max-w-3xl w-full rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)] border border-gray-100 p-6 xl:p-10">
+                    <div className="bg-white max-w-3xl w-full rounded-3xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.07)] border border-gray-100 lg:p-6 xl:p-10">
                         <BookDemoForm />
                     </div>
 

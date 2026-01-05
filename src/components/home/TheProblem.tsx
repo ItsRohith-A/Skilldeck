@@ -45,10 +45,10 @@ const problemCards = [
 
 const TheProblem = () => {
     return (
-        <section className="section-padding py-16 md:py-24 bg-gradient-to-b from-white to-slate-50">
-            <div className="container mx-auto px-4 md:px-6">
+        <section className="section-padding py-12 md:pt-20 bg-gradient-to-b from-white to-slate-50">
+            <div className="container mx-auto md:px-6">
                 {/* Header Section */}
-                <div className="text-center mb-12 md:mb-16">
+                <div className="text-center md:mb-16">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-6">
                         <span className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-medium">
@@ -76,12 +76,12 @@ const TheProblem = () => {
 
                     {/* Left Column - Problem Image (spans 5 columns) */}
                     <div className="lg:col-span-5 flex justify-center">
-                        <div className="relative w-full h-full min-h-[400px] lg:min-h-full">
+                        <div className="relative w-full h-full lg:min-h-full">
                             {/* Background Glow Effect */}
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-50 to-orange-50 rounded-3xl blur-2xl opacity-60" />
 
                             {/* Image Container */}
-                            <div className="relative h-full bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-xl border border-gray-100 flex items-center justify-center">
+                            <div className="relative md:h-full bg-white/80 backdrop-blur-sm md:rounded-3xl p-6 pb-0 md:p-6 md:shadow-xl border border-gray-100 flex items-center justify-center">
                                 <Image
                                     src={problemImage}
                                     alt="Training Industry Challenges"

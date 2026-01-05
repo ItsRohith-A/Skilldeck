@@ -5,10 +5,8 @@ import HeroSection from "@/components/home/HeroSection";
 import ProvenExperience from "@/components/home/ProvenExperience";
 import RecentProjects from "@/components/home/RecentProjects";
 import SkilldSolution from "@/components/home/SkilldSolution";
-import StickyNavbar from "@/components/home/StickyNavbar";
 import TheProblem from "@/components/home/TheProblem";
 import WhatYouGet from "@/components/home/WhatYouGet";
-
 import Footer from "@/components/others/Footer";
 import NavBar from "@/components/others/NavBar";
 import Head from "next/head";
@@ -45,15 +43,8 @@ export default function Home() {
       <GameChanger />
       <BuiltForTrainers />
       <ProvenExperience />
-      {/* <BannerImage /> */}
-      {/* <StickyNavbar /> */}
-      <StickyNavbar />
-
       <RecentProjects />
-
       <BookADemo />
-
-
       <Footer />
     </>
   );

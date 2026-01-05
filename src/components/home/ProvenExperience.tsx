@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Award } from 'lucide-react';
+import { Award, Sparkles, Users, Building2 } from 'lucide-react';
 
 // Import logos
 import knowledgeHutLogo from '../../../public/images/cob/logos/kh.png';
@@ -31,110 +31,94 @@ const logos = [
     { src: saLogo, alt: 'SA' },
 ];
 
+const stats = [
+    { icon: Users, value: '500+', label: 'Companies Trust Us' },
+    { icon: Building2, value: '30+', label: 'Enterprise Clients' },
+    { icon: Sparkles, value: '5+', label: 'Years Experience' },
+];
+
 const ProvenExperience = () => {
     return (
-        <section className="py-12 md:py-20 bg-white overflow-hidden">
+        <section className="py-5 md:py-0 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
-                {/* Header */}
-                <div className="text-center mb-10 md:mb-14">
-                    {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-4">
-                        <span className="bg-amber-100 text-amber-700 px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2">
-                            <Award className="w-4 h-4" />
-                            Trusted by Industry Leaders
-                        </span>
-                    </div>
 
-                    {/* Title */}
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                        Proven by{' '}
-                        <span className="bg-gradient-ai-color bg-clip-text text-transparent">
-                            Industry Experience
-                        </span>
-                    </h2>
-
-                    {/* Description */}
-                    <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-                        Skilldeck is the result of several years of hands-on experience working with leading training brands
-                    </p>
-                </div>
-
-                {/* Logos Section */}
-                <div className="bg-gray-50 rounded-3xl p-6 md:p-10">
-                    {/* Top Label */}
-                    <div className="text-center mb-6">
-                        <span className="text-xs uppercase tracking-widest text-gray-500 font-medium">
-                            Trusted by training companies worldwide
-                        </span>
-                        <p className="text-gray-700 text-sm md:text-base mt-2">
-                            Join <span className="text-blue-600 font-bold">500+</span> training organizations already on Skilldeck
-                        </p>
-                    </div>
-
-                    {/* Infinite Scroll Logo Carousel */}
-                    <div className="relative">
-                        {/* Gradient Fade Left */}
-                        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
-
-                        {/* Gradient Fade Right */}
-                        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
-
-                        {/* Scrolling Container */}
-                        <div className="flex overflow-hidden">
-                            <div className="flex animate-scroll gap-6 md:gap-8">
-                                {/* First set of logos */}
-                                {logos.map((logo, index) => (
-                                    <div
-                                        key={`first-${index}`}
-                                        className="bg-white rounded-xl px-6 py-4 flex items-center justify-center h-16 md:h-20 shadow-sm border border-gray-100 flex-shrink-0 min-w-[140px] md:min-w-[160px]"
-                                    >
-                                        <Image
-                                            src={logo.src}
-                                            alt={logo.alt}
-                                            width={120}
-                                            height={40}
-                                            className="object-contain max-h-10 md:max-h-12 w-auto"
-                                        />
-                                    </div>
-                                ))}
-                                {/* Duplicate logos for seamless loop */}
-                                {logos.map((logo, index) => (
-                                    <div
-                                        key={`second-${index}`}
-                                        className="bg-white rounded-xl px-6 py-4 flex items-center justify-center h-16 md:h-20 shadow-sm border border-gray-100 flex-shrink-0 min-w-[140px] md:min-w-[160px]"
-                                    >
-                                        <Image
-                                            src={logo.src}
-                                            alt={logo.alt}
-                                            width={120}
-                                            height={40}
-                                            className="object-contain max-h-10 md:max-h-12 w-auto"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
+                {/* Compact Header with Stats */}
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8 md:mb-10">
+                    {/* Left - Title */}
+                    <div className="text-center lg:text-left">
+                        <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-3 py-1 mb-3">
+                            <Award className="w-3.5 h-3.5 text-amber-600" />
+                            <span className="text-amber-700 text-xs font-semibold uppercase tracking-wide">Trusted Partners</span>
                         </div>
-                    </div>
-
-                    {/* Additional Companies Note */}
-                    <div className="text-center mt-8">
-                        <div className="inline-flex items-center gap-3 bg-white rounded-full px-6 py-3 shadow-sm border border-gray-100">
-                            <div className="flex -space-x-2">
-                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-xs font-bold border-2 border-white">+</div>
-                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white text-xs font-bold border-2 border-white">30</div>
-                            </div>
-                            <span className="text-gray-700 text-sm font-medium">
-                                And <span className="font-bold text-gray-900">30+ other</span> training companies
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                            Proven by{' '}
+                            <span className="bg-gradient-ai-color bg-clip-text text-transparent">
+                                Industry Experience
                             </span>
+                        </h2>
+                    </div>
+
+                    {/* Right - Stats */}
+                    <div className="flex items-center justify-center lg:justify-end gap-6 md:gap-8">
+                        {stats.map((stat, index) => (
+                            <div key={index} className="text-center">
+                                <div className="flex items-center justify-center gap-1.5 mb-1">
+                                    <stat.icon className="w-4 h-4 text-blue-500" />
+                                    <span className="text-xl md:text-2xl font-bold text-gray-900">{stat.value}</span>
+                                </div>
+                                <span className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wider">{stat.label}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Logo Carousel - Clean Design */}
+                <div className="relative">
+                    {/* Gradient Fades */}
+                    <div className="absolute left-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute right-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+
+                    {/* Scrolling Logos */}
+                    <div className="flex overflow-hidden py-2">
+                        <div className="flex animate-scroll gap-4 md:gap-6">
+                            {/* First set */}
+                            {logos.map((logo, index) => (
+                                <div
+                                    key={`first-${index}`}
+                                    className="group bg-white rounded-xl px-5 py-3 flex items-center justify-center h-14 md:h-16 border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 flex-shrink-0 min-w-[120px] md:min-w-[140px]"
+                                >
+                                    <Image
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        width={150}
+                                        height={32}
+                                        className="object-contain max-h-8 md:max-h-10 w-auto"
+                                    />
+                                </div>
+                            ))}
+                            {/* Duplicate for seamless loop */}
+                            {logos.map((logo, index) => (
+                                <div
+                                    key={`second-${index}`}
+                                    className="group bg-white rounded-xl px-5 py-3 flex items-center justify-center h-14 md:h-16 border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-300 flex-shrink-0 min-w-[120px] md:min-w-[140px]"
+                                >
+                                    <Image
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        width={100}
+                                        height={32}
+                                        className="object-contain max-h-8 md:max-h-10 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
 
-                {/* Bottom Note */}
-                <div className="text-center mt-8">
-                    <p className="text-gray-500 text-sm md:text-base italic">
-                        From technology to marketing to automation — Skilldeck is built on{' '}
-                        <span className="text-gray-900 font-semibold not-italic">real-world challenges</span>, not assumptions.
+                {/* Bottom Tagline */}
+                <div className="text-center mt-6 md:mt-8">
+                    <p className="text-gray-500 text-xs md:text-sm">
+                        Built on <span className="text-gray-800 font-semibold">real-world challenges</span> from technology to marketing to automation
                     </p>
                 </div>
             </div>
@@ -150,7 +134,7 @@ const ProvenExperience = () => {
                     }
                 }
                 .animate-scroll {
-                    animation: scroll 30s linear infinite;
+                    animation: scroll 25s linear infinite;
                 }
                 .animate-scroll:hover {
                     animation-play-state: paused;

@@ -233,10 +233,10 @@ const WhatYouGet = () => {
     };
 
     return (
-        <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white">
+        <section className="pb-12 pt-6 md:py-20 bg-gradient-to-b from-slate-50 to-white">
             <div className="container mx-auto px-4 md:px-6">
                 {/* Header Section */}
-                <div className="text-center mb-12 md:mb-16">
+                <div className="text-center mb-8 md:mb-14">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-6">
                         <span className="bg-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-sm font-medium">
@@ -281,8 +281,8 @@ const WhatYouGet = () => {
                             onClick={() => scroll('left')}
                             disabled={!canScrollLeft}
                             className={`w-10 h-10 rounded-full shadow-md flex items-center justify-center border transition-all ${canScrollLeft
-                                    ? 'bg-white border-gray-200 hover:bg-gray-50 text-gray-700'
-                                    : 'bg-gray-100 border-gray-100 text-gray-300 cursor-not-allowed'
+                                ? 'bg-white border-gray-200 hover:bg-gray-50 text-gray-700'
+                                : 'bg-gray-100 border-gray-100 text-gray-300 cursor-not-allowed'
                                 }`}
                         >
                             <ChevronLeft className="w-5 h-5" />
@@ -303,8 +303,8 @@ const WhatYouGet = () => {
                             onClick={() => scroll('right')}
                             disabled={!canScrollRight}
                             className={`w-10 h-10 rounded-full shadow-md flex items-center justify-center border transition-all ${canScrollRight
-                                    ? 'bg-white border-gray-200 hover:bg-gray-50 text-gray-700'
-                                    : 'bg-gray-100 border-gray-100 text-gray-300 cursor-not-allowed'
+                                ? 'bg-white border-gray-200 hover:bg-gray-50 text-gray-700'
+                                : 'bg-gray-100 border-gray-100 text-gray-300 cursor-not-allowed'
                                 }`}
                         >
                             <ChevronRight className="w-5 h-5" />

@@ -30,27 +30,27 @@ const audiences = [
 
 const BuiltForTrainers = () => {
     return (
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-12 md:py-20 bg-white">
             <div className="container mx-auto px-4 md:px-6">
                 {/* Header Section */}
-                <div className="text-center mb-12 md:mb-16">
+                <div className="text-center mb-12 md:mb-6">
                     {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-6">
-                        <span className="bg-gradient-to-r from-orange-400 to-rose-400 text-white px-4 py-1.5 rounded-full text-sm font-medium">
+                    <div className="inline-block px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-prime-background/10 text-[10px] sm:text-xs tracking-wider uppercase mb-6">
+                        <span className='bg-brand-gradient bg-clip-text text-transparent font-bold'>
                             Skilldeck is not a generic SaaS.
+
                         </span>
                     </div>
-
                     {/* Main Title */}
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Built Specifically for{' '}
-                        <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                        <span className="bg-gradient-ai-color bg-clip-text text-transparent">
                             Trainers &<br className="sm:hidden" /> Training Companies
                         </span>
                     </h2>
 
                     {/* Description */}
-                    <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto mb-10">
+                    <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto mb-6">
                         It is designed only for the training industry, unlike platforms such as Shopify or WooCommerce that are built for e-commerce—not education.
                     </p>
 
@@ -61,11 +61,11 @@ const BuiltForTrainers = () => {
                 </div>
 
                 {/* Audience Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
                     {audiences.map((audience, index) => (
                         <div
                             key={index}
-                            className="group bg-white rounded-3xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center"
+                            className="group bg-white rounded-3xl p-6 md:p-4 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center"
                         >
                             {/* Icon */}
                             <div className="flex justify-center mb-6">
