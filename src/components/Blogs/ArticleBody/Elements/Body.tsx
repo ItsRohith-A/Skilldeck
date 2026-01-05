@@ -2,43 +2,39 @@ import { RootState } from '@/Redux/rootReducer';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import InnerBanner from './InnerBanner';
-import Image from 'next/image';
-import topRight from '../../../../../public/Blogs/blogBannertop.png'
-import bottomLeft from '../../../../../public/Blogs/blogBannerbottom.png'
-// import logo from '../../../../../public/logo.svg'
-
+import { Sparkles } from 'lucide-react';
 
 const Body = () => {
     const { singleArticle } = useSelector((state: RootState) => state.article);
     return (
-        <div className='md:py-4 space-y-4 '>
-            {/* <Breadcrumbs /> */}
-            <div className=" relative bg-prime/10 py-20 text-center md:py-32 text-prime-dark 2xl:text-3xl font-bold rounded-md ">
-                <Image className='absolute right-0 top-0 w-20 md:w-auto ' src={topRight} alt='topBanner' />
-                {/* <Image className='absolute hidden md:block left-4 md:left-10 top-3 md:top-5 w-28 lg:w-32 ' src={logo} alt='logo' /> */}
-                <Image className='absolute left-0 bottom-0' src={bottomLeft} alt='bottomBanner' />
-                {singleArticle?.title}
+        <div className='md:py-4 space-y-6'>
+            {/* Hero Banner */}
+            <div className="relative bg-brand-gradient py-16 md:py-24 text-center text-white rounded-2xl overflow-hidden">
+                {/* Decorative gradient orbs */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-violet/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+
+                <div className="relative z-10 px-6">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 mb-4">
+                        <Sparkles className="w-4 h-4" />
+                        <span className="text-xs font-semibold tracking-wide uppercase">Blog Article</span>
+                    </div>
+
+                    <h1 className="text-xl md:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto leading-tight">
+                        {singleArticle?.title}
+                    </h1>
+                </div>
             </div>
+
             <InnerBanner />
-            <div className='blog-body font-inter text-justify'>
+
+            <div className='blog-body font-inter text-justify prose prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg'>
                 <div dangerouslySetInnerHTML={{ __html: singleArticle?.body || '' }} />
             </div>
-
-            {/* <div className="pt-10">
-                <div className="flex flex-col gap-y-4 col-span-8">
-                    <div className="space-y-2   ">
-                        <h2 className='text-xl md:text-3xl' >Want to Level Up Your Skills?</h2>
-                        <div className="text-xs md:text-sm">Skill is a global training and placement provider helping the graduates to pick the best technology trainings and certification programs.</div>
-                        <div className="text-prime-yellow font-bold leading-normal text-sm">Have queries? font Get In touch!</div>
-                    </div>
-                    <div className="">
-                        <BlogForm />
-                    </div>
-
-                </div>
-            </div> */}
         </div>
     );
 };
 
 export default Body;
+

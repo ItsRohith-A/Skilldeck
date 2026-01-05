@@ -27,7 +27,7 @@ const Article = () => {
       </Head>
       <NavBar />
       {/* Main Body */}
-      <div className="md:mt-5">
+      <div className="pt-20 md:pt-24">
         <ArticleBody />
       </div>
       {/* Main Body */}

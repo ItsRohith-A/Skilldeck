@@ -8,28 +8,33 @@ import {
 } from 'react-icons/fa';
 import { FiCheckCircle, FiEdit3, FiFileText, FiXCircle } from 'react-icons/fi';
 import { IoMdTrendingUp } from 'react-icons/io';
+import { Sparkles, Send, Mail } from 'lucide-react';
 
 const GuestAuthor = () => {
     const benefits = [
         {
-            icon: <IoMdTrendingUp className="w-8 h-8 text-blue-500" />,
+            icon: <IoMdTrendingUp className="w-8 h-8" />,
             title: "Amplify Your Voice",
-            description: "Reach a growing community of professionals, educators, and businesses worldwide."
+            description: "Reach a growing community of professionals, educators, and businesses worldwide.",
+            gradient: "from-blue-500 to-cyan-500"
         },
         {
-            icon: <FaStar className="w-8 h-8 text-yellow-500" />,
+            icon: <FaStar className="w-8 h-8" />,
             title: "Build Authority",
-            description: "Position yourself as a thought leader in your niche."
+            description: "Position yourself as a thought leader in your niche.",
+            gradient: "from-yellow-500 to-orange-500"
         },
         {
-            icon: <FaEye className="w-8 h-8 text-purple-500" />,
+            icon: <FaEye className="w-8 h-8" />,
             title: "Get Visibility",
-            description: "We promote your articles across our social channels, newsletter, and partner platforms."
+            description: "We promote your articles across our social channels, newsletter, and partner platforms.",
+            gradient: "from-purple-500 to-pink-500"
         },
         {
-            icon: <FaUsers className="w-8 h-8 text-green-500" />,
+            icon: <FaUsers className="w-8 h-8" />,
             title: "Grow Your Network",
-            description: "Connect with our vibrant contributor and mentor ecosystem."
+            description: "Connect with our vibrant contributor and mentor ecosystem.",
+            gradient: "from-green-500 to-emerald-500"
         }
     ];
 
@@ -74,7 +79,7 @@ const GuestAuthor = () => {
     const guidelines = [
         {
             title: "Content Quality",
-            icon: <FiFileText className="w-5 h-5 mr-2" />,
+            icon: <FiFileText className="w-5 h-5" />,
             items: [
                 "Minimum 1000–1500 words (well-researched and insightful)",
                 "100% original content (not published elsewhere, including your own blog)",
@@ -85,7 +90,7 @@ const GuestAuthor = () => {
         },
         {
             title: "Voice & Style",
-            icon: <FiEdit3 className="w-5 h-5 mr-2" />,
+            icon: <FiEdit3 className="w-5 h-5" />,
             items: [
                 "Professional yet conversational tone",
                 "Actionable advice, not theory-heavy",
@@ -94,7 +99,7 @@ const GuestAuthor = () => {
         },
         {
             title: "Formatting",
-            icon: <FiCheckCircle className="w-5 h-5 mr-2" />,
+            icon: <FiCheckCircle className="w-5 h-5" />,
             items: [
                 "Submit as a Google Doc or Word file",
                 "Include a short author bio (50–80 words) with headshot (optional)",
@@ -103,7 +108,7 @@ const GuestAuthor = () => {
         },
         {
             title: "What We Don't Accept",
-            icon: <FiXCircle className="w-5 h-5 mr-2" />,
+            icon: <FiXCircle className="w-5 h-5" />,
             items: [
                 "Plagiarized or AI-generated content without editing",
                 "Purely promotional or SEO link-building content",
@@ -114,46 +119,60 @@ const GuestAuthor = () => {
     ];
 
     return (
-        <div className="min-h-screen ">
+        <div className="min-h-screen">
             {/* Hero Section */}
-            <div className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-prime-blue opacity-90"></div>
-                <div className="relative max-w-7xl mx-auto px-2 md:px-4 py-10 md:py-20 text-center text-white">
-                    <h1 className="text-3xl md:text-6xl font-bold mb-6 animate-pulse">
+            <div className="relative bg-brand-gradient overflow-hidden">
+                {/* Decorative gradient orbs */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent-violet/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+                <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
+
+                <div className="relative max-w-7xl mx-auto px-4 py-16 md:py-24 text-center text-white z-10">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <Sparkles className="w-4 h-4" />
+                        <span className="text-xs font-semibold tracking-wide uppercase">Join Our Community</span>
+                    </div>
+
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
                         Become a Guest Author
                     </h1>
-                    <p className="text-lg md:text-2xl mb-4 opacity-90">
+                    <p className="text-lg md:text-xl mb-4 text-white/90 max-w-3xl mx-auto">
                         Showcase Your Expertise | Grow Your Reach | Contribute to the Future of Skills
                     </p>
-                    <p className='mb-6 text-sm'>At SkillDeck, we're passionate about helping professionals, trainers, and businesses stay ahead in a rapidly evolving world of work. If you have unique insights, practical experiences, or research-backed content around career development, training, digital transformation, or skill-building, we'd love to feature your voice.</p>
+                    <p className="mb-8 text-sm md:text-base text-white/70 max-w-4xl mx-auto">
+                        At SkillDeck, we're passionate about helping professionals, trainers, and businesses stay ahead in a rapidly evolving world of work. If you have unique insights, practical experiences, or research-backed content around career development, training, digital transformation, or skill-building, we'd love to feature your voice.
+                    </p>
                     <a
                         href="#submit"
-                        className="inline-flex items-center px-4 md:px-8 py-2 md:py-4 bg-prime-dark text-white font-semibold rounded-full transform hover:scale-105 text-sm md:text-base transition-all duration-300 shadow-lg hover:shadow-xl"
+                        className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 bg-white text-gray-900 font-semibold rounded-full transform hover:scale-105 text-sm md:text-base transition-all duration-300 shadow-lg hover:shadow-xl gap-2"
                     >
                         Start Writing Today
-                        <FaChevronRight className="ml-2 md:w-5 md:h-5" />
+                        <FaChevronRight className="w-4 h-4" />
                     </a>
                 </div>
             </div>
 
             {/* Benefits Section */}
-            <div id="benefits" className="py-20">
+            <div id="benefits" className="py-16 md:py-24 bg-gray-50/50">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-5 md:mb-16">
-                        <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">Why Write for SkillDeck.net?</h2>
-                        <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+                    <div className="text-center mb-12 md:mb-16">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-ai-color bg-clip-text text-transparent">
+                            Why Write for SkillDeck.net?
+                        </h2>
+                        <div className="w-20 h-1 bg-brand-gradient mx-auto rounded-full"></div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                         {benefits.map((benefit, index) => (
                             <div
                                 key={index}
-                                className="bg-white p-4 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-prime-blue"
+                                className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
                             >
-                                <div className="mb-6 flex justify-center">
+                                <div className={`w-16 h-16 bg-gradient-to-br ${benefit.gradient} rounded-2xl flex items-center justify-center mb-6 mx-auto text-white group-hover:scale-110 transition-transform duration-300`}>
                                     {benefit.icon}
                                 </div>
-                                <h3 className="text-lg lg:text-xl font-semibold text-gray-800 mb-4 text-center">{benefit.title}</h3>
+                                <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-3 text-center">{benefit.title}</h3>
                                 <p className="text-gray-600 text-sm md:text-base text-center">{benefit.description}</p>
                             </div>
                         ))}
@@ -162,23 +181,27 @@ const GuestAuthor = () => {
             </div>
 
             {/* Topics Section */}
-            <div id="topics" className="py-20 bg-white">
+            <div id="topics" className="py-16 md:py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">What We're Looking For</h2>
-                        <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
-                        <p className="text-base md:text-xl text-gray-600 mt-6">We welcome original, high-quality articles on these exciting topics:</p>
+                    <div className="text-center mb-12 md:mb-16">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-gradient-ai-color bg-clip-text text-transparent">
+                            What We're Looking For
+                        </h2>
+                        <div className="w-20 h-1 bg-brand-gradient mx-auto rounded-full mb-6"></div>
+                        <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+                            We welcome original, high-quality articles on these exciting topics:
+                        </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {topics.map((topic, index) => (
                             <div
                                 key={index}
-                                className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 md:p-6 rounded-2xl border-l-4 border-prime-blue hover:border-prime-dark transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                                className="bg-gradient-to-br from-gray-50 to-blue-50/50 p-5 md:p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300 group"
                             >
-                                <div className="text-2xl md:text-3xl mb-4">{topic.emoji}</div>
-                                <h3 className="text-base md:text-lg font-semibold text-gray-800 mb-3">{topic.title}</h3>
-                                <p className="text-gray-600 text-sm md:text-base">{topic.description}</p>
+                                <div className="text-3xl md:text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{topic.emoji}</div>
+                                <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">{topic.title}</h3>
+                                <p className="text-gray-600 text-sm">{topic.description}</p>
                             </div>
                         ))}
                     </div>
@@ -186,56 +209,58 @@ const GuestAuthor = () => {
             </div>
 
             {/* Guidelines Section */}
-            <div id="guidelines" className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+            <div id="guidelines" className="py-16 md:py-24 bg-brand-gradient text-white">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-12 md:mb-16">
                         <h2 className="text-2xl md:text-4xl font-bold mb-4">Submission Guidelines</h2>
-                        <div className="w-20 h-1 bg-white mx-auto rounded-full mb-4"></div>
-                        <p className="text-base md:text-lg opacity-90">Before submitting your article, please read and follow these carefully:</p>
+                        <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-4"></div>
+                        <p className="text-base md:text-lg text-white/80">Before submitting your article, please read and follow these carefully:</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                         {guidelines.map((guideline, index) => (
-                            <div key={index} className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
-                                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                                    {guideline.icon}
+                            <div key={index} className="bg-white/10 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300">
+                                <h3 className="text-lg md:text-xl font-semibold mb-4 flex items-center gap-3">
+                                    <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                                        {guideline.icon}
+                                    </div>
                                     {guideline.title}
                                 </h3>
                                 <ul className="space-y-3">
                                     {guideline.items.map((item, itemIndex) => (
-                                        <li key={itemIndex} className="flex items-start">
-                                            <div className="w-2 h-2 bg-white rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                                            <span className="text-sm leading-relaxed">{item}</span>
+                                        <li key={itemIndex} className="flex items-start gap-3">
+                                            <div className="w-1.5 h-1.5 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                                            <span className="text-sm text-white/90 leading-relaxed">{item}</span>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                         ))}
                     </div>
-
-                    {/* How to Submit Section */}
-
                 </div>
             </div>
 
-            <section id="submit" className="py-16 px-4 bg-gradient-to-tr from-[#f0f4ff] via-[#f7fbff] to-[#ffffff]">
-                <div className="container mx-auto max-w-6xl">
-                    <div className="grid md:grid-cols-2 gap-10">
+            <section id="submit" className="py-16 md:py-24 bg-gray-50/50">
+                <div className="container mx-auto max-w-6xl px-4">
+                    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                         {/* How to Submit */}
-                        <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 ease-in-out">
-                            <h3 className="text-lg lg:text-2xl font-bold mb-6 flex items-center text-blue-700">
-                                <FiFileText className="w-6 h-6 mr-3 text-blue-500" />
+                        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                            <h3 className="text-xl lg:text-2xl font-bold mb-6 flex items-center gap-3 bg-gradient-ai-color bg-clip-text text-transparent">
+                                <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                                    <FiFileText className="w-5 h-5 text-blue-600" />
+                                </div>
                                 How to Submit
                             </h3>
                             <p className="text-base mb-4 text-gray-700">Send your pitch or draft to:</p>
-                            <div className="bg-blue-50 border border-blue-200 text-blue-700 p-4 rounded-lg font-semibold text-base md:text-lg mb-6 shadow-inner">
-                                <a href="mailto:editor@skilldeck.net" className="">
-                                    editor@skilldeck.net
-                                </a>
+                            <a
+                                href="mailto:editor@skilldeck.net"
+                                className="flex items-center gap-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-blue-700 p-4 rounded-xl font-semibold text-base md:text-lg mb-6 hover:bg-blue-100 transition-colors"
+                            >
+                                <Mail className="w-5 h-5" />
+                                editor@skilldeck.net
+                            </a>
 
-                            </div>
-
-                            <ul className="space-y-5">
+                            <ul className="space-y-4">
                                 {[
                                     {
                                         label: "Subject line:",
@@ -245,12 +270,12 @@ const GuestAuthor = () => {
                                     { label: "Proposed topic(s) or full draft" },
                                     { label: "Links to previous writing samples (if any)" },
                                 ].map((item, index) => (
-                                    <li key={index} className="flex items-start">
-                                        <span className="bg-blue-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs md:text-sm font-bold mr-3">
+                                    <li key={index} className="flex items-start gap-3">
+                                        <span className="bg-brand-gradient text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             {index + 1}
                                         </span>
                                         <div>
-                                            <p className="text-sm md:text-base font-semibold text-gray-800">{item.label}</p>
+                                            <p className="text-sm md:text-base font-semibold text-gray-900">{item.label}</p>
                                             {item.detail && (
                                                 <p className="text-xs md:text-sm text-gray-500">{item.detail}</p>
                                             )}
@@ -261,13 +286,15 @@ const GuestAuthor = () => {
                         </div>
 
                         {/* What Happens Next */}
-                        <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 ease-in-out">
-                            <h3 className="text-lg md:text-2xl font-bold mb-6 flex items-center text-green-700">
-                                <FiCheckCircle className="w-6 h-6 mr-3 text-green-500" />
+                        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                            <h3 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-3 bg-gradient-ai-color bg-clip-text text-transparent">
+                                <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                                    <FiCheckCircle className="w-5 h-5 text-green-600" />
+                                </div>
                                 What Happens Next?
                             </h3>
 
-                            <ul className="space-y-6">
+                            <ul className="space-y-5">
                                 {[
                                     {
                                         step: "Review Process",
@@ -290,14 +317,14 @@ const GuestAuthor = () => {
                                         color: "from-pink-500 to-red-500",
                                     },
                                 ].map((item, index) => (
-                                    <li key={index} className="flex items-start ">
+                                    <li key={index} className="flex items-start gap-4">
                                         <div
-                                            className={`bg-gradient-to-r ${item.color} rounded-full w-8 h-8 flex items-center justify-center text-white text-xs md:text-sm font-bold mr-2 md:mr-4 shadow-lg`}
+                                            className={`bg-gradient-to-r ${item.color} rounded-xl w-10 h-10 flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-lg`}
                                         >
                                             {index + 1}
                                         </div>
                                         <div>
-                                            <p className="text-sm md:text-base font-semibold text-gray-800 mb-1">
+                                            <p className="text-sm md:text-base font-semibold text-gray-900 mb-1">
                                                 {item.step}
                                             </p>
                                             <p className="text-xs md:text-sm text-gray-600">{item.desc}</p>
@@ -309,17 +336,21 @@ const GuestAuthor = () => {
                     </div>
 
                     {/* CTA Section */}
-                    <div className="mt-16 text-center">
-                        <div className="bg-white rounded-2xl p-5 md:p-10 border border-gray-200 shadow-xl inline-block max-w-xl w-full hover:shadow-2xl transition-all">
-                            <h3 className="text-lg md:text-2xl font-bold mb-4 text-blue-700">
+                    <div className="mt-12 md:mt-16 text-center">
+                        <div className="bg-white rounded-2xl p-8 md:p-12 border border-gray-100 shadow-xl max-w-2xl mx-auto">
+                            <h3 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-ai-color bg-clip-text text-transparent">
                                 Let&apos;s Build the Future of Learning, Together
                             </h3>
-                            <p className="text-sm md:text-base text-gray-700 mb-6">
+                            <p className="text-sm md:text-base text-gray-600 mb-8 max-w-lg mx-auto">
                                 Join a growing list of guest authors, trainers, thought leaders, and professionals who are shaping how India and the world approach learning, careers, and upskilling.
                             </p>
-                            <div className="flex flex-col md:flex-row gap-5 justify-center items-center space-x-6">
-                                <span className="text-sm text-gray-600">Ready to write?</span>
-                                <a href="mailto:editor@skilldeck.net" className="bg-prime-blue text-white px-4 md:px-8 py-2 md:py-3 text-sm md:text-base rounded-full font-semibold hover:bg-prime-dark transition duration-300 transform hover:scale-105 shadow-lg">
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                <span className="text-sm text-gray-500">Ready to write?</span>
+                                <a
+                                    href="mailto:editor@skilldeck.net"
+                                    className="inline-flex items-center gap-2 bg-brand-gradient text-white px-6 md:px-8 py-3 text-sm md:text-base rounded-full font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
+                                >
+                                    <Send className="w-4 h-4" />
                                     editor@skilldeck.net
                                 </a>
                             </div>
